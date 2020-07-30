@@ -4,7 +4,7 @@
     "name": "Monstera",
     "nextWatering": "in 3 days",
     "nextFeeding": "in 20 days",
-    "nextSparing": "in 10 days" ,
+    "nextSpraing": "in 10 days" ,
     "place": "Living room"
   },
   {
@@ -12,7 +12,7 @@
     "name": "Sanseveria",
     "nextWatering": "in 10 days",
     "nextFeeding": "in 3 days",
-    "nextSparing": "in 20 days",
+    "nextSpraing": "in 20 days",
     "place": "Bedroom"
   },
   {
@@ -20,7 +20,7 @@
     "name": "Aloe Vera" ,
     "nextWatering":"in 3 days" ,
     "nextFeeding": "in 10 days",
-    "nextSparing":"in 20 days" ,
+    "nextSpraing":"in 20 days" ,
     "place": "Living room"
   },
   {
@@ -28,7 +28,7 @@
     "name": "Mezo",
     "nextWatering":"in 10 days" ,
     "nextFeeding": "in 3 days",
-    "nextSparing":"in 10 days" ,
+    "nextSpraing":"in 10 days" ,
     "place": "Balcony"
   },
   {
@@ -36,7 +36,7 @@
     "name": "Zamiokulkas",
     "nextWatering": "in 20 days",
     "nextFeeding": "in 3 days",
-    "nextSparing": "doesn't need",
+    "nextSpraing": "doesn't need",
     "place": "Kitchen"
   }
 ]
