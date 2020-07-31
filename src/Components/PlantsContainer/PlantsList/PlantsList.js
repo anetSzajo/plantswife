@@ -1,10 +1,10 @@
 import React from 'react';
-import Plant from './Plant/Plant';
+import PlantListElement from './PlantListElement/PlantListElement';
 
 function PlantsList ({ plants }){
     return(
         <div>
-            {plants.map(plant => ( <Plant key={`${plant.name}${plant.id}`} plant={plant} />)) }
+            {plants.map(plant => ( <PlantListElement key={`${plant.name}${plant.id}`} plant={plant} />)) }
         </div>
     )
 }

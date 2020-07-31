@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PlantDescription({ plant }){
+function PlantShortDescription({ plant }){
     return(
             <div>
                 <div className="plantDescription">
@@ -16,4 +16,4 @@ function PlantDescription({ plant }){
     )
 }
 
-export default PlantDescription;
+export default PlantShortDescription;

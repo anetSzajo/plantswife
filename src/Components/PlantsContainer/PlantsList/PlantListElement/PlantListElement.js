@@ -1,17 +1,17 @@
 import React from 'react';
 
-import PlantDescription from './PlantDescription/PlantDescription';
+import PlantShortDescription from './PlantShortDescription/PlantShortDescription';
 import PlantPhoto from "./PlantPhoto/PlantPhoto";
 import PlantButtons from "./PlantButtons/PlantButtons";
 
-function Plant({ plant }){
+function PlantListElement({ plant }){
     return(
         <div>
             <PlantPhoto />
             <PlantButtons />
-            <PlantDescription plant={plant}/>
+            <PlantShortDescription plant={plant}/>
         </div>
     )
 }
 
-export default Plant;
+export default PlantListElement;
