@@ -1,5 +1,5 @@
 import React from 'react';
-import Plant from '../Plant/Plant';
+import Plant from './Plant/Plant';
 
 function PlantsList ({ plants }){
     return(

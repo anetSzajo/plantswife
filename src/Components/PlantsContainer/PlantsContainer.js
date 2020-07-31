@@ -1,5 +1,5 @@
 import React from "react";
-import PlantsList from '../PlantsList/PlantsList';
+import PlantsList from './PlantsList/PlantsList';
 
 ///fetching plants data from database
 class PlantsContainer extends React.Component{

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b2e6692f-723d-4b84-945c-1a1e95b2918e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/icons/ar-camera.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/armchair.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/balcony.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/bed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/bottle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/dinner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/icons8-watering-can-48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/icons8-watering-can-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/kitchen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/trash.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/water-sprayer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/watering-can.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/plantsPhotos/monstera.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/plantsPhotos/plants2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Footer/Footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/HomePage/AddNewPlantButton/AddNewPlantButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/HomePage/HomePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/HomePage/HomePageBackground/HomePageBackground.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/Plant/Plant.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/Plant/PlantButtons/PlantButtons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/Plant/PlantDescription/PlantDescription.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/Plant/PlantPhoto/PlantPhoto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Plant/Plant.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantsList/PlantsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantsList.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1fOrFUTHD7Jlv7x3J1MbNBtB9A1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/PlantsContainer" />
+      <recent name="$PROJECT_DIR$/src/Components/PlantsList" />
+      <recent name="$PROJECT_DIR$/src/Components/HomePage" />
+      <recent name="$PROJECT_DIR$/src/Components/Plant" />
+      <recent name="$PROJECT_DIR$/public/plantsPhotos" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2e6692f-723d-4b84-945c-1a1e95b2918e" name="Default Changelist" comment="" />
+      <created>1596099876951</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596099876951</updated>
+      <workItem from="1596099883835" duration="10796000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="440" y="-911" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596101191391">
+      <screen x="-1023" y="-1440" width="3440" height="1440" />
+    </state>
+    <state x="440" y="-911" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596101191391" />
+    <state x="435" y="-966" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596100027422">
+      <screen x="-1023" y="-1440" width="3440" height="1440" />
+    </state>
+    <state x="435" y="-966" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596100027422" />
+    <state x="304" y="-1145" key="CommitChangelistDialog2" timestamp="1596106368827">
+      <screen x="-1023" y="-1440" width="3440" height="1440" />
+    </state>
+    <state x="304" y="-1145" key="CommitChangelistDialog2/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596106368827" />
+    <state x="362" y="-1109" width="670" height="676" key="search.everywhere.popup" timestamp="1596104156544">
+      <screen x="-1023" y="-1440" width="3440" height="1440" />
+    </state>
+    <state x="362" y="-1109" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596100001137" />
+    <state x="362" y="-1109" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596104156544" />
+  </component>
+</project>
