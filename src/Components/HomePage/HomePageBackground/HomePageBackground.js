@@ -3,7 +3,7 @@ import './styles.scss';
 
 function HomePageBackground () {
     return(
-        <div>
+        <div className="homePage">
             <img className="homePageBackground" src="plantsPhotos/plants2.jpg" alt="" />
             <div className="homePageLogo">
                 <h1>PLANTSWIFE</h1>

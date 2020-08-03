@@ -1,13 +1,18 @@
 @import '../../base';
 
+.homePage{
+  position: relative;
+}
+
 .homePageBackground{
   margin: 4px auto;
   position: static;
-  width: 310px;
+  width: 96%;
   height: 225px;
   left: 10px;
   top: 10px;
   border-radius: 8px;
+  opacity: 0.85;
 }
 .homePageLogo{
   font-family: $font-family;
@@ -16,9 +21,9 @@
   background-color: #FFFFFF;
   position: absolute;
   top: 7px;
-  left: 116px;
-  width: 28%;
-  height:88px;
+  left: 38%;
+  width: 6rem;
+  height:6rem;
   margin: auto;
   display: flex;
   border-radius: 62px;
