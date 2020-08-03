@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2e6692f-723d-4b84-945c-1a1e95b2918e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/HomePage/AddNewPlantButton/styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/HomePage/HomePageBackground/styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/_base.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/AddNewPlantButton/AddNewPlantButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/AddNewPlantButton/AddNewPlantButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/HomePage/HomePageBackground/HomePageBackground.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/HomePageBackground/HomePageBackground.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/Plant/Plant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantListElement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/Plant/PlantButtons/PlantButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantButtons/PlantButtons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/Plant/PlantDescription/PlantDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantShortDescription/PlantShortDescription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/Plant/PlantPhoto/PlantPhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantPhoto/PlantPhoto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantButtons/PlantButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantButtons/PlantButtons.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,19 +32,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/HomePage/HomePageBackground" />
+      <recent name="$PROJECT_DIR$/src/Components" />
       <recent name="$PROJECT_DIR$/src/Components/PlantsContainer" />
       <recent name="$PROJECT_DIR$/src/Components/PlantsList" />
       <recent name="$PROJECT_DIR$/src/Components/HomePage" />
-      <recent name="$PROJECT_DIR$/src/Components/Plant" />
-      <recent name="$PROJECT_DIR$/public/plantsPhotos" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -56,7 +59,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596099876951</updated>
-      <workItem from="1596099883835" duration="11916000" />
+      <workItem from="1596099883835" duration="18010000" />
+      <workItem from="1596442006854" duration="851000" />
     </task>
     <servers />
   </component>
@@ -72,14 +76,34 @@
       <screen x="-1023" y="-1440" width="3440" height="1440" />
     </state>
     <state x="435" y="-966" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596100027422" />
-    <state x="304" y="-1145" key="CommitChangelistDialog2" timestamp="1596106368827">
+    <state x="304" y="-1145" key="CommitChangelistDialog2" timestamp="1596442640090">
       <screen x="-1023" y="-1440" width="3440" height="1440" />
     </state>
-    <state x="304" y="-1145" key="CommitChangelistDialog2/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596106368827" />
-    <state x="362" y="-1109" width="670" height="676" key="search.everywhere.popup" timestamp="1596104156544">
+    <state x="304" y="-1145" key="CommitChangelistDialog2/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596442640090" />
+    <state width="2207" height="424" key="GridCell.Tab.0.bottom" timestamp="1596323458384">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="2207" height="424" key="GridCell.Tab.0.bottom/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596198936718" />
+    <state width="2207" height="424" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1596323458384" />
+    <state width="2207" height="424" key="GridCell.Tab.0.center" timestamp="1596323458381">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="2207" height="424" key="GridCell.Tab.0.center/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596198936715" />
+    <state width="2207" height="424" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1596323458381" />
+    <state width="2207" height="424" key="GridCell.Tab.0.left" timestamp="1596323458376">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="2207" height="424" key="GridCell.Tab.0.left/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596198936713" />
+    <state width="2207" height="424" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1596323458376" />
+    <state width="2207" height="424" key="GridCell.Tab.0.right" timestamp="1596323458382">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="2207" height="424" key="GridCell.Tab.0.right/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596198936716" />
+    <state width="2207" height="424" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1596323458382" />
+    <state x="362" y="-1109" width="670" height="676" key="search.everywhere.popup" timestamp="1596190237466">
       <screen x="-1023" y="-1440" width="3440" height="1440" />
     </state>
-    <state x="362" y="-1109" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596100001137" />
+    <state x="362" y="-1109" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596190237466" />
     <state x="362" y="-1109" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596104156544" />
   </component>
 </project>
