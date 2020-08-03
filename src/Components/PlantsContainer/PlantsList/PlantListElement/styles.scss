@@ -57,6 +57,9 @@ body{
   font-size: 7px;
   border-radius: $default-border-radius;
   border: none;
+  a{
+    text-decoration: none;
+  }
 }
 
 .plantButtons-bar{
