@@ -1,0 +1,73 @@
+@import '../../../base';
+
+body{
+  font-family: $font-family;
+  margin: unset;
+  width: 100vw;
+  height: 100vh;
+}
+
+.plantListElement{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: 8px auto;
+  padding: 4px 0;
+}
+
+.plantListElement__menu{
+
+}
+
+.plantPhoto__container{
+  width: 5rem;
+  height: 5rem;
+  background-color: pink;
+  border-radius: 8px;
+}
+
+.plantPhoto{
+
+}
+
+.plantDescription{
+  display: flex;
+  font-size: 10px;
+  text-align: left;
+  background-color: $main-color;
+  padding: 8px 10px 20px 2px;
+
+  border-radius: 2* $default-border-radius;
+
+  .plantDescription__column{
+    margin: 0 10px;
+    //padding: 5px 16px;
+
+  }
+  .column-first {
+    color: #B9B5B5;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.moreInfoButton{
+  position: absolute;
+  right: 35px;
+  top: 400px;
+  background-color: $second-color;
+  font-size: 8px;
+  border-radius: $default-border-radius;
+  border: none;
+}
+
+.plantButtons-bar{
+
+}
+
+.plantButton{
+
+}

@@ -1,8 +1,11 @@
 import React from "react";
+import '../styles.scss';
 
 function PlantPhoto(){
     return(
-        <img src="plantsPhotos" alt="" />
+        <div className="plantPhoto__container">
+            <img src="plantPhoto" alt="" />
+        </div>
     )
 }
 
