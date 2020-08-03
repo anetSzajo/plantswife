@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2e6692f-723d-4b84-945c-1a1e95b2918e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Footer/styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantMoreInfoButton/PlantMoreInfoButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantButtons/PlantButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantButtons/PlantButtons.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantListElement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantListElement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantPhoto/PlantPhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantPhoto/PlantPhoto.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantShortDescription/PlantShortDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantShortDescription/PlantShortDescription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/_base.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596099876951</updated>
       <workItem from="1596099883835" duration="18010000" />
-      <workItem from="1596442006854" duration="5060000" />
+      <workItem from="1596442006854" duration="8327000" />
     </task>
     <servers />
   </component>
@@ -73,10 +76,10 @@
       <screen x="-1023" y="-1440" width="3440" height="1440" />
     </state>
     <state x="435" y="-966" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596100027422" />
-    <state x="304" y="-1145" key="CommitChangelistDialog2" timestamp="1596442640090">
+    <state x="304" y="-1145" key="CommitChangelistDialog2" timestamp="1596452527280">
       <screen x="-1023" y="-1440" width="3440" height="1440" />
     </state>
-    <state x="304" y="-1145" key="CommitChangelistDialog2/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596442640090" />
+    <state x="304" y="-1145" key="CommitChangelistDialog2/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596452527280" />
     <state width="2207" height="424" key="GridCell.Tab.0.bottom" timestamp="1596323458384">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -1,0 +1,13 @@
+@import '../base';
+
+.footer{
+  background-color: $third-color;
+  opacity: $default-opacity;
+  font-size: 11px;
+  p{
+    margin: 0;
+    text-align: left;
+    padding: 1px 0 2px 4px;
+    color: #9C9C9C;
+  }
+}
