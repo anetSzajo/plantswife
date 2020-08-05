@@ -1,0 +1,30 @@
+@import '../../base';
+
+.plantDescription{
+  display: flex;
+  font-size: 10px;
+  text-align: left;
+  background-color: $main-color;
+  padding: 8px 10px 20px 2px;
+  border-radius: 2* $default-border-radius;
+  min-width: 57%;
+  .plantDescription__column{
+    margin: 0 10px;
+  }
+  .column-first {
+    color: #B9B5B5;
+    margin: 0 0 0 10px;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+@media(min-width: 370px) {
+  .plantDescription{
+    padding: 2px 35px 20px 2px;
+  }
+  .plantDescription__column {
+    padding: 8px 16px 2px 1px;
+  }
+}

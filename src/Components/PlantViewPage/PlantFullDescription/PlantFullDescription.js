@@ -1,12 +1,14 @@
 import React from "react";
 import PlantShortDescription
-    from "../../PlantsContainer/PlantsList/PlantListElement/PlantShortDescription/PlantShortDescription";
+    from "../../SharedComponents/PlantShortDescription/PlantShortDescription";
 
 function PlantFullDescription() {
     return(
         <div>
-            <p>PLANT FULL DESCRIPTION</p>
             {/*<PlantShortDescription />*/}
+            <div>
+                <p>PLANT FULL DESCRIPTION</p>
+            </div>
         </div>
     )
 }

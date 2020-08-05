@@ -2,16 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2e6692f-723d-4b84-945c-1a1e95b2918e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/PlantViewPage/AddNewPlantPhoto/AddNewPlantPhoto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/PlantViewPage/PlantFullDescription/PlantFullDescription.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/PlantViewPage/PlantViewPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/databaseFull.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PlantViewPage/AddNewPlantPhoto/addNewPlantPhoto.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PlantViewPage/PlantFullDescription/plantFullDescription.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PlantViewPage/plantViewPage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantMoreInfoButton/plantMoreInfoButton.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantButtons/plantButtons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantPhoto/plantPhoto.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantShortDescription/plantShortDescription.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Footer/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantViewPage/PlantFullDescription/PlantFullDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantViewPage/PlantFullDescription/PlantFullDescription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantViewPage/PlantViewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantViewPage/PlantViewPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantButtons/PlantButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantButtons/PlantButtons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantListElement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantListElement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantMoreInfoButton/PlantMoreInfoButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantMoreInfoButton/PlantMoreInfoButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantPhoto/PlantPhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantPhoto/PlantPhoto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantShortDescription/PlantShortDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantShortDescription/PlantShortDescription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/plantListElement.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,19 +43,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/SharedComponents" />
       <recent name="$PROJECT_DIR$/src/Components/HomePage/HomePageBackground" />
       <recent name="$PROJECT_DIR$/src/Components" />
       <recent name="$PROJECT_DIR$/src/Components/PlantsContainer" />
       <recent name="$PROJECT_DIR$/src/Components/PlantsList" />
-      <recent name="$PROJECT_DIR$/src/Components/HomePage" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -60,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596099876951</updated>
       <workItem from="1596099883835" duration="18010000" />
-      <workItem from="1596442006854" duration="14510000" />
+      <workItem from="1596442006854" duration="24892000" />
     </task>
     <servers />
   </component>
@@ -76,10 +88,10 @@
       <screen x="-1023" y="-1440" width="3440" height="1440" />
     </state>
     <state x="435" y="-966" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596100027422" />
-    <state x="304" y="-1145" key="CommitChangelistDialog2" timestamp="1596452527280">
+    <state x="304" y="-1145" key="CommitChangelistDialog2" timestamp="1596624566875">
       <screen x="-1023" y="-1440" width="3440" height="1440" />
     </state>
-    <state x="304" y="-1145" key="CommitChangelistDialog2/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596452527280" />
+    <state x="304" y="-1145" key="CommitChangelistDialog2/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596624566875" />
     <state width="2207" height="424" key="GridCell.Tab.0.bottom" timestamp="1596323458384">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -105,5 +117,17 @@
     </state>
     <state x="362" y="-1109" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596190237466" />
     <state x="362" y="-1109" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596104156544" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Components/PlantViewPage/PlantViewPage.js</url>
+          <line>14</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

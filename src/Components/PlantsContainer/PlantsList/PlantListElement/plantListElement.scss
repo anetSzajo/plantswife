@@ -1,0 +1,20 @@
+@import '../../../base';
+
+body{
+  font-family: $font-family;
+  margin: unset;
+  width: 100vw;
+  height: 100vh;
+}
+
+.plantListElement{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 96%;
+  margin: 14px auto;
+  padding: 4px 0;
+  position: relative;
+}
+
+

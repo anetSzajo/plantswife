@@ -1,10 +1,10 @@
 import React from 'react';
 
-import PlantShortDescription from './PlantShortDescription/PlantShortDescription';
-import PlantPhoto from "./PlantPhoto/PlantPhoto";
-import PlantButtons from "./PlantButtons/PlantButtons";
+import PlantShortDescription from '../../../SharedComponents/PlantShortDescription/PlantShortDescription';
+import PlantPhoto from "../../../SharedComponents/PlantPhoto/PlantPhoto";
+import PlantButtons from "../../../SharedComponents/PlantButtons/PlantButtons";
 import PlantMoreInfoButton from "./PlantMoreInfoButton/PlantMoreInfoButton";
-import './styles.scss';
+import './plantListElement.scss';
 
 function PlantListElement({ plant }){
     return(

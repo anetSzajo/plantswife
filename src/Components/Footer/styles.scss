@@ -4,6 +4,9 @@
   background-color: $third-color;
   opacity: $default-opacity;
   font-size: 11px;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
   p{
     margin: 0;
     text-align: left;

@@ -1,0 +1,15 @@
+@import '../../../../base';
+
+.moreInfoButton{
+  position: absolute;
+  font-family: $font-family;
+  right: 7%;
+  top: 83%;
+  background-color: $second-color;
+  font-size: 7px;
+  border-radius: $default-border-radius;
+  border: none;
+  a{
+    text-decoration: none;
+  }
+}

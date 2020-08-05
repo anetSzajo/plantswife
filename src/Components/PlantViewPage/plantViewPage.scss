@@ -1,0 +1,15 @@
+.plantViewPageBody{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.deleteButton{
+  border: none;
+  background-color: white;
+    img{
+      width: 2rem;
+      height: 2rem;
+    }
+}

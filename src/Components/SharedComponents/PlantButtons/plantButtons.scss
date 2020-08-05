@@ -1,0 +1,25 @@
+.plantButtons-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 8px;
+
+.plantButton {
+    background-color: white;
+    border: none;
+    padding: 0;
+}
+}
+
+.largeButton{
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+}
+
+.plantButton img{
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.7;
+}
+
