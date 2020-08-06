@@ -2,10 +2,10 @@ import React from "react";
 import PlantShortDescription
     from "../../SharedComponents/PlantShortDescription/PlantShortDescription";
 
-function PlantFullDescription() {
+function PlantDescription({plant}) {
     return(
         <div>
-            {/*<PlantShortDescription />*/}
+            <PlantShortDescription id={plant.id} name={plant.name} nextWatering={plant.nextWatering}/>
             <div>
                 <p>PLANT FULL DESCRIPTION</p>
             </div>
@@ -13,4 +13,4 @@ function PlantFullDescription() {
     )
 }
 
-export default PlantFullDescription;
+export default PlantDescription;

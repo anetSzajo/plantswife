@@ -1,8 +1,7 @@
 import React from 'react';
 
-import Footer from '../Footer/Footer';
 import AddNewPlantButton from './AddNewPlantButton/AddNewPlantButton';
-import PlantsContainer from "../PlantsContainer/PlantsContainer";
+import PlantListPage from "../PlantListPage/PlantListPage";
 import HomePageBackground from "./HomePageBackground/HomePageBackground";
 
 function HomePage () {
@@ -10,8 +9,7 @@ function HomePage () {
         <div>
             <HomePageBackground />
             <AddNewPlantButton />
-            <PlantsContainer />
-            <Footer />
+            <PlantListPage />
         </div>
     )
 }

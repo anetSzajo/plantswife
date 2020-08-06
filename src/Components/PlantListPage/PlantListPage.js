@@ -1,13 +1,13 @@
 import React from "react";
 import PlantsList from './PlantsList/PlantsList';
 
-class PlantsContainer extends React.Component{
+class PlantListPage extends React.Component{
     state = {
         plants: []
     }
 
     componentDidMount(){
-        fetch('database.json')
+        fetch('/database.json')
             .then(response => response.json())
             .then(data => this.setState({
                     plants: data
@@ -24,4 +24,4 @@ class PlantsContainer extends React.Component{
     }
 }
 
-export default PlantsContainer;
+export default PlantListPage;

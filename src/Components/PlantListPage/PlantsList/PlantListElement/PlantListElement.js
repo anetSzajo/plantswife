@@ -14,7 +14,7 @@ function PlantListElement({ plant }){
                 <PlantButtons />
             </div>
             <PlantShortDescription plant={plant}/>
-            <PlantMoreInfoButton />
+            <PlantMoreInfoButton plant={plant}/>
         </div>
     )
 }
