@@ -2,11 +2,30 @@
   opacity: 0.7;
   border: none;
   background-color: transparent;
-  position: fixed;
+  position: absolute;
   top: 127px;
   left: 80px;
   img{
     width: 1.5rem;
     height: 1.5rem;
+  }
+}
+
+@media(min-width: 370px) {
+  .addNewPlantPhotoButton {
+    top:126px;
+    left: 106px;
+  }
+}
+@media(min-width: 360px) {
+  .addNewPlantPhotoButton {
+    top:126px;
+    left: 106px;
+  }
+}
+
+@media(min-width: 376px) {
+  .addNewPlantPhotoButton {
+    left: 128px;
   }
 }

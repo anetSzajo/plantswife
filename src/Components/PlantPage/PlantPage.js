@@ -27,6 +27,7 @@ class PlantPage extends React.Component {
         return(
             <div>
                 <div className="plantViewPageBody">
+
                     <PlantPhoto fullDescriptionView={true}/>
                     <AddNewPlantPhoto />
                     <PlantButtons fullDescriptionView={true}/>
@@ -52,15 +53,15 @@ class PlantPage extends React.Component {
                                     <p>{this.state.plant.notes}</p>
                                 </div>
                             </div>
+                            <div>
+                                <button className="editButton">
+                                    <img src="/icons/edit-icon.png" alt="" />
+                                </button>
+                                <button className="deleteButton">
+                                    <img src="/icons/trash.png" alt="" />
+                                </button>
+                            </div>
                         </div>
-                    <div className="editAndDeleteButtons">
-                        <button className="editButton">
-                            <img src="/icons/edit-icon.png" alt="" />
-                        </button>
-                        <button className="deleteButton">
-                            <img src="/icons/trash.png" alt="" />
-                        </button>
-                    </div>
                     <button className="backHomeButton">
                         <Link to={`/`}>HOME</Link>
                     </button>

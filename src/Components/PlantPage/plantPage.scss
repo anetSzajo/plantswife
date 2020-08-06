@@ -7,29 +7,6 @@
   align-items: center;
 }
 
-
-.deleteButton,
-.editButton{
-  position: fixed;
-  opacity: 0.6;
-  border: none;
-  background-color: transparent;
-  img{
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-}
-
-.deleteButton{
-  bottom: 80px;
-  right: 32px;
-}
-
-.editButton{
-  bottom: 80px;
-  right: 55px;
-}
-
 .plantDescription{
   display: flex;
   font-size: 10px;
@@ -58,8 +35,8 @@
   border-radius: 2* $default-border-radius;
   margin: 1.5rem auto;
   padding: 1rem;
+  position: relative;
 }
-
 
 .backHomeButton{
   background-color: $second-color;
@@ -76,5 +53,36 @@
   {
     text-decoration: none;
     color: black;
+  }
+}
+
+.deleteButton,
+.editButton{
+  position: absolute;
+  opacity: 0.6;
+  border: none;
+  background-color: transparent;
+  img{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.deleteButton{
+  bottom: 1%;
+  right: 1%;
+}
+
+.editButton{
+  bottom: 1%;
+  right: 9%;
+}
+
+@media(min-width: 370px) {
+  .plantFullDescription{
+    height: 40vh;
+  }
+  .column-first {
+    padding: 0 17px 0 0;
   }
 }

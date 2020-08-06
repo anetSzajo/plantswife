@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2e6692f-723d-4b84-945c-1a1e95b2918e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/icons/edit-icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantPage/AddNewPlantPhoto/AddNewPlantPhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/AddNewPlantPhoto/AddNewPlantPhoto.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/PlantPage/AddNewPlantPhoto/addNewPlantPhoto.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/AddNewPlantPhoto/addNewPlantPhoto.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/PlantPage/PlantPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/PlantPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/PlantPage/plantPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/plantPage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SharedComponents/PlantButtons/plantButtons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantButtons/plantButtons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SharedComponents/PlantShortDescription/PlantShortDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantShortDescription/PlantShortDescription.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/SharedComponents/PlantShortDescription/plantShortDescription.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantShortDescription/plantShortDescription.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596099876951</updated>
       <workItem from="1596099883835" duration="18010000" />
-      <workItem from="1596442006854" duration="35725000" />
+      <workItem from="1596442006854" duration="39993000" />
     </task>
     <servers />
   </component>
