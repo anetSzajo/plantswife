@@ -79,10 +79,16 @@
 }
 
 @media(min-width: 370px) {
+  .plantDescription{
+    padding-top: 0;
+  }
+  .plantDescription__column{
+    padding-top: 8px;
+  }
   .plantFullDescription{
     height: 40vh;
   }
   .column-first {
-    padding: 0 17px 0 0;
+    padding: 8px 17px 0 0;
   }
 }
