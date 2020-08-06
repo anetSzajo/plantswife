@@ -1,3 +1,5 @@
+@import '../base';
+
 .plantViewPageBody{
   display: flex;
   flex-direction: column;
@@ -5,11 +7,74 @@
   align-items: center;
 }
 
-.deleteButton{
+
+.deleteButton,
+.editButton{
+  position: fixed;
+  opacity: 0.6;
   border: none;
-  background-color: white;
-    img{
-      width: 2rem;
-      height: 2rem;
-    }
+  background-color: transparent;
+  img{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.deleteButton{
+  bottom: 80px;
+  right: 32px;
+}
+
+.editButton{
+  bottom: 80px;
+  right: 55px;
+}
+
+.plantDescription{
+  display: flex;
+  font-size: 10px;
+  text-align: left;
+  background-color: $main-color;
+  padding: 8px 10px 20px 2px;
+  border-radius: 2* $default-border-radius;
+  min-width: 57%;
+
+  .plantDescription__column{
+    margin: 0 10px;
+  }
+
+  .column-first{
+    color: #B9B5B5;
+    margin: 0 0 0 10px;
+  }
+  p {
+    margin: 0;
+    font-size: 10px;
+  }
+}
+
+.plantFullDescription{
+  background-color: $main-color;
+  border-radius: 2* $default-border-radius;
+  margin: 1.5rem auto;
+  padding: 1rem;
+}
+
+
+.backHomeButton{
+  background-color: $second-color;
+  border-radius: $default-border-radius;
+  border: none;
+  font-size: 10px;
+  font-family: $font-family;
+  padding: 3px 6px;
+  position: fixed;
+  bottom: 28px;
+  rigth: 30px;
+  a,
+  a:visited
+  {
+    text-decoration: none;
+    color: black;
+  }
 }

@@ -3,8 +3,8 @@ import './plantShortDescription.scss';
 
 function PlantShortDescription({ plant }){
     return(
-            <div className="plantDescription">
-                <div className="plantDescription__column column-first">
+            <div className="plantShortDescription">
+                <div className="plantShortDescription__column column-first">
                     <p>Id: </p>
                     <p>Name: </p>
                     <p>Next watering: </p>
@@ -12,7 +12,7 @@ function PlantShortDescription({ plant }){
                     <p>Next spraing: </p>
                     <p>Place: </p>
                 </div>
-                <div className="plantDescription__column">
+                <div className="plantShortDescription__column">
                     <p>{plant.id}</p>
                     <p>{plant.name}</p>
                     <p>{plant.nextWatering}</p>

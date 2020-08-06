@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2e6692f-723d-4b84-945c-1a1e95b2918e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/icons/edit-icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantViewPage/AddNewPlantPhoto/AddNewPlantPhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/AddNewPlantPhoto/AddNewPlantPhoto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantViewPage/AddNewPlantPhoto/addNewPlantPhoto.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/AddNewPlantPhoto/addNewPlantPhoto.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantViewPage/PlantFullDescription/PlantFullDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/PlantDescription/PlantDescription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantViewPage/PlantFullDescription/plantFullDescription.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/PlantDescription/plantDescription.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantViewPage/PlantViewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/PlantPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantViewPage/plantViewPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/plantPage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantListPage/PlantListPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantListElement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantListPage/PlantsList/PlantListElement/PlantListElement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantMoreInfoButton/PlantMoreInfoButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantListPage/PlantsList/PlantListElement/PlantMoreInfoButton/PlantMoreInfoButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/PlantMoreInfoButton/plantMoreInfoButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantListPage/PlantsList/PlantListElement/PlantMoreInfoButton/plantMoreInfoButton.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantListElement/plantListElement.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantListPage/PlantsList/PlantListElement/plantListElement.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantsContainer/PlantsList/PlantsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantListPage/PlantsList/PlantsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SharedComponents/PlantPhoto/PlantPhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantPhoto/PlantPhoto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantPage/AddNewPlantPhoto/AddNewPlantPhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/AddNewPlantPhoto/AddNewPlantPhoto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantPage/AddNewPlantPhoto/addNewPlantPhoto.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/AddNewPlantPhoto/addNewPlantPhoto.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantPage/PlantPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/PlantPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PlantPage/plantPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/plantPage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SharedComponents/PlantButtons/plantButtons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantButtons/plantButtons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SharedComponents/PlantShortDescription/PlantShortDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantShortDescription/PlantShortDescription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SharedComponents/PlantShortDescription/plantShortDescription.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SharedComponents/PlantShortDescription/plantShortDescription.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +44,11 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/icons" />
       <recent name="$PROJECT_DIR$/src/Components/SharedComponents" />
       <recent name="$PROJECT_DIR$/src/Components/HomePage/HomePageBackground" />
       <recent name="$PROJECT_DIR$/src/Components" />
       <recent name="$PROJECT_DIR$/src/Components/PlantsContainer" />
-      <recent name="$PROJECT_DIR$/src/Components/PlantsList" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -69,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596099876951</updated>
       <workItem from="1596099883835" duration="18010000" />
-      <workItem from="1596442006854" duration="29901000" />
+      <workItem from="1596442006854" duration="35725000" />
     </task>
     <servers />
   </component>
