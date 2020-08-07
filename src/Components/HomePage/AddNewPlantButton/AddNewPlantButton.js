@@ -1,9 +1,11 @@
 import React from 'react';
-import './styles.scss';
+import { Link } from 'react-router-dom';
+
+import './addNewPlantButton.scss';
 
 function AddNewPlantButton() {
     return(
-       <button className="addNewPlantButton">ADD NEW PLANT</button>
+        <button className="addNewPlantButton"><Link to={"/createNewPlant"}>ADD NEW PLANT</Link></button>
     )
 }
 

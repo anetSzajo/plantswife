@@ -9,12 +9,14 @@ import HomePage from "./Components/HomePage/HomePage";
 import PlantPage from "./Components/PlantPage/PlantPage";
 import './App.css';
 import Footer from "./Components/Footer/Footer";
+import NewPlantPage from "./Components/NewPlantPage/NewPlantPage";
 
 function App() {
   return (
     <div className="App">
         <Router>
             <Switch>
+                <Route exact path="/createNewPlant" component={NewPlantPage} />
                 <Route exact path="/plantViewPage/:plantid" component={PlantPage} />
                 <Route path="/"><HomePage /></Route>
             </Switch>

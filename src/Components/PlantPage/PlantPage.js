@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 
 import PlantButtons from "../SharedComponents/PlantButtons/PlantButtons";
 import PlantPhoto from "../SharedComponents/PlantPhoto/PlantPhoto";
 import './plantPage.scss';
 import PlantShortDescription from "../SharedComponents/PlantShortDescription/PlantShortDescription";
 import AddNewPlantPhoto from "./AddNewPlantPhoto/AddNewPlantPhoto";
+import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 
 class PlantPage extends React.Component {
     state = {
@@ -62,9 +62,7 @@ class PlantPage extends React.Component {
                                 </button>
                             </div>
                         </div>
-                    <button className="backHomeButton">
-                        <Link to={`/`}>HOME</Link>
-                    </button>
+                        <GoHomeButton />
                 </div>
             </div>
         )

@@ -38,24 +38,6 @@
   position: relative;
 }
 
-.backHomeButton{
-  background-color: $second-color;
-  border-radius: $default-border-radius;
-  border: none;
-  font-size: 10px;
-  font-family: $font-family;
-  padding: 3px 6px;
-  position: fixed;
-  bottom: 28px;
-  rigth: 30px;
-  a,
-  a:visited
-  {
-    text-decoration: none;
-    color: black;
-  }
-}
-
 .deleteButton,
 .editButton{
   position: absolute;

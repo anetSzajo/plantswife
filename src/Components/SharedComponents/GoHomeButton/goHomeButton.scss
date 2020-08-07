@@ -1,0 +1,20 @@
+@import "../../base";
+
+.goHomeButton{
+  background-color: $second-color;
+  border-radius: $default-border-radius;
+  border: none;
+  font-size: 10px;
+  font-family: $font-family;
+  padding: 3px 6px;
+  position: fixed;
+  bottom: 28px;
+  width: 16%;
+  margin: auto;
+  a,
+  a:visited
+  {
+    text-decoration: none;
+    color: black;
+  }
+}
