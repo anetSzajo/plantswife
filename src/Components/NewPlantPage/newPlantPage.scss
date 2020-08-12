@@ -1,0 +1,67 @@
+@import '../base';
+
+body{
+  height: 100vh;
+}
+.newPlantFormPage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/plantsPhotos/plants2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  h1{
+    font-size: 21px;
+    border: 2px solid $second-color;
+    border-radius: $default-border-radius;
+    padding: 8px;
+    margin: 2rem 0;
+  }
+}
+.newPlantForm{
+  padding: 6px;
+  border: 2px solid $second-color;
+  background: $main-color;
+  border-radius: $default-border-radius;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  input,
+  select,
+  textarea
+  {
+    padding-left: 8px;
+    min-width: 50vw;
+    margin-bottom: 1rem;
+  }
+  label{
+    text-align: left;
+    margin: 8px 0;
+  }
+  .goHomeButton{
+    position: inherit;
+    width: 23%;
+  }
+}
+
+.submitButton{
+  background-color: $main-color;
+  border-radius: $default-border-radius;
+  border: 2px solid $second-color;
+  font-size: 10px;
+  font-family: $font-family;
+  padding: 3px 6px;
+  width: 30%;
+  margin: 5px auto;
+  a,
+  a:visited
+  {
+    text-decoration: none;
+    color: black;
+  }
+}

@@ -8,7 +8,9 @@
   border: none;
   margin: 1rem auto;
   width: 55%;
-  a{
+  a,
+  a:visited{
     text-decoration: none;
+    color: black;
   }
 }

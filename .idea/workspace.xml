@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2e6692f-723d-4b84-945c-1a1e95b2918e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/NewPlantPage/NewPlantPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/NewPlantPage/newPlantPage.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/SharedComponents/GoHomeButton/GoHomeButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/SharedComponents/GoHomeButton/goHomeButton.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/AddNewPlantButton/AddNewPlantButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/AddNewPlantButton/AddNewPlantButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/AddNewPlantButton/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/AddNewPlantButton/addNewPlantButton.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantPage/PlantPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/PlantPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PlantPage/plantPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PlantPage/plantPage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/AddNewPlantButton/addNewPlantButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/AddNewPlantButton/addNewPlantButton.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NewPlantPage/NewPlantPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NewPlantPage/NewPlantPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NewPlantPage/newPlantPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NewPlantPage/newPlantPage.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596099876951</updated>
       <workItem from="1596099883835" duration="18010000" />
-      <workItem from="1596442006854" duration="43665000" />
+      <workItem from="1596442006854" duration="51397000" />
     </task>
     <servers />
   </component>
