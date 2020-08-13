@@ -33,7 +33,8 @@ body{
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
-  input,
+  input[type="text"],
+  input[type="date"],
   select,
   textarea
   {
@@ -52,7 +53,7 @@ body{
   }
 }
 
-.submitButton{
+.submit-button{
   background-color: $main-color;
   border-radius: $default-border-radius;
   border: 2px solid $second-color;
