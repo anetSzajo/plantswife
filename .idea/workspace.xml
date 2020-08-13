@@ -4,7 +4,6 @@
     <list default="true" id="b2e6692f-723d-4b84-945c-1a1e95b2918e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/NewPlantPage/NewPlantPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NewPlantPage/NewPlantPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NewPlantPage/newPlantPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NewPlantPage/newPlantPage.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +31,8 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -57,7 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596099876951</updated>
       <workItem from="1596099883835" duration="18010000" />
-      <workItem from="1596442006854" duration="57188000" />
+      <workItem from="1596442006854" duration="61600000" />
     </task>
     <servers />
   </component>
@@ -97,10 +97,10 @@
     </state>
     <state width="2207" height="424" key="GridCell.Tab.0.right/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1596198936716" />
     <state width="2207" height="424" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1596323458382" />
-    <state x="849" y="-1081" key="SettingsEditor" timestamp="1597310714695">
+    <state x="849" y="-1081" key="SettingsEditor" timestamp="1597318369438">
       <screen x="-1023" y="-1440" width="3440" height="1440" />
     </state>
-    <state x="849" y="-1081" key="SettingsEditor/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1597310714695" />
+    <state x="849" y="-1081" key="SettingsEditor/0.0.1440.900/-1023.-1440.3440.1440@-1023.-1440.3440.1440" timestamp="1597318369438" />
     <state x="362" y="-1109" width="670" height="676" key="search.everywhere.popup" timestamp="1596637239056">
       <screen x="-1023" y="-1440" width="3440" height="1440" />
     </state>
