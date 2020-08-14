@@ -3,6 +3,8 @@ import React from 'react';
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 import './newPlantPage.scss';
 
+const moment = require('moment');
+
 class NewPlantPage extends React.Component {
     constructor(props) {
         super(props);
@@ -32,15 +34,33 @@ class NewPlantPage extends React.Component {
                     ...this.state.plant,
                     [event.target.name]: event.target.value
                 }
-            }, () => this.calculateNextWatering(this.state.lastWatering
-            , this.state.wateringInterval)
+            }, () => this.calculateNextWatering(this.state.plant.lastWatering
+            , this.state.plant.wateringInterval)
         )
     }
 
 
     calculateNextWatering = (lastWatering, wateringInterval) => {
-        const nextWatering = undefined;
-        
+        let nextWatering;
+
+        if (wateringInterval === "everyDay"){
+            nextWatering = moment(lastWatering).add(1, 'd');
+        }
+        else if (wateringInterval === "onceAWeek"){
+            nextWatering = moment(lastWatering).add(1, 'w');
+        }
+        else if (wateringInterval === "twiceAWeek"){
+            nextWatering = moment(lastWatering).add(3, 'd');
+        }
+        else if (wateringInterval === "threeTimesAWeek"){
+            nextWatering = moment(lastWatering).add(2, 'd');
+        }
+        else if (wateringInterval === "onceAMonth"){
+            nextWatering = moment(lastWatering).add(1, 'M');
+        }
+
+        console.log('This is next: ' + nextWatering);
+
         this.setState({
             plant: {
                 ...this.state.plant,
@@ -83,7 +103,7 @@ class NewPlantPage extends React.Component {
                         </select>
                         <p>NextWatering: {this.state.nextWatering}</p>
                         <label>Last watering:</label>
-                        <input type="date" name="lastWatering" value={plant.lastWatering}
+                        <input type="datetime-local" name="lastWatering" value={plant.lastWatering}
                                onChange={this.handleInput}/>
                         <label>Spraing interval:</label>
                         <select value={plant.spraingInterval} name="spraingInterval" onChange={this.handleInput}>
