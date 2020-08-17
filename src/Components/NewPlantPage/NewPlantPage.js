@@ -1,5 +1,6 @@
 import React from 'react';
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 import './newPlantPage.scss';
 
@@ -28,45 +29,6 @@ class NewPlantPage extends React.Component {
         notes: ''
     })
 
-    // handleInput = (event) => {
-    //     this.setState({
-    //             plant: {
-    //                 ...this.state.plant,
-    //                 [event.target.name]: event.target.value
-    //             }
-    //         }, () => this.calculateNextWatering(this.state.plant.lastWatering
-    //         , this.state.plant.wateringInterval)
-    //     )
-    // }
-
-    //
-    // calculateNextWatering = (lastWatering, wateringInterval) => {
-    //     let nextWatering;
-    //
-    //     if (lastWatering && wateringInterval) {
-    //         if (wateringInterval === "everyDay") {
-    //             nextWatering = moment(lastWatering).add(1, 'd').format("DD/MM/YYYY, hh:mm:ss");
-    //         } else if (wateringInterval === "onceAWeek") {
-    //             nextWatering = moment(lastWatering).add(1, 'w').format("DD/MM/YYYY, hh:mm");
-    //         } else if (wateringInterval === "twiceAWeek") {
-    //             nextWatering = moment(lastWatering).add(3, 'd').format("DD/MM/YYYY,hh:mm");
-    //         } else if (wateringInterval === "threeTimesAWeek") {
-    //             nextWatering = moment(lastWatering).add(2, 'd').format("DD/MM/YYYY, hh:mm");
-    //         } else if (wateringInterval === "onceAMonth") {
-    //             nextWatering = moment(lastWatering).add(1, 'M').format("DD/MM/YYYY, hh:mm");
-    //         }
-    //     } else {
-    //         console.log("Please enter correct date and watering interval");
-    //     }
-    //
-    //     this.setState({
-    //                 plant: {
-    //                 ...this.state.plant,
-    //                 nextWatering: nextWatering
-    //             }
-    //             })
-    // }
-
     handleInput = (event) => {
         this.setState({
                 plant: {
@@ -82,27 +44,18 @@ class NewPlantPage extends React.Component {
 
         if (previousAction && interval) {
             if (interval === "everyDay") {
-                nextAction = moment(previousAction).add(1, 'd').format("DD/MM/YYYY, hh:mm:ss");
+                nextAction = moment(previousAction).add(1, 'd').format("DD/MM/YYYY, hh:mm");
             } else if (interval === "onceAWeek") {
                 nextAction = moment(previousAction).add(1, 'w').format("DD/MM/YYYY, hh:mm");
             } else if (interval === "twiceAWeek") {
-                nextAction = moment(previousAction).add(3, 'd').format("DD/MM/YYYY,hh:mm");
+                nextAction = moment(previousAction).add(3, 'd').format("DD/MM/YYYY, hh:mm");
             } else if (interval === "threeTimesAWeek") {
                 nextAction = moment(previousAction).add(2, 'd').format("DD/MM/YYYY, hh:mm");
             } else if (interval === "onceAMonth") {
                 nextAction = moment(previousAction).add(1, 'M').format("DD/MM/YYYY, hh:mm");
             }
-        } else {
-            console.log("Please enter correct date and watering interval");
         }
         return nextAction;
-
-        // this.setState({
-        //     plant: {
-        //         ...this.state.plant,
-        //         nextAction: nextAction
-        //     }
-        // })
     }
 
     checkAction = (plant) => {
@@ -133,12 +86,7 @@ class NewPlantPage extends React.Component {
                 }
             })
         }
-        else {
-            console.log("Something went wrong. Please enter valid data");
-        }
     }
-
-
 
 
     // handleSubmit = (event) => {
@@ -158,6 +106,7 @@ class NewPlantPage extends React.Component {
     render() {
         const {plant} = this.state;
 
+
         return (
             <div className="newPlantFormPage">
                 <div>
@@ -176,7 +125,7 @@ class NewPlantPage extends React.Component {
                         </select>
                         <label>Last watering:</label>
                         <input type="datetime-local" name="lastWatering" value={plant.lastWatering}
-                               onChange={this.handleInput}/>
+                               onChange={this.handleInput} max={moment().format("DD/MM/YYYY")}/>
                         <label>NextWatering:</label>
                         <p>{this.state.plant.nextWatering}</p>
                         <label>Spraing interval:</label>
