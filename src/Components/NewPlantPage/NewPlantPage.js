@@ -10,7 +10,7 @@ class NewPlantPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            plant: props.plant ? props.plant : this.defaultEmptyPlant()
+            plant: props.plant ? props.plant : this.defaultEmptyPlant(),
         }
     }
 
@@ -28,6 +28,17 @@ class NewPlantPage extends React.Component {
         place: '',
         notes: ''
     })
+
+    handleDateChange = (date, name) => {
+
+        this.setState({
+            plant: {
+                ...this.state.plant,
+                [name]: date
+            }
+        }, () => this.checkAction(this.state.plant)
+        )
+    }
 
     handleInput = (event) => {
         this.setState({
@@ -124,8 +135,14 @@ class NewPlantPage extends React.Component {
                             <option value="onceAMonth">Once a month</option>
                         </select>
                         <label>Last watering:</label>
-                        <input type="datetime-local" name="lastWatering" value={plant.lastWatering}
-                               onChange={this.handleInput} max={moment().format("DD/MM/YYYY")}/>
+                        <DatePicker selected={this.state.plant.lastWatering}
+                                    onChange={(date) => this.handleDateChange(date, "lastWatering")}
+                                    name="lastWatering" placeholderText="Select a date" maxDate={new Date()}
+                                    dateFormat={"dd/MM/yyyy hh:mm"} showTimeSelect/>
+
+
+                        {/*<input type="datetime-local" name="lastWatering" value={plant.lastWatering}*/}
+                        {/*       onChange={this.handleInput} />*/}
                         <label>NextWatering:</label>
                         <p>{this.state.plant.nextWatering}</p>
                         <label>Spraing interval:</label>
