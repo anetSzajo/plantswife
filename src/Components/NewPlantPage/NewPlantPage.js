@@ -28,44 +28,118 @@ class NewPlantPage extends React.Component {
         notes: ''
     })
 
+    // handleInput = (event) => {
+    //     this.setState({
+    //             plant: {
+    //                 ...this.state.plant,
+    //                 [event.target.name]: event.target.value
+    //             }
+    //         }, () => this.calculateNextWatering(this.state.plant.lastWatering
+    //         , this.state.plant.wateringInterval)
+    //     )
+    // }
+
+    //
+    // calculateNextWatering = (lastWatering, wateringInterval) => {
+    //     let nextWatering;
+    //
+    //     if (lastWatering && wateringInterval) {
+    //         if (wateringInterval === "everyDay") {
+    //             nextWatering = moment(lastWatering).add(1, 'd').format("DD/MM/YYYY, hh:mm:ss");
+    //         } else if (wateringInterval === "onceAWeek") {
+    //             nextWatering = moment(lastWatering).add(1, 'w').format("DD/MM/YYYY, hh:mm");
+    //         } else if (wateringInterval === "twiceAWeek") {
+    //             nextWatering = moment(lastWatering).add(3, 'd').format("DD/MM/YYYY,hh:mm");
+    //         } else if (wateringInterval === "threeTimesAWeek") {
+    //             nextWatering = moment(lastWatering).add(2, 'd').format("DD/MM/YYYY, hh:mm");
+    //         } else if (wateringInterval === "onceAMonth") {
+    //             nextWatering = moment(lastWatering).add(1, 'M').format("DD/MM/YYYY, hh:mm");
+    //         }
+    //     } else {
+    //         console.log("Please enter correct date and watering interval");
+    //     }
+    //
+    //     this.setState({
+    //                 plant: {
+    //                 ...this.state.plant,
+    //                 nextWatering: nextWatering
+    //             }
+    //             })
+    // }
+
     handleInput = (event) => {
         this.setState({
                 plant: {
                     ...this.state.plant,
                     [event.target.name]: event.target.value
                 }
-            }, () => this.calculateNextWatering(this.state.plant.lastWatering
-            , this.state.plant.wateringInterval)
+            }, () => this.checkAction(this.state.plant)
         )
     }
 
+    calculateNextAction = (previousAction, interval) => {
+        let nextAction;
 
-    calculateNextWatering = (lastWatering, wateringInterval) => {
-        let nextWatering;
-
-        if (lastWatering && wateringInterval) {
-            if (wateringInterval === "everyDay") {
-                nextWatering = moment(lastWatering).add(1, 'd').format("DD/MM/YYYY, hh:mm:ss");
-            } else if (wateringInterval === "onceAWeek") {
-                nextWatering = moment(lastWatering).add(1, 'w').format("DD/MM/YYYY, hh:mm:ss");
-            } else if (wateringInterval === "twiceAWeek") {
-                nextWatering = moment(lastWatering).add(3, 'd').format("DD/MM/YYYY,hh:mm:ss");
-            } else if (wateringInterval === "threeTimesAWeek") {
-                nextWatering = moment(lastWatering).add(2, 'd').format("DD/MM/YYYY, hh:mm:ss");
-            } else if (wateringInterval === "onceAMonth") {
-                nextWatering = moment(lastWatering).add(1, 'M').format("DD/MM/YYYY, hh:mm:ss");
+        if (previousAction && interval) {
+            if (interval === "everyDay") {
+                nextAction = moment(previousAction).add(1, 'd').format("DD/MM/YYYY, hh:mm:ss");
+            } else if (interval === "onceAWeek") {
+                nextAction = moment(previousAction).add(1, 'w').format("DD/MM/YYYY, hh:mm");
+            } else if (interval === "twiceAWeek") {
+                nextAction = moment(previousAction).add(3, 'd').format("DD/MM/YYYY,hh:mm");
+            } else if (interval === "threeTimesAWeek") {
+                nextAction = moment(previousAction).add(2, 'd').format("DD/MM/YYYY, hh:mm");
+            } else if (interval === "onceAMonth") {
+                nextAction = moment(previousAction).add(1, 'M').format("DD/MM/YYYY, hh:mm");
             }
         } else {
             console.log("Please enter correct date and watering interval");
         }
+        return nextAction;
 
-        this.setState({
-                    plant: {
+        // this.setState({
+        //     plant: {
+        //         ...this.state.plant,
+        //         nextAction: nextAction
+        //     }
+        // })
+    }
+
+    checkAction = (plant) => {
+        if (plant.lastWatering && plant.wateringInterval){
+            let nextWatering = this.calculateNextAction(plant.lastWatering, plant.wateringInterval);
+            this.setState({
+                plant: {
                     ...this.state.plant,
                     nextWatering: nextWatering
                 }
-                })
+            })
+        }
+        if (plant.lastSpraing && plant.spraingInterval){
+            let nextSpraing = this.calculateNextAction(plant.lastSpraing, plant.spraingInterval);
+            this.setState({
+                plant: {
+                    ...this.state.plant,
+                    nextSpraing: nextSpraing
+                }
+            })
+        }
+        if (plant.lastFeeding && plant.feedingInterval){
+            let nextFeeding = this.calculateNextAction(plant.lastFeeding, plant.feedingInterval);
+            this.setState({
+                plant: {
+                    ...this.state.plant,
+                    nextFeeding: nextFeeding
+                }
+            })
+        }
+        else {
+            console.log("Something went wrong. Please enter valid data");
+        }
     }
+
+
+
 
     // handleSubmit = (event) => {
     //     event.preventDefault();
@@ -107,6 +181,7 @@ class NewPlantPage extends React.Component {
                         <p>{this.state.plant.nextWatering}</p>
                         <label>Spraing interval:</label>
                         <select value={plant.spraingInterval} name="spraingInterval" onChange={this.handleInput}>
+                            <option value=''>Choose an option...</option>
                             <option value="everyDay">Every day</option>
                             <option value="onceAWeek">Once a week</option>
                             <option value="twiceAWeek">Twice a week</option>
@@ -116,8 +191,11 @@ class NewPlantPage extends React.Component {
                         <label>Last spraing:</label>
                         <input type="datetime-local" name="lastSpraing" value={plant.lastSpraing}
                                onChange={this.handleInput}/>
+                        <label>Next spraing::</label>
+                        <p>{this.state.plant.nextSpraing}</p>
                         <label>Feeding interval:</label>
                         <select value={plant.feedingInterval} name="feedingInterval" onChange={this.handleInput}>
+                            <option value=''>Choose an option...</option>
                             <option value="everyDay">Every day</option>
                             <option value="onceAWeek">Once a week</option>
                             <option value="twiceAWeek">Twice a week</option>
@@ -127,6 +205,8 @@ class NewPlantPage extends React.Component {
                         <label>Last feeding:</label>
                         <input type="datetime-local" name="lastFeeding" value={plant.lastFeeding}
                                onChange={this.handleInput}/>
+                        <label>Next feeding:</label>
+                        <p>{this.state.plant.nextFeeding}</p>
                         <label>Place:</label>
                         <input type="text" name="place" value={plant.place} onChange={this.handleInput}/>
                         <label>Notes:</label>
