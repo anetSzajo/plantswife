@@ -34,7 +34,7 @@ body{
   align-items: center;
   margin-bottom: 2rem;
   input[type="text"],
-  input[type="date"],
+  input[type="datetime-local"],
   select,
   textarea
   {
@@ -46,6 +46,12 @@ body{
   label{
     text-align: left;
     margin: 8px 0;
+  }
+  p{
+    background: $second-color;
+    padding: 2px 6px;
+    margin: 0 0 1rem 0;
+    border-radius: $default-border-radius;
   }
   .goHomeButton{
     position: inherit;

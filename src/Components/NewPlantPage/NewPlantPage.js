@@ -43,30 +43,28 @@ class NewPlantPage extends React.Component {
     calculateNextWatering = (lastWatering, wateringInterval) => {
         let nextWatering;
 
-        if (wateringInterval === "everyDay"){
-            nextWatering = moment(lastWatering).add(1, 'd');
+        if (lastWatering && wateringInterval) {
+            if (wateringInterval === "everyDay") {
+                nextWatering = moment(lastWatering).add(1, 'd').format("DD/MM/YYYY, hh:mm:ss");
+            } else if (wateringInterval === "onceAWeek") {
+                nextWatering = moment(lastWatering).add(1, 'w').format("DD/MM/YYYY, hh:mm:ss");
+            } else if (wateringInterval === "twiceAWeek") {
+                nextWatering = moment(lastWatering).add(3, 'd').format("DD/MM/YYYY,hh:mm:ss");
+            } else if (wateringInterval === "threeTimesAWeek") {
+                nextWatering = moment(lastWatering).add(2, 'd').format("DD/MM/YYYY, hh:mm:ss");
+            } else if (wateringInterval === "onceAMonth") {
+                nextWatering = moment(lastWatering).add(1, 'M').format("DD/MM/YYYY, hh:mm:ss");
+            }
+        } else {
+            console.log("Please enter correct date and watering interval");
         }
-        else if (wateringInterval === "onceAWeek"){
-            nextWatering = moment(lastWatering).add(1, 'w');
-        }
-        else if (wateringInterval === "twiceAWeek"){
-            nextWatering = moment(lastWatering).add(3, 'd');
-        }
-        else if (wateringInterval === "threeTimesAWeek"){
-            nextWatering = moment(lastWatering).add(2, 'd');
-        }
-        else if (wateringInterval === "onceAMonth"){
-            nextWatering = moment(lastWatering).add(1, 'M');
-        }
-
-        console.log('This is next: ' + nextWatering);
 
         this.setState({
-            plant: {
-                ...this.state.plant,
-                nextWatering: nextWatering
-            }
-        })
+                    plant: {
+                    ...this.state.plant,
+                    nextWatering: nextWatering
+                }
+                })
     }
 
     // handleSubmit = (event) => {
@@ -94,17 +92,19 @@ class NewPlantPage extends React.Component {
                         <label>Name: </label>
                         <input type="text" name="name" value={plant.name} onChange={this.handleInput}/>
                         <label>Watering interval:</label>
-                        <select value={plant.wateringInterval} name="wateringInterval" onChange={this.handleInput}>
+                        <select value={plant.wateringInterval} name="wateringInterval" onChange={this.handleInput} >
+                            <option value=''>Choose an option...</option>
                             <option value="everyDay">Every day</option>
                             <option value="onceAWeek">Once a week</option>
                             <option value="twiceAWeek">Twice a week</option>
                             <option value="threeTimesAWeek">Three times a week</option>
                             <option value="onceAMonth">Once a month</option>
                         </select>
-                        <p>NextWatering: {this.state.nextWatering}</p>
                         <label>Last watering:</label>
                         <input type="datetime-local" name="lastWatering" value={plant.lastWatering}
                                onChange={this.handleInput}/>
+                        <label>NextWatering:</label>
+                        <p>{this.state.plant.nextWatering}</p>
                         <label>Spraing interval:</label>
                         <select value={plant.spraingInterval} name="spraingInterval" onChange={this.handleInput}>
                             <option value="everyDay">Every day</option>
@@ -114,7 +114,7 @@ class NewPlantPage extends React.Component {
                             <option value="onceAMonth">Once a month</option>
                         </select>
                         <label>Last spraing:</label>
-                        <input type="date" name="lastSpraing" value={plant.lastSpraing}
+                        <input type="datetime-local" name="lastSpraing" value={plant.lastSpraing}
                                onChange={this.handleInput}/>
                         <label>Feeding interval:</label>
                         <select value={plant.feedingInterval} name="feedingInterval" onChange={this.handleInput}>
@@ -125,7 +125,7 @@ class NewPlantPage extends React.Component {
                             <option value="onceAMonth">Once a month</option>
                         </select>
                         <label>Last feeding:</label>
-                        <input type="date" name="lastFeeding" value={plant.lastFeeding}
+                        <input type="datetime-local" name="lastFeeding" value={plant.lastFeeding}
                                onChange={this.handleInput}/>
                         <label>Place:</label>
                         <input type="text" name="place" value={plant.place} onChange={this.handleInput}/>
