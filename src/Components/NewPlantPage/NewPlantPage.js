@@ -139,10 +139,6 @@ class NewPlantPage extends React.Component {
                                     onChange={(date) => this.handleDateChange(date, "lastWatering")}
                                     name="lastWatering" placeholderText="Select a date" maxDate={new Date()}
                                     dateFormat={"dd/MM/yyyy hh:mm"} showTimeSelect/>
-
-
-                        {/*<input type="datetime-local" name="lastWatering" value={plant.lastWatering}*/}
-                        {/*       onChange={this.handleInput} />*/}
                         <label>NextWatering:</label>
                         <p>{this.state.plant.nextWatering}</p>
                         <label>Spraing interval:</label>
@@ -155,8 +151,10 @@ class NewPlantPage extends React.Component {
                             <option value="onceAMonth">Once a month</option>
                         </select>
                         <label>Last spraing:</label>
-                        <input type="datetime-local" name="lastSpraing" value={plant.lastSpraing}
-                               onChange={this.handleInput}/>
+                        <DatePicker selected={this.state.plant.lastSpraing}
+                                    onChange={(date) => this.handleDateChange(date, "lastSpraing")}
+                                    name="lastSpraing" placeholderText="Select a date" maxDate={new Date()}
+                                    dateFormat={"dd/MM/yyyy hh:mm"} showTimeSelect/>
                         <label>Next spraing::</label>
                         <p>{this.state.plant.nextSpraing}</p>
                         <label>Feeding interval:</label>
@@ -169,8 +167,10 @@ class NewPlantPage extends React.Component {
                             <option value="onceAMonth">Once a month</option>
                         </select>
                         <label>Last feeding:</label>
-                        <input type="datetime-local" name="lastFeeding" value={plant.lastFeeding}
-                               onChange={this.handleInput}/>
+                        <DatePicker selected={this.state.plant.lastFeeding}
+                                    onChange={(date) => this.handleDateChange(date, "lastFeeding")}
+                                    name="lastFeeding" placeholderText="Select a date" maxDate={new Date()}
+                                    dateFormat={"dd/MM/yyyy hh:mm"} showTimeSelect/>
                         <label>Next feeding:</label>
                         <p>{this.state.plant.nextFeeding}</p>
                         <label>Place:</label>
