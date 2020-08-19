@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 import './newPlantPage.scss';
+import CustomInput from "./CustomInput/CustomInput";
 
 const moment = require('moment');
 
@@ -11,7 +12,8 @@ class NewPlantPage extends React.Component {
         super(props);
         this.state = {
             plant: props.plant ? props.plant : this.defaultEmptyPlant(),
-        }
+        };
+
     }
 
     defaultEmptyPlant = () => ({
@@ -99,7 +101,6 @@ class NewPlantPage extends React.Component {
         }
     }
 
-
     // handleSubmit = (event) => {
     //     event.preventDefault();
     //
@@ -116,7 +117,6 @@ class NewPlantPage extends React.Component {
 
     render() {
         const {plant} = this.state;
-
 
         return (
             <div className="newPlantFormPage">
@@ -137,8 +137,14 @@ class NewPlantPage extends React.Component {
                         <label>Last watering:</label>
                         <DatePicker selected={this.state.plant.lastWatering}
                                     onChange={(date) => this.handleDateChange(date, "lastWatering")}
-                                    name="lastWatering" placeholderText="Select a date" maxDate={new Date()}
-                                    dateFormat={"dd/MM/yyyy hh:mm"} showTimeSelect/>
+                                    name="lastWatering"
+                                    placeholderText="Select date and time"
+                                    maxDate={new Date()}
+                                    dateFormat={"dd/MM/yyyy hh:mm"}
+                                    showTimeSelect
+                                    popperPlacement="bottom"
+                                    customInput={<CustomInput />}
+                            />
                         <label>NextWatering:</label>
                         <p>{this.state.plant.nextWatering}</p>
                         <label>Spraing interval:</label>
@@ -153,8 +159,14 @@ class NewPlantPage extends React.Component {
                         <label>Last spraing:</label>
                         <DatePicker selected={this.state.plant.lastSpraing}
                                     onChange={(date) => this.handleDateChange(date, "lastSpraing")}
-                                    name="lastSpraing" placeholderText="Select a date" maxDate={new Date()}
-                                    dateFormat={"dd/MM/yyyy hh:mm"} showTimeSelect/>
+                                    name="lastSpraing"
+                                    placeholderText="Select date and time"
+                                    maxDate={new Date()}
+                                    dateFormat={"dd/MM/yyyy hh:mm"}
+                                    showTimeSelect
+                                    popperPlacement="bottom"
+                                    customInput={<CustomInput />}
+                            />
                         <label>Next spraing::</label>
                         <p>{this.state.plant.nextSpraing}</p>
                         <label>Feeding interval:</label>
@@ -167,18 +179,24 @@ class NewPlantPage extends React.Component {
                             <option value="onceAMonth">Once a month</option>
                         </select>
                         <label>Last feeding:</label>
-                        <DatePicker selected={this.state.plant.lastFeeding}
-                                    onChange={(date) => this.handleDateChange(date, "lastFeeding")}
-                                    name="lastFeeding" placeholderText="Select a date" maxDate={new Date()}
-                                    dateFormat={"dd/MM/yyyy hh:mm"} showTimeSelect/>
+                         <DatePicker selected={this.state.plant.lastFeeding}
+                                     onChange={(date) => this.handleDateChange(date, "lastFeeding")}
+                                     name="lastFeeding"
+                                     placeholderText="Select date and time"
+                                     maxDate={new Date()}
+                                     dateFormat={"dd/MM/yyyy hh:mm"}
+                                     showTimeSelect
+                                     popperPlacement="bottom"
+                                     customInput={<CustomInput />}
+                                 />
                         <label>Next feeding:</label>
                         <p>{this.state.plant.nextFeeding}</p>
                         <label>Place:</label>
                         <input type="text" name="place" value={plant.place} onChange={this.handleInput}/>
                         <label>Notes:</label>
-                        <textarea name="notes" value={plant.notes} onChange={this.handleInput}/>
+                        <textarea name="notes" value={plant.notes} onChange={this.handleInput} placeholder="Put your notes here..."/>
                         <input type="submit" value="SUBMIT" className="submit-button"/>
-                        <GoHomeButton/>
+                        <GoHomeButton />
                     </form>
                     {console.log(plant)}
                 </div>
