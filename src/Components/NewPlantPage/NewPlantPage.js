@@ -192,7 +192,15 @@ class NewPlantPage extends React.Component {
                         <label>Next feeding:</label>
                         <p>{this.state.plant.nextFeeding}</p>
                         <label>Place:</label>
-                        <input type="text" name="place" value={plant.place} onChange={this.handleInput}/>
+                        <select value={plant.place} name="place" onChange={this.handleInput}>
+                            <option value=''>Choose a place..</option>
+                            <option value="livingRoom">Living room</option>
+                            <option value="diningRoom">Dining room</option>
+                            <option value="bedroom">Bedroom</option>
+                            <option value="kitchen">Kitchen</option>
+                            <option value="hall">Hall</option>
+                            <option value="balcony">Balcony</option>
+                        </select>
                         <label>Notes:</label>
                         <textarea name="notes" value={plant.notes} onChange={this.handleInput} placeholder="Put your notes here..."/>
                         <input type="submit" value="SUBMIT" className="submit-button"/>

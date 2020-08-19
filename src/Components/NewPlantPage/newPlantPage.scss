@@ -24,6 +24,7 @@ body{
     margin: 2rem 0;
   }
 }
+
 .newPlantForm{
   padding: 6px;
   border: 2px solid $second-color;
@@ -43,9 +44,8 @@ body{
     text-align: center;
     text-align-last:center;
     padding: 3px 5px;
-    width: 60%;
+    width: 70%;
     margin-bottom: 1rem;
-    max-width: fit-content;
     font-family: $font-family !important;
     border-radius: $default-border-radius;
     border: 2px solid $main-color;
@@ -53,6 +53,9 @@ body{
     -moz-box-sizing:content-box;
     -webkit-box-sizing:content-box;
     box-sizing:content-box;
+  }
+  textarea{
+    max-width: 70%;
   }
   label{
     text-align: left;
@@ -62,7 +65,7 @@ body{
   p{
     border: 2px solid $second-color;
     border-radius: $default-border-radius;
-    width: 54%;
+    width: 60%;
     min-height: 0.7rem;
     max-height: fit-content;
     padding: 3px 15px;
@@ -82,8 +85,8 @@ body{
   font-size: 10px;
   font-family: $font-family;
   padding: 3px 6px;
-  width: 30%;
-  margin: 5px auto;
+  width: 30% !important;
+  margin: 5px auto 8px auto !important;
   a,
   a:visited
   {
@@ -92,9 +95,8 @@ body{
   }
 }
 
-
 div .react-datepicker{
-  width: 100% !important;
+  width: max-content !important;
   text-align: center !important;
 }
 
@@ -116,5 +118,3 @@ div .react-datepicker{
   color: black !important;
   border-radius: $default-border-radius !important;
 }
-
-
