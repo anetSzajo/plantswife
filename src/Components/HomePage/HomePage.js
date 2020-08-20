@@ -3,14 +3,14 @@ import React from 'react';
 import AddNewPlantButton from './AddNewPlantButton/AddNewPlantButton';
 import PlantListPage from "../PlantListPage/PlantListPage";
 import HomePageBackground from "./HomePageBackground/HomePageBackground";
-import FilterByPlaceButton from "./FilterByPlaceButton/FilterByPlaceButton";
+import FindByPlaceButton from "./FindByPlaceButton/FindByPlaceButton";
 
 function HomePage () {
     return(
         <div>
             <HomePageBackground />
             <AddNewPlantButton />
-            <FilterByPlaceButton />
+            <FindByPlaceButton />
             <PlantListPage />
         </div>
     )

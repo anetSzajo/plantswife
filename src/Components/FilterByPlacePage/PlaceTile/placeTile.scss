@@ -1,0 +1,24 @@
+@import '../../base.scss';
+
+.findByPlaceTile{
+  font-family: $font-family;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $second-color;
+  border-radius: 10px;
+  background: transparent;
+  width: 36%;
+  margin: 8px auto;
+  padding: 0.5rem;
+  img{
+    width: 4rem;
+    height: 4rem;
+    opacity: 0.6;
+  }
+  p{
+    font-size: 12px;
+    margin: 8px;
+  }
+}

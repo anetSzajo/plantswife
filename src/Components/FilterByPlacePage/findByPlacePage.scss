@@ -1,0 +1,28 @@
+@import '../base.scss';
+
+body{
+  font-family: $font-family;
+  //background: $main-color !important;
+}
+
+.placeTiles--list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.findByPlacePage h1{
+  background: $second-color;
+  border-radius: 13px;
+  font-size: 14px;
+  font-weight: normal;
+  width: 75%;
+  margin: 1.5rem auto;
+  padding: 0.5rem;
+}
+
+.goHomeButton{
+  position: absolute;
+  width: 23%;
+  left:39vw;
+}

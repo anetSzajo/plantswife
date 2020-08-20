@@ -10,6 +10,7 @@ import PlantPage from "./Components/PlantPage/PlantPage";
 import './App.css';
 import Footer from "./Components/Footer/Footer";
 import NewPlantPage from "./Components/NewPlantPage/NewPlantPage";
+import FindByPlacePage from "./Components/FilterByPlacePage/FindByPlacePage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Router>
             <Switch>
                 <Route exact path="/createNewPlant" component={NewPlantPage} />
+                <Route exact path="/filterByPlace" component={FindByPlacePage} />
                 <Route exact path="/plantViewPage/:plantid" component={PlantPage} />
                 <Route path="/"><HomePage /></Route>
             </Switch>
