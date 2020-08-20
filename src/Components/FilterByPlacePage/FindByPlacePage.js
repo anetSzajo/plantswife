@@ -4,13 +4,13 @@ import './findByPlacePage.scss';
 import PlaceTile from "./PlaceTile/PlaceTile";
 
 class FindByPlacePage extends React.Component{
-    // componentWillMount: function(){
-    //     document.body.style.backgroundColor = "#F2F2F2";
-    // }
-    //
-    // componentWillUnmount: function(){
-    //     document.body.style.backgroundColor = null;
-    // }
+    componentWillMount(){
+            document.body.style.backgroundColor = "#F2F2F2";
+        }
+
+    componentWillUnmount(){
+        document.body.style.backgroundColor = null;
+    }
 
     render(){
         return(
