@@ -2,8 +2,8 @@ import React from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
-import './newPlantPage.scss';
 import CustomInput from "./CustomInput/CustomInput";
+import './newPlantPage.scss';
 
 const moment = require('moment');
 

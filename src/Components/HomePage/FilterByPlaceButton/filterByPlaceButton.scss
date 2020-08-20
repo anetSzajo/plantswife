@@ -1,12 +1,12 @@
 @import '../../base';
 
-.addNewPlantButton{
-  background-color: $second-color;
+.filterByPlace--button{
+  background-color: white;
   font-family: $font-family;
   font-size: 13px;
   border-radius: $default-border-radius;
-  border: none;
-  margin: 1rem auto 0.5rem auto;
+  border: 2px solid $second-color;
+  margin: 0 auto 1rem auto;
   width: 55%;
   a,
   a:visited{
