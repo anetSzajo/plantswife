@@ -1,5 +1,8 @@
 import React from 'react';
+import axios from 'axios';
 import DatePicker from "react-datepicker";
+import CreateNewPlantDto from './CreateNewPlantDto';
+
 import "react-datepicker/dist/react-datepicker.css";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 import CustomInput from "./CustomInput/CustomInput";
@@ -56,7 +59,7 @@ class NewPlantPage extends React.Component {
         let nextAction;
 
         if (previousAction && interval) {
-            if (interval === "everyDay") {
+            if (interval === "everyday") {
                 nextAction = moment(previousAction).add(1, 'd').format("DD/MM/YYYY, hh:mm");
             } else if (interval === "onceAWeek") {
                 nextAction = moment(previousAction).add(1, 'w').format("DD/MM/YYYY, hh:mm");
@@ -101,18 +104,18 @@ class NewPlantPage extends React.Component {
         }
     }
 
-    // handleSubmit = (event) => {
-    //     event.preventDefault();
-    //
-    //     // const plant = this.state.plant;
-    //     //
-    //     // axios.post('',
-    //     //     {...plant},{ headers: { 'Content-Type': 'application/json' } } )
-    //     //     .then(res => {
-    //     //         console.log(res);
-    //     //         console.log(plant);
-    //     //     })
-    // }
+    handleSubmit = (event) => {
+        event.preventDefault();
+
+        const plant = CreateNewPlantDto.fromNewPlantForm(this.state.plant);
+
+        axios.post(`${process.env.REACT_APP_AXIOS_URL}/plants`,
+            {...plant},{ headers: { 'Content-Type': 'application/json' }})
+            .then(res => {
+                console.log(res);
+                console.log(plant);
+            })
+    }
 
 
     render() {
@@ -128,7 +131,7 @@ class NewPlantPage extends React.Component {
                         <label>Watering interval:</label>
                         <select value={plant.wateringInterval} name="wateringInterval" onChange={this.handleInput} >
                             <option value=''>Choose an option...</option>
-                            <option value="everyDay">Every day</option>
+                            <option value="everyday">Everyday</option>
                             <option value="onceAWeek">Once a week</option>
                             <option value="twiceAWeek">Twice a week</option>
                             <option value="threeTimesAWeek">Three times a week</option>
@@ -150,7 +153,7 @@ class NewPlantPage extends React.Component {
                         <label>Spraing interval:</label>
                         <select value={plant.spraingInterval} name="spraingInterval" onChange={this.handleInput}>
                             <option value=''>Choose an option...</option>
-                            <option value="everyDay">Every day</option>
+                            <option value="everyday">Everyday</option>
                             <option value="onceAWeek">Once a week</option>
                             <option value="twiceAWeek">Twice a week</option>
                             <option value="threeTimesAWeek">Three times a week</option>
@@ -172,7 +175,7 @@ class NewPlantPage extends React.Component {
                         <label>Feeding interval:</label>
                         <select value={plant.feedingInterval} name="feedingInterval" onChange={this.handleInput}>
                             <option value=''>Choose an option...</option>
-                            <option value="everyDay">Every day</option>
+                            <option value="everyday">Everyday</option>
                             <option value="onceAWeek">Once a week</option>
                             <option value="twiceAWeek">Twice a week</option>
                             <option value="threeTimesAWeek">Three times a week</option>
