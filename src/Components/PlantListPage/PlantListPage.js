@@ -15,14 +15,6 @@ class PlantListPage extends React.Component{
             .catch(error => {
                 console.log(error)
             })
-
-        // fetch('/database.json')
-        //     .then(response => response.json())
-        //     .then(data => this.setState({
-        //             plants: data
-        //         })
-        //
-        //     )
     }
 
     render(){

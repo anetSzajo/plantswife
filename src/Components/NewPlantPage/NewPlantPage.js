@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import DatePicker from "react-datepicker";
-import CreateNewPlantDto from './CreateNewPlantDto';
+import CreateNewPlantDto, { intervalsMap } from './CreateNewPlantDto';
 
 import "react-datepicker/dist/react-datepicker.css";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
@@ -16,7 +16,6 @@ class NewPlantPage extends React.Component {
         this.state = {
             plant: props.plant ? props.plant : this.defaultEmptyPlant(),
         };
-
     }
 
     defaultEmptyPlant = () => ({
@@ -35,7 +34,6 @@ class NewPlantPage extends React.Component {
     })
 
     handleDateChange = (date, name) => {
-
         this.setState({
             plant: {
                 ...this.state.plant,
@@ -58,25 +56,29 @@ class NewPlantPage extends React.Component {
     calculateNextAction = (previousAction, interval) => {
         let nextAction;
 
-        if (previousAction && interval) {
-            if (interval === "everyday") {
-                nextAction = moment(previousAction).add(1, 'd').format("DD/MM/YYYY, hh:mm");
-            } else if (interval === "onceAWeek") {
-                nextAction = moment(previousAction).add(1, 'w').format("DD/MM/YYYY, hh:mm");
-            } else if (interval === "twiceAWeek") {
-                nextAction = moment(previousAction).add(3, 'd').format("DD/MM/YYYY, hh:mm");
-            } else if (interval === "threeTimesAWeek") {
-                nextAction = moment(previousAction).add(2, 'd').format("DD/MM/YYYY, hh:mm");
-            } else if (interval === "onceAMonth") {
-                nextAction = moment(previousAction).add(1, 'M').format("DD/MM/YYYY, hh:mm");
-            }
-        }
+        nextAction = moment(previousAction).add(interval[0], interval[1]).format("DD/MM/YYYY, hh:mm");
+
         return nextAction;
+
+        // if (previousAction && interval) {
+        //     if (interval === "everyday") {
+        //         nextAction = moment(previousAction).add(1, 'd').format("DD/MM/YYYY, hh:mm");
+        //     } else if (interval === "onceAWeek") {
+        //         nextAction = moment(previousAction).add(1, 'w').format("DD/MM/YYYY, hh:mm");
+        //     } else if (interval === "twiceAWeek") {
+        //         nextAction = moment(previousAction).add(3, 'd').format("DD/MM/YYYY, hh:mm");
+        //     } else if (interval === "threeTimesAWeek") {
+        //         nextAction = moment(previousAction).add(2, 'd').format("DD/MM/YYYY, hh:mm");
+        //     } else if (interval === "onceAMonth") {
+        //         nextAction = moment(previousAction).add(1, 'M').format("DD/MM/YYYY, hh:mm");
+        //     }
+        // }
+        // return nextAction;
     }
 
     checkAction = (plant) => {
         if (plant.lastWatering && plant.wateringInterval){
-            let nextWatering = this.calculateNextAction(plant.lastWatering, plant.wateringInterval);
+            let nextWatering = this.calculateNextAction(plant.lastWatering, intervalsMap.get(this.state.plant.wateringInterval));
             this.setState({
                 plant: {
                     ...this.state.plant,
@@ -85,7 +87,7 @@ class NewPlantPage extends React.Component {
             })
         }
         if (plant.lastSpraing && plant.spraingInterval){
-            let nextSpraing = this.calculateNextAction(plant.lastSpraing, plant.spraingInterval);
+            let nextSpraing = this.calculateNextAction(plant.lastSpraing, intervalsMap.get(this.state.plant.spraingInterval));
             this.setState({
                 plant: {
                     ...this.state.plant,
@@ -94,7 +96,7 @@ class NewPlantPage extends React.Component {
             })
         }
         if (plant.lastFeeding && plant.feedingInterval){
-            let nextFeeding = this.calculateNextAction(plant.lastFeeding, plant.feedingInterval);
+            let nextFeeding = this.calculateNextAction(plant.lastFeeding, intervalsMap.get(this.state.plant.feedingInterval));
             this.setState({
                 plant: {
                     ...this.state.plant,
@@ -103,6 +105,36 @@ class NewPlantPage extends React.Component {
             })
         }
     }
+
+    // checkAction = (plant) => {
+    //     if (plant.watering.lastTimeProcessed && plant.watering.interval){
+    //         let nextWatering = this.calculateNextAction(plant.watering.lastTimeProcessed , plant.watering.interval);
+    //         this.setState({
+    //             plant: {
+    //                 ...this.state.plant,
+    //                 nextWatering: nextWatering
+    //             }
+    //         })
+    //     }
+    //     if (plant.spraing.lastTimeProcessed && plant.spraing.interval){
+    //         let nextSpraing = this.calculateNextAction(plant.spraing.lastTimeProcessed, plant.spraing.interval);
+    //         this.setState({
+    //             plant: {
+    //                 ...this.state.plant,
+    //                 nextSpraing: nextSpraing
+    //             }
+    //         })
+    //     }
+    //     if (plant.feeding.lastTimeProcessed && plant.feeding.interval){
+    //         let nextFeeding = this.calculateNextAction(plant.feeding.lastTimeProcessed, plant.feeding.interval);
+    //         this.setState({
+    //             plant: {
+    //                 ...this.state.plant,
+    //                 nextFeeding: nextFeeding
+    //             }
+    //         })
+    //     }
+    // }
 
     handleSubmit = (event) => {
         event.preventDefault();
