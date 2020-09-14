@@ -56,7 +56,6 @@ class PlantPage extends React.Component {
                                     <p>Notes: </p>
                                 </div>
                                 <div className="plantDescription__column">
-                                    {console.log(this.state.plantById.watering.lastTimeProcessed)}
                                     <p>{this.state.plantById.watering.interval}</p>
                                     <p>{moment(this.state.plantById.watering.lastTimeProcessed).format(defaultDateFormat)}</p>
                                     <p>{this.state.plantById.spraing.interval}</p>

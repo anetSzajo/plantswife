@@ -11,7 +11,7 @@ function PlantListElement({ plant }){
         <div className="plantListElement">
             <div className="plantListElement__menu">
                 <PlantPhoto />
-                {/*<PlantButtons />*/}
+                {/*<PlantButtons plantId={plant.id} onPlantUpdate={}/>*/}
             </div>
             <PlantShortDescription plant={plant}/>
             <PlantMoreInfoButton plant={plant}/>

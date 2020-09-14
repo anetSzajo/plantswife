@@ -5,34 +5,27 @@ import './plantButtons.scss';
 
 class PlantButtons extends React.Component {
 
-    handlePlantWatering = () => {
-
-        axios.post(`plants/${this.props.plantId}/watering`,
+    handlePlantUpdating(processType){
+        axios.post(`plants/${this.props.plantId}/${processType}`,
             {},{ headers: { 'Content-Type': 'application/json' }})
+            .then(res => this.props.onPlantUpdate())
             .catch(error => {
                 console.log(error)
             })
-        this.props.onPlantUpdate();
-    }
 
-    // handlePlantSpraing = () => {
-    //     this.plantUpdate(this.plant.spraing)
-    // }
-    // handlePlantFeeding = () => {
-    //     this.plantUpdate(this.plant.feeding);
-    // }
+    }
 
     render(){
 
         return(
             <div className="plantButtons-bar">
-                <button className="plantButton" onClick={this.handlePlantWatering}>
+                <button className="plantButton" onClick={() => this.handlePlantUpdating('watering')}>
                     <img src="/icons/watering-can.png" alt="" className={`${ this.props.fullDescriptionView && 'largeButton'}`}/>
                 </button>
-                <button className="plantButton" onClick={this.handlePlantSpraing}>
+                <button className="plantButton" onClick={() => this.handlePlantUpdating('spraing')}>
                     <img src="/icons/water-sprayer.png" alt="" className={`${ this.props.fullDescriptionView && 'largeButton'}`}/>
                 </button>
-                <button className="plantButton" onClick={this.handlePlantFeeding}>
+                <button className="plantButton" onClick={() => this.handlePlantUpdating('feeding')}>
                     <img src="/icons/bottle.png" alt="" className={`${ this.props.fullDescriptionView && 'largeButton'}`}/>
                 </button>
             </div>
