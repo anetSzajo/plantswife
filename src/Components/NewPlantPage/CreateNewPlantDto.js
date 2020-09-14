@@ -1,16 +1,10 @@
 export const intervalsMap = new Map([
     ['everyday', [1, 'd']],
-    ['onceAWeek', [7, 'd']],
+    ['onceAWeek', [1, 'w']],
     ['twiceAWeek', [3, 'd']],
     ['threeTimesAWeek', [2, 'd']],
     ['onceAMonth', [1, 'M']]
 ]);
-
-    //     ['everyday', 86400],
-    // ['onceAWeek', 604800],
-    // ['twiceAWeek', 345600],
-    // ['threeTimesAWeek', 172800],
-    // ['onceAMonth', 18748800]
 
 export default class CreateNewPlantDto {
     static fromNewPlantForm(plant) {

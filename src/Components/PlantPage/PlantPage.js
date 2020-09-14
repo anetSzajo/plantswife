@@ -1,39 +1,51 @@
 import React from "react";
+import axios from "axios";
 
 import PlantButtons from "../SharedComponents/PlantButtons/PlantButtons";
 import PlantPhoto from "../SharedComponents/PlantPhoto/PlantPhoto";
-import './plantPage.scss';
 import PlantShortDescription from "../SharedComponents/PlantShortDescription/PlantShortDescription";
 import AddNewPlantPhoto from "./AddNewPlantPhoto/AddNewPlantPhoto";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
+import './plantPage.scss';
+import {defaultDateFormat} from "../NewPlantPage/NewPlantPage";
+
+const moment = require('moment');
 
 class PlantPage extends React.Component {
     state = {
-        plant: {}
+        plantById: {},
+        loaded: false
     }
-    componentDidMount(){
+
+    plantUpdate = () => {
         const plantId = this.props.match.params.plantid;
 
-        fetch('/databaseFull.json')
-            .then(response => response.json())
-            .then(data => this.setState({
-                    plant: data.filter(plant => ''+plant.id === plantId)[0]
-                }))
+        axios.get(`plants/${plantId}`)
+            // .then(x => {console.log(x, 'fetching'); return x})
+            .then(res => this.setState({
+                plantById: res.data,
+                loaded: true
+            }))
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
-            .catch(error => console.log(error))
+    componentDidMount(){
+      this.plantUpdate();
     }
 
     render(){
-        return(
-            <div>
-                <div className="plantViewPageBody">
-
-                    <PlantPhoto fullDescriptionView={true}/>
-                    <AddNewPlantPhoto />
-                    <PlantButtons fullDescriptionView={true}/>
-                    <div className="plantFullDescription">
-                        <PlantShortDescription plant={this.state.plant}/>
-                        <div className="plantDescription">
+        if (this.state.loaded) {
+            return (
+                <div>
+                    <div className="plantViewPageBody">
+                        <PlantPhoto fullDescriptionView={true}/>
+                        <AddNewPlantPhoto/>
+                        <PlantButtons plantId={this.state.plantById.id} fullDescriptionView={true} onPlantUpdate={this.plantUpdate}/>
+                        <div className="plantFullDescription">
+                            <PlantShortDescription plant={this.state.plantById}/>
+                            <div className="plantDescription">
                                 <div className="plantDescription__column column-first">
                                     <p>Watering interval: </p>
                                     <p>Last watering: </p>
@@ -44,28 +56,33 @@ class PlantPage extends React.Component {
                                     <p>Notes: </p>
                                 </div>
                                 <div className="plantDescription__column">
-                                    <p>{this.state.plant.wateringInterval}</p>
-                                    <p>{this.state.plant.lastWatering}</p>
-                                    <p>{this.state.plant.sparingInterval}</p>
-                                    <p>{this.state.plant.lastSpraing}</p>
-                                    <p>{this.state.plant.feedingInterval}</p>
-                                    <p>{this.state.plant.lastFeeding}</p>
-                                    <p>{this.state.plant.notes}</p>
+                                    {console.log(this.state.plantById.watering.lastTimeProcessed)}
+                                    <p>{this.state.plantById.watering.interval}</p>
+                                    <p>{moment(this.state.plantById.watering.lastTimeProcessed).format(defaultDateFormat)}</p>
+                                    <p>{this.state.plantById.spraing.interval}</p>
+                                    <p>{moment(this.state.plantById.spraing.lastTimeProcessed).format(defaultDateFormat)}</p>
+                                    <p>{this.state.plantById.feeding.interval}</p>
+                                    <p>{moment(this.state.plantById.feeding.lastTimeProcessed).format(defaultDateFormat)}</p>
+                                    <p>{this.state.plantById.notes}</p>
                                 </div>
                             </div>
                             <div>
                                 <button className="editButton">
-                                    <img src="/icons/edit-icon.png" alt="" />
+                                    <img src="/icons/edit-icon.png" alt=""/>
                                 </button>
                                 <button className="deleteButton">
-                                    <img src="/icons/trash.png" alt="" />
+                                    <img src="/icons/trash.png" alt=""/>
                                 </button>
                             </div>
                         </div>
-                        <GoHomeButton />
+                        <GoHomeButton/>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
+        else{
+            return null;
+        }
     }
 }
 

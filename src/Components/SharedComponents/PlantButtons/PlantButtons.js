@@ -1,18 +1,29 @@
 import React from 'react';
+import axios from 'axios';
+
 import './plantButtons.scss';
 
 class PlantButtons extends React.Component {
-    // handlePlantWatering = () => {
-    //
-    // }
+
+    handlePlantWatering = () => {
+
+        axios.post(`plants/${this.props.plantId}/watering`,
+            {},{ headers: { 'Content-Type': 'application/json' }})
+            .catch(error => {
+                console.log(error)
+            })
+        this.props.onPlantUpdate();
+    }
+
     // handlePlantSpraing = () => {
-    //
+    //     this.plantUpdate(this.plant.spraing)
     // }
     // handlePlantFeeding = () => {
-    //
+    //     this.plantUpdate(this.plant.feeding);
     // }
 
     render(){
+
         return(
             <div className="plantButtons-bar">
                 <button className="plantButton" onClick={this.handlePlantWatering}>

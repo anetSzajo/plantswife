@@ -10,6 +10,8 @@ import './newPlantPage.scss';
 
 const moment = require('moment');
 
+export const defaultDateFormat = "LLL";
+
 class NewPlantPage extends React.Component {
     constructor(props) {
         super(props);
@@ -56,24 +58,9 @@ class NewPlantPage extends React.Component {
     calculateNextAction = (previousAction, interval) => {
         let nextAction;
 
-        nextAction = moment(previousAction).add(interval[0], interval[1]).format("DD/MM/YYYY, hh:mm");
+        nextAction = moment(previousAction).add(interval[0], interval[1]).format(defaultDateFormat);
 
         return nextAction;
-
-        // if (previousAction && interval) {
-        //     if (interval === "everyday") {
-        //         nextAction = moment(previousAction).add(1, 'd').format("DD/MM/YYYY, hh:mm");
-        //     } else if (interval === "onceAWeek") {
-        //         nextAction = moment(previousAction).add(1, 'w').format("DD/MM/YYYY, hh:mm");
-        //     } else if (interval === "twiceAWeek") {
-        //         nextAction = moment(previousAction).add(3, 'd').format("DD/MM/YYYY, hh:mm");
-        //     } else if (interval === "threeTimesAWeek") {
-        //         nextAction = moment(previousAction).add(2, 'd').format("DD/MM/YYYY, hh:mm");
-        //     } else if (interval === "onceAMonth") {
-        //         nextAction = moment(previousAction).add(1, 'M').format("DD/MM/YYYY, hh:mm");
-        //     }
-        // }
-        // return nextAction;
     }
 
     checkAction = (plant) => {
@@ -147,6 +134,9 @@ class NewPlantPage extends React.Component {
                 console.log(res);
                 console.log(plant);
             })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
 
@@ -175,7 +165,7 @@ class NewPlantPage extends React.Component {
                                     name="lastWatering"
                                     placeholderText="Select date and time"
                                     maxDate={new Date()}
-                                    dateFormat={"dd/MM/yyyy hh:mm"}
+                                    dateFormat={defaultDateFormat}
                                     showTimeSelect
                                     popperPlacement="bottom"
                                     customInput={<CustomInput />}
@@ -197,7 +187,7 @@ class NewPlantPage extends React.Component {
                                     name="lastSpraing"
                                     placeholderText="Select date and time"
                                     maxDate={new Date()}
-                                    dateFormat={"dd/MM/yyyy hh:mm"}
+                                    dateFormat={defaultDateFormat}
                                     showTimeSelect
                                     popperPlacement="bottom"
                                     customInput={<CustomInput />}
@@ -219,7 +209,7 @@ class NewPlantPage extends React.Component {
                                      name="lastFeeding"
                                      placeholderText="Select date and time"
                                      maxDate={new Date()}
-                                     dateFormat={"dd/MM/yyyy hh:mm"}
+                                     dateFormat={defaultDateFormat}
                                      showTimeSelect
                                      popperPlacement="bottom"
                                      customInput={<CustomInput />}

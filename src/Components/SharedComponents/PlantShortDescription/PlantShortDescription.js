@@ -1,5 +1,8 @@
 import React from 'react';
+import { defaultDateFormat } from '../../NewPlantPage/NewPlantPage';
 import './plantShortDescription.scss';
+
+const moment = require('moment');
 
 function PlantShortDescription({ plant }){
     return(
@@ -15,9 +18,9 @@ function PlantShortDescription({ plant }){
                 <div className="plantShortDescription__column">
                     <p>{plant.id}</p>
                     <p>{plant.name}</p>
-                    <p>{plant.watering.nextTimeProcessed}</p>
-                    <p>{plant.feeding.nextTimeProcessed}</p>
-                    <p>{plant.spraing.nextTimeProcessed}</p>
+                    <p>{moment(plant.watering.nextTimeProcessed).format(defaultDateFormat)}</p>
+                    <p>{moment(plant.feeding.nextTimeProcessed).format(defaultDateFormat)}</p>
+                    <p>{moment(plant.spraing.nextTimeProcessed).format(defaultDateFormat)}</p>
                     <p>{plant.place}</p>
                 </div>
             </div>
