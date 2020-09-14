@@ -10,7 +10,7 @@ import './newPlantPage.scss';
 
 const moment = require('moment');
 
-export const defaultDateFormat = "LLL";
+export const defaultDateFormat = "L, LT, (dddd)";
 
 class NewPlantPage extends React.Component {
     constructor(props) {

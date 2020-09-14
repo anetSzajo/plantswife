@@ -34,6 +34,10 @@ class PlantPage extends React.Component {
       this.fetchPlant();
     }
 
+    formatIntervalString = (string) => {
+        return string.replace(/([a-zA-Z])(?=[A-Z])/g, '$1 ').toLowerCase();
+    }
+
     render(){
         if (this.state.loaded) {
             return (
@@ -57,11 +61,11 @@ class PlantPage extends React.Component {
                                     <p>Notes: </p>
                                 </div>
                                 <div className="plantDescription__column">
-                                    <p>{this.state.plantById.watering.interval}</p>
+                                    <p>{this.formatIntervalString(this.state.plantById.watering.interval)}</p>
                                     <p>{moment(this.state.plantById.watering.lastTimeProcessed).format(defaultDateFormat)}</p>
-                                    <p>{this.state.plantById.spraing.interval}</p>
+                                    <p>{this.formatIntervalString(this.state.plantById.spraing.interval)}</p>
                                     <p>{moment(this.state.plantById.spraing.lastTimeProcessed).format(defaultDateFormat)}</p>
-                                    <p>{this.state.plantById.feeding.interval}</p>
+                                    <p>{this.formatIntervalString(this.state.plantById.feeding.interval)}</p>
                                     <p>{moment(this.state.plantById.feeding.lastTimeProcessed).format(defaultDateFormat)}</p>
                                     <p>{this.state.plantById.notes}</p>
                                 </div>
