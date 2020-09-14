@@ -12,6 +12,7 @@ import Footer from "./Components/Footer/Footer";
 import NewPlantPage from "./Components/NewPlantPage/NewPlantPage";
 import FindByPlacePage from "./Components/FilterByPlacePage/FindByPlacePage";
 
+
 function App() {
   return (
     <div className="App">

@@ -7,7 +7,8 @@ class PlantListPage extends React.Component{
         plants: []
     }
 
-    componentDidMount(){
+
+    fetchPlants = () => {
         axios.get(`plants`)
             .then(res => this.setState({
                 plants: res.data
@@ -16,11 +17,14 @@ class PlantListPage extends React.Component{
                 console.log(error)
             })
     }
+    componentDidMount(){
+        this.fetchPlants()
+    }
 
     render(){
         const { plants } = this.state;
         return(
-            <PlantsList plants={plants} />
+            <PlantsList plants={plants} plantProcessTriggered={this.fetchPlants} />
         )
     }
 }

@@ -19,8 +19,8 @@ function PlantShortDescription({ plant }){
                     <p>{plant.id}</p>
                     <p>{plant.name}</p>
                     <p>{moment(plant.watering.nextTimeProcessed).format(defaultDateFormat)}</p>
-                    <p>{moment(plant.feeding.nextTimeProcessed).format(defaultDateFormat)}</p>
                     <p>{moment(plant.spraing.nextTimeProcessed).format(defaultDateFormat)}</p>
+                    <p>{moment(plant.feeding.nextTimeProcessed).format(defaultDateFormat)}</p>
                     <p>{plant.place}</p>
                 </div>
             </div>

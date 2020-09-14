@@ -17,11 +17,10 @@ class PlantPage extends React.Component {
         loaded: false
     }
 
-    plantUpdate = () => {
+    fetchPlant = () => {
         const plantId = this.props.match.params.plantid;
 
         axios.get(`plants/${plantId}`)
-            // .then(x => {console.log(x, 'fetching'); return x})
             .then(res => this.setState({
                 plantById: res.data,
                 loaded: true
@@ -32,7 +31,7 @@ class PlantPage extends React.Component {
     }
 
     componentDidMount(){
-      this.plantUpdate();
+      this.fetchPlant();
     }
 
     render(){
@@ -42,7 +41,9 @@ class PlantPage extends React.Component {
                     <div className="plantViewPageBody">
                         <PlantPhoto fullDescriptionView={true}/>
                         <AddNewPlantPhoto/>
-                        <PlantButtons plantId={this.state.plantById.id} fullDescriptionView={true} onPlantUpdate={this.plantUpdate}/>
+                        <PlantButtons plantId={this.state.plantById.id}
+                                      fullDescriptionView={true}
+                                      plantProcessTriggered={this.fetchPlant}/>
                         <div className="plantFullDescription">
                             <PlantShortDescription plant={this.state.plantById}/>
                             <div className="plantDescription">
