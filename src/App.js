@@ -11,19 +11,27 @@ import './App.css';
 import Footer from "./Components/Footer/Footer";
 import NewPlantPage from "./Components/NewPlantPage/NewPlantPage";
 import FindByPlacePage from "./Components/FilterByPlacePage/FindByPlacePage";
+import Login from "./Components/Login/Login";
+import SignUp from "./Components/SignUp/SignUp";
+import {AuthContext} from "./Context/auth";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-        <Router>
-            <Switch>
-                <Route exact path="/createNewPlant" component={NewPlantPage} />
-                <Route exact path="/filterByPlace" component={FindByPlacePage} />
-                <Route exact path="/plantViewPage/:plantid" component={PlantPage} />
-                <Route path="/"><HomePage /></Route>
-            </Switch>
-        </Router>
+        <AuthContext.Provider value={ false }>
+            <Router>
+                <Switch>
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/signUp" component={SignUp} />
+                    <PrivateRoute exact path="/createNewPlant" component={NewPlantPage} />
+                    <PrivateRoute exact path="/filterByPlace" component={FindByPlacePage} />
+                    <PrivateRoute exact path="/plantViewPage/:plantid" component={PlantPage} />
+                    <PrivateRoute exact path="/"><HomePage /></PrivateRoute>
+                </Switch>
+            </Router>
+        </AuthContext.Provider>
         <Footer />
     </div>
   );
