@@ -22,7 +22,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 2.5rem 1.5rem;
 
   .logoImgContainer{
     width: 2.7rem;
@@ -43,23 +43,34 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-  }
 
-  input{
-    margin: 0 9px 7px 9px;
-    padding: 4px 4px 4px 7px;
-    border-radius: $default-border-radius;
-    border: 1px;
-    font-size: 10px;
-  }
+    input{
+      margin: 10px 9px 3px 9px;
+      padding: 4px 4px 4px 7px;
+      border-radius: $default-border-radius;
+      border: 1px;
+      font-size: 10px;
+    }
 
-  button{
-    margin: 9px 9px 9px 9px;
-    padding: 4px;
-    border-radius: $default-border-radius;
-    border: 1px;
-    background: $second-color;
-    color: $main-color;
+    p{
+      font-size: 8px;
+      margin: 0 0 0 10px;
+      text-align: left;
+    }
+
+    p::before {
+      display: inline;
+      content: "⚠ ";
+    }
+
+    button{
+      margin: 9px 9px 9px 9px;
+      padding: 4px;
+      border-radius: $default-border-radius;
+      border: 1px;
+      background: $second-color;
+      color: $main-color;
+    }
   }
 
   a{
