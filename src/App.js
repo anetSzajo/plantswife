@@ -11,10 +11,10 @@ import './App.css';
 import Footer from "./Components/Footer/Footer";
 import NewPlantPage from "./Components/NewPlantPage/NewPlantPage";
 import FindByPlacePage from "./Components/FilterByPlacePage/FindByPlacePage";
-import Login from "./Components/Login/Login";
-import SignUp from "./Components/SignUp/SignUp";
+import Login from "./Components/Auth/Login/Login";
+import SignUp from "./Components/Auth/SignUp/SignUp";
 import {AuthContext} from "./Context/auth";
-import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import PrivateRoute from "./Components/Auth/PrivateRoute/PrivateRoute";
 
 
 function App(props) {
@@ -28,7 +28,7 @@ function App(props) {
                     <PrivateRoute exact path="/createNewPlant" component={NewPlantPage} />
                     <PrivateRoute exact path="/filterByPlace" component={FindByPlacePage} />
                     <PrivateRoute exact path="/plantViewPage/:plantid" component={PlantPage} />
-                    <PrivateRoute exact path="/"><HomePage /></PrivateRoute>
+                    <PrivateRoute exact path="/" component={HomePage}/>
                 </Switch>
             </Router>
         </AuthContext.Provider>

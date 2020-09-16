@@ -1,6 +1,6 @@
 import React from 'react';
 import AuthForm from "../AuthForm/AuthForm";
-import Footer from '../Footer/Footer';
+import Footer from '../../Footer/Footer';
 
 function SignUp(){
     return(
