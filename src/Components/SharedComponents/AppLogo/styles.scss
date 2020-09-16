@@ -1,0 +1,26 @@
+@import '../../base';
+
+.AppLogo {
+  font-family: $font-family;
+  font-size: 13px;
+  color: white;
+  background-color: $second-color;
+  position: absolute;
+  top: 19px;
+  left: 34%;
+  width: 6rem;
+  height: 6rem;
+  margin: auto;
+  display: flex;
+  border-radius: 62px;
+  opacity: 0.8;
+
+  h1{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    margin: auto;
+  }
+}
+

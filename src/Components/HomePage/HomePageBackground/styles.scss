@@ -1,39 +1,9 @@
 @import '../../base';
 
-.homePage{
-  position: relative;
-}
-
 .homePageBackground{
   margin: 4px auto;
-  position: static;
   width: 96%;
   height: 225px;
-  left: 10px;
-  top: 10px;
   border-radius: 8px;
   opacity: 0.85;
-}
-.homePageLogo{
-  font-family: $font-family;
-  font-size: 13px;
-  color: $second-color;
-  background-color: #FFFFFF;
-  position: absolute;
-  top: 7px;
-  left: 38%;
-  width: 6rem;
-  height:6rem;
-  margin: auto;
-  display: flex;
-  border-radius: 62px;
-  opacity: 0.8;
-
-  h1{
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    padding: 1px;
-    margin: auto;
-  }
 }

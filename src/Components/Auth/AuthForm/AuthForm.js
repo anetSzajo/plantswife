@@ -1,10 +1,12 @@
 import React from 'react';
 import './authForm.scss';
 import {Link} from "react-router-dom";
+import AppLogo from "../../SharedComponents/AppLogo/AppLogo";
 
 function AuthForm(props) {
     return(
-        <div className="authFormPage">
+        <div className="authFormPage" style={{backgroundImage: `url(${props.backgroundImage})`}}>
+            <AppLogo />
             <div className="card">
                 <div className="logoImgContainer">
                     <img alt="" src="/icons/user.png" />

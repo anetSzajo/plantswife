@@ -28,7 +28,7 @@ function App(props) {
                     <PrivateRoute exact path="/createNewPlant" component={NewPlantPage} />
                     <PrivateRoute exact path="/filterByPlace" component={FindByPlacePage} />
                     <PrivateRoute exact path="/plantViewPage/:plantid" component={PlantPage} />
-                    <PrivateRoute exact path="/" component={HomePage}/>
+                    <Route exact path="/" component={HomePage}/>
                 </Switch>
             </Router>
         </AuthContext.Provider>
