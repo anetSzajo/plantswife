@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,9 +18,18 @@ import PrivateRoute from "./Components/Auth/PrivateRoute/PrivateRoute";
 
 
 function App(props) {
+
+    const existingTokens = JSON.parse(localStorage.getItem("tokens"));
+    const [authTokens, setAuthTokens] = useState(existingTokens);
+
+     const setTokens = (data) => {
+         localStorage.setItem("tokens", JSON.stringify(data));
+         setAuthTokens(data);
+     }
+
   return (
     <div className="App">
-        <AuthContext.Provider value={ false }>
+        <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens } }>
             <Router>
                 <Switch>
                     <Route exact path="/login" component={Login} />

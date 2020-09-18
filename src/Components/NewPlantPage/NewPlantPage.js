@@ -93,36 +93,6 @@ class NewPlantPage extends React.Component {
         }
     }
 
-    // checkAction = (plant) => {
-    //     if (plant.watering.lastTimeProcessed && plant.watering.interval){
-    //         let nextWatering = this.calculateNextAction(plant.watering.lastTimeProcessed , plant.watering.interval);
-    //         this.setState({
-    //             plant: {
-    //                 ...this.state.plant,
-    //                 nextWatering: nextWatering
-    //             }
-    //         })
-    //     }
-    //     if (plant.spraing.lastTimeProcessed && plant.spraing.interval){
-    //         let nextSpraing = this.calculateNextAction(plant.spraing.lastTimeProcessed, plant.spraing.interval);
-    //         this.setState({
-    //             plant: {
-    //                 ...this.state.plant,
-    //                 nextSpraing: nextSpraing
-    //             }
-    //         })
-    //     }
-    //     if (plant.feeding.lastTimeProcessed && plant.feeding.interval){
-    //         let nextFeeding = this.calculateNextAction(plant.feeding.lastTimeProcessed, plant.feeding.interval);
-    //         this.setState({
-    //             plant: {
-    //                 ...this.state.plant,
-    //                 nextFeeding: nextFeeding
-    //             }
-    //         })
-    //     }
-    // }
-
     handleSubmit = (event) => {
         event.preventDefault();
 

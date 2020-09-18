@@ -17,7 +17,9 @@
   border: 2px solid $second-color;
   background: $main-color;
   width: 50%;
-  height: 40%;
+  min-height: 40%;
+  max-height: 45%;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
