@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Redirect } from 'react-router-dom';
 
 import PlantButtons from "../SharedComponents/PlantButtons/PlantButtons";
 import PlantPhoto from "../SharedComponents/PlantPhoto/PlantPhoto";
@@ -14,7 +15,8 @@ const moment = require('moment');
 class PlantPage extends React.Component {
     state = {
         plantById: {},
-        loaded: false
+        loaded: false,
+        redirect: false
     }
 
     fetchPlant = () => {
@@ -34,11 +36,41 @@ class PlantPage extends React.Component {
       this.fetchPlant();
     }
 
+    handleEditButton = () => {
+        // const plantId = this.state.plantById.id;
+
+        axios.put(`plants/${this.state.plantById.id}`,
+            {},{ headers: { 'Content-Type': 'application/json' }})
+            .then(res => this.fetchPlant())
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+    handleDeleteButton = () => {
+        axios.delete(`plants/${this.state.plantById.id}`)
+            .then(x => console.log("Plant deleted"))
+            .then(res => this.setState(
+                {
+                    redirect: true
+                }
+            ))
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
     formatIntervalString = (string) => {
         return string.replace(/([a-zA-Z])(?=[A-Z])/g, '$1 ').toLowerCase();
     }
 
     render(){
+        const { redirect } = this.state;
+
+        if (redirect) {
+            return <Redirect to="/" />
+        }
+
         if (this.state.loaded) {
             return (
                 <div>
@@ -71,10 +103,10 @@ class PlantPage extends React.Component {
                                 </div>
                             </div>
                             <div>
-                                <button className="editButton">
+                                <button className="editButton" onClick={this.handleEditButton}>
                                     <img src="/icons/edit-icon.png" alt=""/>
                                 </button>
-                                <button className="deleteButton">
+                                <button className="deleteButton" onClick={this.handleDeleteButton}>
                                     <img src="/icons/trash.png" alt=""/>
                                 </button>
                             </div>

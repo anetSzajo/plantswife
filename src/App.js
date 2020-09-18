@@ -34,9 +34,9 @@ function App(props) {
                 <Switch>
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/signUp" component={SignUp} />
-                    <PrivateRoute exact path="/createNewPlant" component={NewPlantPage} />
+                    <Route exact path="/createNewPlant" component={NewPlantPage} />
                     <PrivateRoute exact path="/filterByPlace" component={FindByPlacePage} />
-                    <PrivateRoute exact path="/plantViewPage/:plantid" component={PlantPage} />
+                    <Route exact path="/plantViewPage/:plantid" component={PlantPage} />
                     <Route exact path="/" component={HomePage}/>
                 </Switch>
             </Router>

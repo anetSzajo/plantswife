@@ -7,21 +7,29 @@ const moment = require('moment');
 function PlantShortDescription({ plant }){
     return(
             <div className="plantShortDescription">
-                <div className="plantShortDescription__column column-first">
-                    <p>Id: </p>
-                    <p>Name: </p>
-                    <p>Next watering: </p>
-                    <p>Next feeding: </p>
-                    <p>Next spraing: </p>
-                    <p>Place: </p>
+                <div className="row">
+                    <div  className="column first">Id:</div>
+                    <div className="column">{plant.id}</div>
                 </div>
-                <div className="plantShortDescription__column">
-                    <p>{plant.id}</p>
-                    <p>{plant.name}</p>
-                    <p>{moment(plant.watering.nextTimeProcessed).format(defaultDateFormat)}</p>
-                    <p>{moment(plant.spraing.nextTimeProcessed).format(defaultDateFormat)}</p>
-                    <p>{moment(plant.feeding.nextTimeProcessed).format(defaultDateFormat)}</p>
-                    <p>{plant.place}</p>
+                <div className="row">
+                    <div className="column first">Name:</div>
+                    <div className="column">{plant.name}</div>
+                </div>
+                <div className="row">
+                    <div className="column first">Next watering:</div>
+                    <div className="column">{moment(plant.watering.nextTimeProcessed).format(defaultDateFormat)}</div>
+                </div>
+                <div className="row">
+                    <div className="column first">Next feeding:</div>
+                    <div className="column">{moment(plant.spraing.nextTimeProcessed).format(defaultDateFormat)}</div>
+                </div>
+                <div className="row">
+                    <div className="column first">Next spraing:</div>
+                    <div className="column">{moment(plant.feeding.nextTimeProcessed).format(defaultDateFormat)}</div>
+                </div>
+                <div className="row">
+                    <div className="column first">Place:</div>
+                    <div className="column">{plant.place}</div>
                 </div>
             </div>
     )
