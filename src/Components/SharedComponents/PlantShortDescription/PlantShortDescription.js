@@ -6,7 +6,7 @@ const moment = require('moment');
 
 function PlantShortDescription({ plant }){
     return(
-            <div className="plantShortDescription">
+            <div className="plantDescription">
                 <div className="row">
                     <div  className="column first">Id:</div>
                     <div className="column">{plant.id}</div>

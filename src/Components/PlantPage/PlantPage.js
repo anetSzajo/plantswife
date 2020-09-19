@@ -7,6 +7,7 @@ import PlantPhoto from "../SharedComponents/PlantPhoto/PlantPhoto";
 import PlantShortDescription from "../SharedComponents/PlantShortDescription/PlantShortDescription";
 import AddNewPlantPhoto from "./AddNewPlantPhoto/AddNewPlantPhoto";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
+import '../SharedComponents/PlantShortDescription/plantShortDescription.scss';
 import './plantPage.scss';
 import {defaultDateFormat} from "../NewPlantPage/NewPlantPage";
 
@@ -73,46 +74,70 @@ class PlantPage extends React.Component {
 
         if (this.state.loaded) {
             return (
-                <div>
-                    <div className="plantViewPageBody">
-                        <PlantPhoto fullDescriptionView={true}/>
-                        <AddNewPlantPhoto/>
-                        <PlantButtons plantId={this.state.plantById.id}
-                                      fullDescriptionView={true}
-                                      plantProcessTriggered={this.fetchPlant}/>
-                        <div className="plantFullDescription">
-                            <PlantShortDescription plant={this.state.plantById}/>
-                            <div className="plantDescription">
-                                <div className="plantDescription__column column-first">
-                                    <p>Watering interval: </p>
-                                    <p>Last watering: </p>
-                                    <p>Spraing interval: </p>
-                                    <p>Last spraing: </p>
-                                    <p>Feeding interval: </p>
-                                    <p>Last feeding: </p>
-                                    <p>Notes: </p>
-                                </div>
-                                <div className="plantDescription__column">
-                                    <p>{this.formatIntervalString(this.state.plantById.watering.interval)}</p>
-                                    <p>{moment(this.state.plantById.watering.lastTimeProcessed).format(defaultDateFormat)}</p>
-                                    <p>{this.formatIntervalString(this.state.plantById.spraing.interval)}</p>
-                                    <p>{moment(this.state.plantById.spraing.lastTimeProcessed).format(defaultDateFormat)}</p>
-                                    <p>{this.formatIntervalString(this.state.plantById.feeding.interval)}</p>
-                                    <p>{moment(this.state.plantById.feeding.lastTimeProcessed).format(defaultDateFormat)}</p>
-                                    <p>{this.state.plantById.notes}</p>
+                <div className="plantViewPageBody">
+                    <PlantPhoto fullDescriptionView={true}/>
+                    <AddNewPlantPhoto/>
+                    <PlantButtons plantId={this.state.plantById.id}
+                                  fullDescriptionView={true}
+                                  plantProcessTriggered={this.fetchPlant}/>
+                    <div className="plantFullDescription">
+                        <PlantShortDescription plant={this.state.plantById}/>
+                        <div className="plantDescription">
+                            <div className="row">
+                                <div  className="column first">Watering interval:</div>
+                                <div className="column">
+                                    {this.formatIntervalString(this.state.plantById.watering.interval)}
                                 </div>
                             </div>
-                            <div>
-                                <button className="editButton" onClick={this.handleEditButton}>
-                                    <img src="/icons/edit-icon.png" alt=""/>
-                                </button>
-                                <button className="deleteButton" onClick={this.handleDeleteButton}>
-                                    <img src="/icons/trash.png" alt=""/>
-                                </button>
+                            <div className="row">
+                                <div  className="column first">
+                                    Last watering:
+                                </div>
+                                <div className="column">
+                                    {moment(this.state.plantById.watering.lastTimeProcessed).format(defaultDateFormat)}
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div  className="column first">Spraing interval:</div>
+                                <div className="column">
+                                    {this.formatIntervalString(this.state.plantById.spraing.interval)}
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div  className="column first">Last spraing:</div>
+                                <div className="column">{
+                                    moment(this.state.plantById.spraing.lastTimeProcessed).format(defaultDateFormat)}
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div  className="column first">Feeding interval:</div>
+                                <div className="column">
+                                    {this.formatIntervalString(this.state.plantById.feeding.interval)}
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div  className="column first">Last feeding:</div>
+                                <div className="column">
+                                    {moment(this.state.plantById.feeding.lastTimeProcessed).format(defaultDateFormat)}
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div  className="column first">Notes:</div>
+                                <div className="column">
+                                    {this.state.plantById.notes}
+                                </div>
                             </div>
                         </div>
-                        <GoHomeButton/>
+                        <div>
+                            <button className="editButton" onClick={this.handleEditButton}>
+                                <img src="/icons/edit-icon.png" alt=""/>
+                            </button>
+                            <button className="deleteButton" onClick={this.handleDeleteButton}>
+                                <img src="/icons/trash.png" alt=""/>
+                            </button>
+                        </div>
                     </div>
+                    <GoHomeButton/>
                 </div>
             )
         }

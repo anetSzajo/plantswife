@@ -7,37 +7,14 @@
   align-items: center;
 }
 
-.plantDescription{
-  display: flex;
-  font-size: 10px;
-  text-align: left;
-  background-color: $main-color;
-  padding: 8px 10px 20px 2px;
-  border-radius: 2* $default-border-radius;
-  min-width: 57%;
-
-  .plantDescription__column{
-    margin: 0 10px;
-  }
-
-  .column-first{
-    color: #B9B5B5;
-    margin: 0 0 0 10px;
-  }
-  p {
-    margin: 0;
-    font-size: 10px;
-  }
-}
-
 .plantFullDescription{
   background-color: $main-color;
   border-radius: 2* $default-border-radius;
   margin: 1.5rem auto;
-  padding: 1rem;
+  padding: 1.5rem;
   position: relative;
+  width: 70%;
 }
-
 .deleteButton,
 .editButton{
   position: absolute;
@@ -58,19 +35,4 @@
 .editButton{
   bottom: 1%;
   right: 9%;
-}
-
-@media(min-width: 370px) {
-  .plantDescription{
-    padding-top: 0;
-  }
-  .plantDescription__column{
-    padding-top: 8px;
-  }
-  .plantFullDescription{
-    height: 40vh;
-  }
-  .column-first {
-    padding: 8px 17px 0 0;
-  }
 }

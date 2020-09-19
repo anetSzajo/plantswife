@@ -1,6 +1,6 @@
 @import '../../base';
 
-.plantShortDescription{
+.plantDescription{
   display: flex;
   flex-direction: column;
   background-color: $main-color;
@@ -8,9 +8,11 @@
   padding: 8px 10px 20px 7px;
   margin-left: 7px;
   border-radius: 2* $default-border-radius;
-  max-width: 60%;
+  //max-width: 60%;
+  width: 86%;
 }
-.plantShortDescription>* {
+
+.plantDescription>* {
   flex: 1 1 10px;
 }
 .row{
