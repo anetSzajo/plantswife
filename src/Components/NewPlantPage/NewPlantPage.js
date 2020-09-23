@@ -10,7 +10,7 @@ import './newPlantPage.scss';
 
 const moment = require('moment');
 
-export const defaultDateFormat = "L, LT (dddd)";
+export const defaultDateFormat = "LLL";
 
 class NewPlantPage extends React.Component {
     constructor(props) {
@@ -135,7 +135,7 @@ class NewPlantPage extends React.Component {
                                     name="lastWatering"
                                     placeholderText="Select date and time"
                                     maxDate={new Date()}
-                                    dateFormat={defaultDateFormat}
+                                    dateFormat={"dd/MM/yyyy hh:mm"}
                                     showTimeSelect
                                     popperPlacement="bottom"
                                     customInput={<CustomInput />}
@@ -157,7 +157,7 @@ class NewPlantPage extends React.Component {
                                     name="lastSpraing"
                                     placeholderText="Select date and time"
                                     maxDate={new Date()}
-                                    dateFormat={defaultDateFormat}
+                                    dateFormat={"dd/MM/yyyy hh:mm"}
                                     showTimeSelect
                                     popperPlacement="bottom"
                                     customInput={<CustomInput />}
@@ -179,7 +179,7 @@ class NewPlantPage extends React.Component {
                                      name="lastFeeding"
                                      placeholderText="Select date and time"
                                      maxDate={new Date()}
-                                     dateFormat={defaultDateFormat}
+                                     dateFormat={"dd/MM/yyyy hh:mm"}
                                      showTimeSelect
                                      popperPlacement="bottom"
                                      customInput={<CustomInput />}

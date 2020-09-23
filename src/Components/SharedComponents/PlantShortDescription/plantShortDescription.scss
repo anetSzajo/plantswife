@@ -30,6 +30,22 @@
   line-height: 10px;
   margin: 3px;
   text-align: left;
+
+  *:focus{
+    outline: none;
+  }
+  //input,
+  //select,
+  //select:focus,
+  input:focus{
+    height: 10px;
+    width: 5rem;
+    font-size: 10px;
+    background: $main-color;
+    border-radius: 2px;
+    border: 1px dotted $second-color;
+    padding: 2px 4px;
+  }
 }
 .first{
   font-weight: bold;
