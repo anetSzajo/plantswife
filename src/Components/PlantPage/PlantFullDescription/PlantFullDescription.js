@@ -27,19 +27,6 @@ class PlantFullDescription extends React.Component{
         return nextAction;
     }
 
-    // updateWateringAction = (data) => {
-    //     let nextWatering = this.calculateNextAction(this.state.plant.watering.lastTimeProcessed, intervalsMap.get(this.state.plant.watering.interval));
-    //     this.setState({
-    //         plant: {
-    //             ...this.state.plant,
-    //             watering: {
-    //                 ...this.state.plant.watering,
-    //                 nextTimeProcessed: nextWatering
-    //             }
-    //         }
-    //     })
-    // }
-
     updateAction = (data, processName) => {
         let nextAction = this.calculateNextAction(this.state.plant[processName].lastTimeProcessed, intervalsMap.get(this.state.plant[processName].interval));
         this.setState({
@@ -53,38 +40,20 @@ class PlantFullDescription extends React.Component{
         })
     }
 
-
-    // handleDateChange = (date, processName) => {
-    //     {console.log("This is a processName: " + processName)}
-    //     this.setState({
-    //             plant: {
-    //                 ...this.state.plant,
-    //                 [processName]: {
-    //                     ...this.state.plant[processName],
-    //                     lastTimeProcessed: date
-    //                 }
-    //             }
-    //         }, () => this.checkAction(this.state.plant)
-    //     )
-    // }
-
-
-
-    handleWateringDateChange = (date) => {
+    handleProcessDateChange = (date, process) => {
         this.setState({
                 plant: {
                     ...this.state.plant,
-                    watering: {
-                        ...this.state.plant.watering,
+                    [process]: {
+                        ...this.state.plant[process],
                         lastTimeProcessed: date
                     }
                 }
-            }, () => {this.updateAction(this.state.plant, "watering")}
+            }, () => {this.updateAction(this.state.plant, process)}
         )
     }
 
-
-    handleIntervalSelect = (event) => {
+    handleIntervalSelect = (event, process) => {
         this.setState({
                 plant: {
                     ...this.state.plant,
@@ -93,23 +62,9 @@ class PlantFullDescription extends React.Component{
                         interval: event.target.value
                     }
                 }
-            }, () => {this.updateAction(this.state.plant, "watering")}
+            }, () => {this.updateAction(this.state.plant, process)}
         )
     }
-
-
-    // handleSelect = (event) => {
-    //     this.setState({
-    //             plant: {
-    //                 ...this.state.plant,
-    //                 [event.target.name]: {
-    //                     ...this.state.plant[event.target.name],
-    //                     interval: event.target.value
-    //                 }
-    //             }
-    //         }, () => this.checkAction(this.state.plant)
-    //     )
-    // }
 
     handleInput = (event) => {
         this.setState({
@@ -121,7 +76,7 @@ class PlantFullDescription extends React.Component{
         )
     }
 
-
+////FOR SENDING PUT REQUEST /////
     //
     // handleSubmit = (event) => {
     //     // const plantId = this.state.plant.id;
@@ -192,7 +147,7 @@ class PlantFullDescription extends React.Component{
                         { this.props.isEditOn
                             ?
                             <select value={plant.watering.interval}
-                                    name="watering" onChange={this.handleIntervalSelect} >
+                                    name="watering" onChange={(event) => this.handleIntervalSelect(event,"watering")} >
                                 <option value=''>Choose an option...</option>
                                 <option value="everyday">Everyday</option>
                                 <option value="onceAWeek">Once a week</option>
@@ -205,7 +160,6 @@ class PlantFullDescription extends React.Component{
                                 {this.formatIntervalString(plant.watering.interval)}
                             </div>
                         }
-
                     </div>
                     <div className="row">
                         <div  className="column first">
@@ -215,7 +169,7 @@ class PlantFullDescription extends React.Component{
                             ?
                             <DatePicker
                                 selected={Date.parse(plant.watering.lastTimeProcessed)}
-                                        onChange={(date) => this.handleWateringDateChange(date)}
+                                        onChange={(date) => this.handleProcessDateChange(date, "watering")}
                                         name="watering"
                                         placeholderText="Select date and time"
                                         maxDate={new Date()}
@@ -236,7 +190,7 @@ class PlantFullDescription extends React.Component{
                             { this.props.isEditOn
                                 ?
                                 <select value={plant.spraing.interval}
-                                        name="spraing" onChange={this.handleSelect} >
+                                        name="spraing" onChange={(event) => this.handleIntervalSelect(event, "spraing")} >
                                     <option value=''>Choose an option...</option>
                                     <option value="everyday">Everyday</option>
                                     <option value="onceAWeek">Once a week</option>
@@ -256,7 +210,7 @@ class PlantFullDescription extends React.Component{
                         { this.props.isEditOn
                             ?
                             <DatePicker selected={Date.parse(plant.spraing.lastTimeProcessed)}
-                                        onChange={(date) => this.handleDateChange(date, "spraing")}
+                                        onChange={(date) => this.handleProcessDateChange(date, "spraing")}
                                         name="spraing"
                                         placeholderText="Select date and time"
                                         maxDate={new Date()}
@@ -276,7 +230,7 @@ class PlantFullDescription extends React.Component{
                         { this.props.isEditOn
                             ?
                             <select value={plant.feeding.interval}
-                                    name="feeding" onChange={this.handleSelect} >
+                                    name="feeding" onChange={(event) => this.handleIntervalSelect(event, "feeding")} >
                                 <option value=''>Choose an option...</option>
                                 <option value="everyday">Everyday</option>
                                 <option value="onceAWeek">Once a week</option>
@@ -295,7 +249,7 @@ class PlantFullDescription extends React.Component{
                         { this.props.isEditOn
                             ?
                             <DatePicker selected={Date.parse(plant.feeding.lastTimeProcessed)}
-                                        onChange={(date) => this.handleDateChange(date, "feeding")}
+                                        onChange={(date) => this.handleProcessDateChange(date, "feeding")}
                                         name="feeding"
                                         placeholderText="Select date and time"
                                         maxDate={new Date()}
