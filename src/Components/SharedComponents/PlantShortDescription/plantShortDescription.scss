@@ -10,45 +10,54 @@
   border-radius: 2* $default-border-radius;
   //max-width: 60%;
   width: 86%;
-}
 
-.plantDescription>* {
-  flex: 1 1 10px;
-}
-.row{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.column{
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex:1;
-  line-height: 10px;
-  margin: 3px;
-  text-align: left;
-
-  *:focus{
-    outline: none;
+  .plantDescription>* {
+    flex: 1 1 10px;
   }
-  //input,
-  //select,
-  //select:focus,
-  input:focus{
-    height: 10px;
-    width: 5rem;
-    font-size: 10px;
-    background: $main-color;
-    border-radius: 2px;
-    border: 1px dotted $second-color;
-    padding: 2px 4px;
+  .row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .column{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex:1;
+    line-height: 10px;
+    margin: 3px;
+    text-align: left;
+    justify-content: center;
+
+    *:focus{
+      outline: none;
+    }
+
+    input,
+    select,
+    select:focus,
+    input:focus{
+      height: 14px;
+      width: 7rem;
+      font-size: 10px;
+      background: $main-color;
+      border-radius: 2px;
+      border: 1px solid $second-color;
+      padding: 2px 4px;
+      margin: 0;
+      -ms-box-sizing:content-box;
+      -moz-box-sizing:content-box;
+      -webkit-box-sizing:content-box;
+      box-sizing:content-box;
+    }
+  }
+
+  .first{
+    font-weight: bold;
   }
 }
-.first{
-  font-weight: bold;
-}
+
 
 

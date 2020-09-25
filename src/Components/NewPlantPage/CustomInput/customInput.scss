@@ -1,20 +1,22 @@
 @import '../../base';
 
-.calendar-icon__container{
-  position: relative;
+.react-datepicker-wrapper{
+  width: 100%;
+  .calendar-icon__container{
+    position: relative;
 
-  input{
-    width: 48vw;
-    margin-bottom: 1rem;
-    padding: 3px 0 3px 12px;
+    input{
+      width: 48vw;
+      margin-bottom: 1rem;
+      padding: 3px 0 3px 12px;
+    }
   }
-}
-
-.calendar-icon{
-  width: 16px;
-  height: 16px;
-  opacity: 0.5;
-  position: absolute;
-  top: 12%;
-  left: 4%;
+  .calendar-icon{
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+    position: absolute;
+    top: 12%;
+    left: 16%;
+  }
 }

@@ -1,0 +1,37 @@
+@import '../../base';
+
+.plantFullDescription{
+  background-color: $main-color;
+  border-radius: 2* $default-border-radius;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  position: relative;
+  width: 70%;
+}
+
+.dateInput {
+  height: 10px;
+  width: 5rem;
+  font-size: 10px;
+  background: $main-color;
+  border-radius: 2px;
+  border: 1px solid $second-color;
+  padding: 2px 4px;
+}
+
+//*:focus{
+//  outline: none;
+//}
+//
+//input,
+//select,
+//select:focus,
+//input:focus{
+//  height: 10px;
+//  width: 5rem;
+//  font-size: 10px;
+//  background: $main-color;
+//  border-radius: 2px;
+//  border: 1px solid $second-color;
+//  padding: 2px 4px;
+//}

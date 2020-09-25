@@ -3,7 +3,8 @@ import axios from 'axios';
 import {defaultDateFormat} from "../../NewPlantPage/NewPlantPage";
 
 import '../../SharedComponents/PlantShortDescription/plantShortDescription.scss';
-import '../plantPage.scss';
+import './plantFullDescription.scss';
+
 import {intervalsMap} from "../../NewPlantPage/CreateNewPlantDto";
 import DatePicker from "react-datepicker";
 import CustomInput from "../../NewPlantPage/CustomInput/CustomInput";
@@ -41,6 +42,8 @@ class PlantFullDescription extends React.Component{
     }
 
     handleProcessDateChange = (date, process) => {
+        date = date.toString();
+
         this.setState({
                 plant: {
                     ...this.state.plant,
@@ -76,8 +79,6 @@ class PlantFullDescription extends React.Component{
         )
     }
 
-////FOR SENDING PUT REQUEST /////
-    //
     // handleSubmit = (event) => {
     //     // const plantId = this.state.plant.id;
     //
@@ -94,7 +95,6 @@ class PlantFullDescription extends React.Component{
 
         return(
             <div className="plantFullDescription">
-
                 <div className="plantDescription">
                     <div className="row">
                         <div className="column first">Id:</div>
@@ -102,12 +102,14 @@ class PlantFullDescription extends React.Component{
                     </div>
                     <div className="row">
                         <div className="column first">Name:</div>
+                        <div className="column">
                         { this.props.isEditOn
                             ?
                             <input type="text" name="name" value={plant.name} onChange={this.handleInput}/>
                             :
-                            <div className="column">{plant.name}</div>
+                            <div>{plant.name}</div>
                         }
+                        </div>
                     </div>
                     <div className="row">
                         <div className="column first">Next watering:</div>
@@ -125,10 +127,10 @@ class PlantFullDescription extends React.Component{
                     </div>
                     <div className="row">
                         <div className="column first">Place:</div>
+                        <div className="column">
                         { this.props.isEditOn
                             ?
                             <select value={plant.place} name="place" onChange={this.handleInput}>
-                                <option value=''>Choose a place..</option>
                                 <option value="livingRoom">Living room</option>
                                 <option value="diningRoom">Dining room</option>
                                 <option value="bedroom">Bedroom</option>
@@ -137,18 +139,19 @@ class PlantFullDescription extends React.Component{
                                 <option value="balcony">Balcony</option>
                             </select>
                             :
-                            <div className="column">{plant.place}</div>
+                            <div>{plant.place}</div>
                         }
+                        </div>
                     </div>
                 </div>
                 <div className="plantDescription">
                     <div className="row">
                         <div  className="column first">Watering interval:</div>
+                        <div className="column">
                         { this.props.isEditOn
                             ?
-                            <select value={plant.watering.interval}
+                            <select className="column" value={plant.watering.interval}
                                     name="watering" onChange={(event) => this.handleIntervalSelect(event,"watering")} >
-                                <option value=''>Choose an option...</option>
                                 <option value="everyday">Everyday</option>
                                 <option value="onceAWeek">Once a week</option>
                                 <option value="twiceAWeek">Twice a week</option>
@@ -160,11 +163,13 @@ class PlantFullDescription extends React.Component{
                                 {this.formatIntervalString(plant.watering.interval)}
                             </div>
                         }
+                        </div>
                     </div>
                     <div className="row">
                         <div  className="column first">
                             Last watering:
                         </div>
+                        <div className="column">
                         { this.props.isEditOn
                             ?
                             <DatePicker
@@ -173,7 +178,7 @@ class PlantFullDescription extends React.Component{
                                         name="watering"
                                         placeholderText="Select date and time"
                                         maxDate={new Date()}
-                                        dateFormat={"dd/MM/yyyy hh:mm"}
+                                        dateFormat="MM/dd/yyyy hh:mm"
                                         showTimeSelect
                                         popperPlacement="bottom"
                                         customInput={<CustomInput />}
@@ -183,15 +188,15 @@ class PlantFullDescription extends React.Component{
                                 {moment(plant.watering.lastTimeProcessed).format(defaultDateFormat)}
                             </div>
                         }
+                        </div>
                     </div>
                     <div className="row">
                         <div  className="column first">Spraing interval:</div>
                         <div className="column">
                             { this.props.isEditOn
                                 ?
-                                <select value={plant.spraing.interval}
+                                <select className="column" value={plant.spraing.interval}
                                         name="spraing" onChange={(event) => this.handleIntervalSelect(event, "spraing")} >
-                                    <option value=''>Choose an option...</option>
                                     <option value="everyday">Everyday</option>
                                     <option value="onceAWeek">Once a week</option>
                                     <option value="twiceAWeek">Twice a week</option>
@@ -207,6 +212,7 @@ class PlantFullDescription extends React.Component{
                     </div>
                     <div className="row">
                         <div  className="column first">Last spraing:</div>
+                        <div className="column">
                         { this.props.isEditOn
                             ?
                             <DatePicker selected={Date.parse(plant.spraing.lastTimeProcessed)}
@@ -214,7 +220,7 @@ class PlantFullDescription extends React.Component{
                                         name="spraing"
                                         placeholderText="Select date and time"
                                         maxDate={new Date()}
-                                        dateFormat={"dd/MM/yyyy hh:mm"}
+                                        dateFormat="MM/dd/yyyy hh:mm"
                                         showTimeSelect
                                         popperPlacement="bottom"
                                         customInput={<CustomInput />}
@@ -224,14 +230,15 @@ class PlantFullDescription extends React.Component{
                                 {moment(plant.spraing.lastTimeProcessed).format(defaultDateFormat)}
                             </div>
                         }
+                        </div>
                     </div>
                     <div className="row">
                         <div  className="column first">Feeding interval:</div>
+                        <div className="column">
                         { this.props.isEditOn
                             ?
-                            <select value={plant.feeding.interval}
+                            <select className="column" value={plant.feeding.interval}
                                     name="feeding" onChange={(event) => this.handleIntervalSelect(event, "feeding")} >
-                                <option value=''>Choose an option...</option>
                                 <option value="everyday">Everyday</option>
                                 <option value="onceAWeek">Once a week</option>
                                 <option value="twiceAWeek">Twice a week</option>
@@ -239,13 +246,13 @@ class PlantFullDescription extends React.Component{
                                 <option value="onceAMonth">Once a month</option>
                             </select>
                             :
-                            <div className="column">
-                                {this.formatIntervalString(this.props.plant.feeding.interval)}
-                            </div>
+                            <div>{this.formatIntervalString(this.props.plant.feeding.interval)}</div>
                         }
+                        </div>
                     </div>
                     <div className="row">
                         <div  className="column first">Last feeding:</div>
+                        <div className="column">
                         { this.props.isEditOn
                             ?
                             <DatePicker selected={Date.parse(plant.feeding.lastTimeProcessed)}
@@ -253,7 +260,7 @@ class PlantFullDescription extends React.Component{
                                         name="feeding"
                                         placeholderText="Select date and time"
                                         maxDate={new Date()}
-                                        dateFormat={"dd/MM/yyyy hh:mm"}
+                                        dateFormat="MM/dd/yyyy hh:mm"
                                         showTimeSelect
                                         popperPlacement="bottom"
                                         customInput={<CustomInput />}
@@ -263,15 +270,18 @@ class PlantFullDescription extends React.Component{
                                 {moment(plant.feeding.lastTimeProcessed).format(defaultDateFormat)}
                             </div>
                         }
+                        </div>
                     </div>
                     <div className="row">
                         <div  className="column first">Notes:</div>
+                        <div className="column">
                         { this.props.isEditOn
                             ?
-                            <input type="text" name="notes" value={plant.notes} onChange={this.handleInput}/>
+                            <input className="column" type="text" name="notes" value={plant.notes} onChange={this.handleInput}/>
                             :
-                            <div className="column">{plant.notes}</div>
+                            <div>{plant.notes}</div>
                         }
+                        </div>
                     </div>
                 </div>
             </div>

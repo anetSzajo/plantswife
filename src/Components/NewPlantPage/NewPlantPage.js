@@ -135,10 +135,10 @@ class NewPlantPage extends React.Component {
                                     name="lastWatering"
                                     placeholderText="Select date and time"
                                     maxDate={new Date()}
-                                    dateFormat={"dd/MM/yyyy hh:mm"}
+                                    dateFormat="dd/MM/yyyy hh:mm"
                                     showTimeSelect
                                     popperPlacement="bottom"
-                                    customInput={<CustomInput />}
+                                    customInput={<CustomInput calendarIcon="true"  />}
                             />
                         <label>NextWatering:</label>
                         <p>{this.state.plant.nextWatering}</p>
@@ -157,10 +157,10 @@ class NewPlantPage extends React.Component {
                                     name="lastSpraing"
                                     placeholderText="Select date and time"
                                     maxDate={new Date()}
-                                    dateFormat={"dd/MM/yyyy hh:mm"}
+                                    dateFormat="dd/MM/yyyy hh:mm"
                                     showTimeSelect
                                     popperPlacement="bottom"
-                                    customInput={<CustomInput />}
+                                    customInput={<CustomInput calendarIcon="true" />}
                             />
                         <label>Next spraing::</label>
                         <p>{this.state.plant.nextSpraing}</p>
@@ -179,10 +179,10 @@ class NewPlantPage extends React.Component {
                                      name="lastFeeding"
                                      placeholderText="Select date and time"
                                      maxDate={new Date()}
-                                     dateFormat={"dd/MM/yyyy hh:mm"}
+                                     dateFormat="dd/MM/yyyy hh:mm"
                                      showTimeSelect
                                      popperPlacement="bottom"
-                                     customInput={<CustomInput />}
+                                     customInput={<CustomInput calendarIcon="true" />}
                                  />
                         <label>Next feeding:</label>
                         <p>{this.state.plant.nextFeeding}</p>
