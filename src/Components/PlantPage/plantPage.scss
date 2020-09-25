@@ -6,25 +6,28 @@
   justify-content: center;
   align-items: center;
 }
-
+.cancelButton,
+.saveButton,
 .deleteButton,
 .editButton{
   position: absolute;
+  bottom: 2%;
   opacity: 0.6;
   border: none;
   background-color: transparent;
+  padding: 1px 8px;
   img{
     width: 1.5rem;
     height: 1.5rem;
   }
 }
 
+.cancelButton,
 .deleteButton{
-  bottom: 1%;
-  right: 1%;
+  right: 2%;
 }
 
-.editButton{
-  bottom: 1%;
-  right: 9%;
+.editButton,
+.saveButton{
+  right: 12%;
 }

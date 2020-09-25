@@ -44,7 +44,8 @@ class PlantPage extends React.Component {
     handleEditButton = () => {
         // const plantId = this.state.plantById.id;
         this.setState({
-            isEditOn: !this.state.isEditOn
+            isEditOn: true,
+            isHidden: false
         })
         // axios.put(`plants/${this.state.plantById.id}`,
         //     {},{ headers: { 'Content-Type': 'application/json' }})
@@ -52,6 +53,14 @@ class PlantPage extends React.Component {
         //     .catch(error => {
         //         console.log(error)
         //     })
+    }
+
+    handleCancelButton = () => {
+        this.setState(
+            {
+                isEditOn: false
+            }
+        )
     }
 
     handleDeleteButton = () => {
@@ -66,21 +75,6 @@ class PlantPage extends React.Component {
                 console.log(error)
             })
     }
-
-    // formatIntervalString = (string) => {
-    //     return string.replace(/([a-zA-Z])(?=[A-Z])/g, '$1 ').toLowerCase();
-    // }
-
-    // handleInput = (event) => {
-    //     this.setState({
-    //             plantById: {
-    //                 ...this.state.plantById,
-    //                 [event.target.name]: event.target.value
-    //             }
-    //         }
-    //     );
-    //     console.log(this.state.plantById)
-    // }
 
     render(){
         const { redirectToHome, redirectToUpdateForm } = this.state;
@@ -99,15 +93,13 @@ class PlantPage extends React.Component {
                     <PlantButtons plantId={this.state.plantById.id}
                                   fullDescriptionView={true}
                                   plantProcessTriggered={this.fetchPlant}/>
-                    <PlantFullDescription plant={this.state.plantById} isEditOn={this.state.isEditOn} />
-                    <div>
-                        <button className="editButton" onClick={this.handleEditButton}>
-                            <img src="/icons/edit-icon.png" alt=""/>
-                        </button>
-                        <button className="deleteButton" onClick={this.handleDeleteButton}>
-                            <img src="/icons/trash.png" alt=""/>
-                        </button>
-                    </div>
+                    <PlantFullDescription
+                        plant={this.state.plantById}
+                        isEditOn={this.state.isEditOn}
+                        handleEditButton={this.handleEditButton}
+                        handleDeleteButton={this.handleDeleteButton}
+                        handleCancelButton={this.handleCancelButton}
+                    />
                     <GoHomeButton/>
                 </div>
             )

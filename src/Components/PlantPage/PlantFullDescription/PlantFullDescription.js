@@ -284,6 +284,29 @@ class PlantFullDescription extends React.Component{
                         </div>
                     </div>
                 </div>
+                <div>
+                    {
+                        this.props.isEditOn
+                        ?
+                        <div className="buttonsContainer">
+                            <button className="saveButton">
+                                <img src="/icons/floppy-disk.png" alt=""/>
+                            </button>
+                            <button className="cancelButton" onClick={this.props.handleCancelButton}>
+                                <img src="/icons/cancel.png" alt=""/>
+                            </button>
+                        </div>
+                        :
+                        <div className="buttonsContainer">
+                            <button className="editButton" onClick={this.props.handleEditButton}>
+                            <img src="/icons/edit-icon.png" alt=""/>
+                            </button>
+                            <button className="deleteButton" onClick={this.props.handleDeleteButton}>
+                            <img src="/icons/trash.png" alt=""/>
+                            </button>
+                        </div>
+                    }
+                </div>
             </div>
             )
     }
