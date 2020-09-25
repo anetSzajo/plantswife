@@ -22,3 +22,30 @@
 .buttonsContainer{
   margin: 1rem 4px;
 }
+
+.cancelButton,
+.saveButton,
+.deleteButton,
+.editButton {
+  position: absolute;
+  bottom: 2%;
+  opacity: 0.6;
+  border: none;
+  background-color: transparent;
+  padding: 1px 8px;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.cancelButton,
+.deleteButton{
+  right: 2%;
+}
+
+.editButton,
+.saveButton{
+  right: 12%;
+}

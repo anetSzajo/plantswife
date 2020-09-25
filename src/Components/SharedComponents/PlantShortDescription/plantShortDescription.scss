@@ -37,6 +37,8 @@
 
     input,
     select,
+    textarea,
+    textarea:focus,
     select:focus,
     input:focus{
       height: 14px;
@@ -51,6 +53,12 @@
       -moz-box-sizing:content-box;
       -webkit-box-sizing:content-box;
       box-sizing:content-box;
+    }
+    textarea{
+      min-width: 7rem;
+      max-width: 232px;
+      min-height: 49px;
+      max-height: fit-content;
     }
   }
 

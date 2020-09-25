@@ -4,13 +4,11 @@ import { Redirect } from 'react-router-dom';
 
 import PlantButtons from "../SharedComponents/PlantButtons/PlantButtons";
 import PlantPhoto from "../SharedComponents/PlantPhoto/PlantPhoto";
-import PlantShortDescription from "../SharedComponents/PlantShortDescription/PlantShortDescription";
 import AddNewPlantPhoto from "./AddNewPlantPhoto/AddNewPlantPhoto";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
+import PlantFullDescription from "./PlantFullDescription/PlantFullDescription";
 import '../SharedComponents/PlantShortDescription/plantShortDescription.scss';
 import './plantPage.scss';
-import {defaultDateFormat} from "../NewPlantPage/NewPlantPage";
-import PlantFullDescription from "./PlantFullDescription/PlantFullDescription";
 
 
 const moment = require('moment');
@@ -42,17 +40,22 @@ class PlantPage extends React.Component {
     }
 
     handleEditButton = () => {
-        // const plantId = this.state.plantById.id;
         this.setState({
-            isEditOn: true,
-            isHidden: false
+            isEditOn: true
         })
-        // axios.put(`plants/${this.state.plantById.id}`,
-        //     {},{ headers: { 'Content-Type': 'application/json' }})
-        //     .then(res => this.fetchPlant())
-        //     .catch(error => {
-        //         console.log(error)
-        //     })
+    }
+
+    submitUpdatedPlantForm = (plant) => {
+
+        axios.put(`plants/${plant.id}`,
+            {...plant},{ headers: { 'Content-Type': 'application/json' }})
+            .then(x => console.log("PUT SENT"))
+            .then(x => this.setState({
+                isEditOn: false
+            }))
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     handleCancelButton = () => {
@@ -99,6 +102,7 @@ class PlantPage extends React.Component {
                         handleEditButton={this.handleEditButton}
                         handleDeleteButton={this.handleDeleteButton}
                         handleCancelButton={this.handleCancelButton}
+                        submitUpdatedPlantForm={this.submitUpdatedPlantForm}
                     />
                     <GoHomeButton/>
                 </div>

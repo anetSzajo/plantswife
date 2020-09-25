@@ -1,13 +1,11 @@
 import React from "react";
-import axios from 'axios';
+
 import {defaultDateFormat} from "../../NewPlantPage/NewPlantPage";
-
-import '../../SharedComponents/PlantShortDescription/plantShortDescription.scss';
-import './plantFullDescription.scss';
-
 import {intervalsMap} from "../../NewPlantPage/CreateNewPlantDto";
 import DatePicker from "react-datepicker";
 import CustomInput from "../../NewPlantPage/CustomInput/CustomInput";
+import '../../SharedComponents/PlantShortDescription/plantShortDescription.scss';
+import './plantFullDescription.scss';
 
 const moment = require('moment');
 
@@ -78,17 +76,6 @@ class PlantFullDescription extends React.Component{
             }
         )
     }
-
-    // handleSubmit = (event) => {
-    //     // const plantId = this.state.plant.id;
-    //
-    //     axios.put(`plants/${this.state.plant.id}`,
-    //         {...plant},{ headers: { 'Content-Type': 'application/json' }})
-    //         .then(res => this.fetchPlant())
-    //         .catch(error => {
-    //             console.log(error)
-    //         })
-    // }
 
     render(){
         const {plant} = this.state;
@@ -277,7 +264,7 @@ class PlantFullDescription extends React.Component{
                         <div className="column">
                         { this.props.isEditOn
                             ?
-                            <input className="column" type="text" name="notes" value={plant.notes} onChange={this.handleInput}/>
+                            <textarea className="notesInput" name="notes" value={plant.notes} onChange={this.handleInput}/>
                             :
                             <div>{plant.notes}</div>
                         }
@@ -289,7 +276,7 @@ class PlantFullDescription extends React.Component{
                         this.props.isEditOn
                         ?
                         <div className="buttonsContainer">
-                            <button className="saveButton">
+                            <button className="saveButton" onClick={() => this.props.submitUpdatedPlantForm(this.state.plant)}>
                                 <img src="/icons/floppy-disk.png" alt=""/>
                             </button>
                             <button className="cancelButton" onClick={this.props.handleCancelButton}>
