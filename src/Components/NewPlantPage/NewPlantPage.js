@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import DatePicker from "react-datepicker";
+import {Redirect} from "react-router-dom";
 import CreateNewPlantDto, { intervalsMap } from './CreateNewPlantDto';
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -9,14 +10,14 @@ import CustomInput from "./CustomInput/CustomInput";
 import './newPlantPage.scss';
 
 const moment = require('moment');
-
-export const defaultDateFormat = "L, LT (dddd)";
+export const defaultDateFormat = "LLL";
 
 class NewPlantPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             plant: props.plant ? props.plant : this.defaultEmptyPlant(),
+            redirectToHome: false
         };
     }
 
@@ -36,6 +37,8 @@ class NewPlantPage extends React.Component {
     })
 
     handleDateChange = (date, name) => {
+        date = moment(date).format();
+
         this.setState({
             plant: {
                 ...this.state.plant,
@@ -58,7 +61,7 @@ class NewPlantPage extends React.Component {
     calculateNextAction = (previousAction, interval) => {
         let nextAction;
 
-        nextAction = moment(previousAction).add(interval[0], interval[1]).format(defaultDateFormat);
+        nextAction = moment(previousAction).add(interval[0], interval[1]).format();
 
         return nextAction;
     }
@@ -104,6 +107,11 @@ class NewPlantPage extends React.Component {
                 console.log(res);
                 console.log(plant);
             })
+            .then(res => this.setState(
+                {
+                    redirectToHome: true
+                }
+            ))
             .catch(error => {
                 console.log(error)
             })
@@ -112,6 +120,11 @@ class NewPlantPage extends React.Component {
 
     render() {
         const {plant} = this.state;
+        const { redirectToHome } = this.state;
+
+        if (redirectToHome) {
+            return <Redirect to="/" />
+        }
 
         return (
             <div className="newPlantFormPage">
@@ -130,15 +143,15 @@ class NewPlantPage extends React.Component {
                             <option value="onceAMonth">Once a month</option>
                         </select>
                         <label>Last watering:</label>
-                        <DatePicker selected={this.state.plant.lastWatering}
+                        <DatePicker selected={Date.parse(this.state.plant.lastWatering)}
                                     onChange={(date) => this.handleDateChange(date, "lastWatering")}
                                     name="lastWatering"
                                     placeholderText="Select date and time"
                                     maxDate={new Date()}
-                                    dateFormat={defaultDateFormat}
+                                    dateFormat="MM/dd/yyyy HH:mm"
                                     showTimeSelect
                                     popperPlacement="bottom"
-                                    customInput={<CustomInput />}
+                                    customInput={<CustomInput calendarIcon="true"  />}
                             />
                         <label>NextWatering:</label>
                         <p>{this.state.plant.nextWatering}</p>
@@ -152,15 +165,15 @@ class NewPlantPage extends React.Component {
                             <option value="onceAMonth">Once a month</option>
                         </select>
                         <label>Last spraing:</label>
-                        <DatePicker selected={this.state.plant.lastSpraing}
+                        <DatePicker selected={Date.parse(this.state.plant.lastSpraing)}
                                     onChange={(date) => this.handleDateChange(date, "lastSpraing")}
                                     name="lastSpraing"
                                     placeholderText="Select date and time"
                                     maxDate={new Date()}
-                                    dateFormat={defaultDateFormat}
+                                    dateFormat="MM/dd/yyyy HH:mm"
                                     showTimeSelect
                                     popperPlacement="bottom"
-                                    customInput={<CustomInput />}
+                                    customInput={<CustomInput calendarIcon="true" />}
                             />
                         <label>Next spraing::</label>
                         <p>{this.state.plant.nextSpraing}</p>
@@ -174,15 +187,15 @@ class NewPlantPage extends React.Component {
                             <option value="onceAMonth">Once a month</option>
                         </select>
                         <label>Last feeding:</label>
-                         <DatePicker selected={this.state.plant.lastFeeding}
+                         <DatePicker selected={Date.parse(this.state.plant.lastFeeding)}
                                      onChange={(date) => this.handleDateChange(date, "lastFeeding")}
                                      name="lastFeeding"
                                      placeholderText="Select date and time"
                                      maxDate={new Date()}
-                                     dateFormat={defaultDateFormat}
+                                     dateFormat="MM/dd/yyyy HH:mm"
                                      showTimeSelect
                                      popperPlacement="bottom"
-                                     customInput={<CustomInput />}
+                                     customInput={<CustomInput calendarIcon="true" />}
                                  />
                         <label>Next feeding:</label>
                         <p>{this.state.plant.nextFeeding}</p>

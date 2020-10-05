@@ -8,7 +8,7 @@ function PlantShortDescription({ plant }){
     return(
             <div className="plantDescription">
                 <div className="row">
-                    <div  className="column first">Id:</div>
+                    <div className="column first">Id:</div>
                     <div className="column">{plant.id}</div>
                 </div>
                 <div className="row">

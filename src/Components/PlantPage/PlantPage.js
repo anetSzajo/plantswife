@@ -4,20 +4,19 @@ import { Redirect } from 'react-router-dom';
 
 import PlantButtons from "../SharedComponents/PlantButtons/PlantButtons";
 import PlantPhoto from "../SharedComponents/PlantPhoto/PlantPhoto";
-import PlantShortDescription from "../SharedComponents/PlantShortDescription/PlantShortDescription";
 import AddNewPlantPhoto from "./AddNewPlantPhoto/AddNewPlantPhoto";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
+import PlantFullDescription from "./PlantFullDescription/PlantFullDescription";
 import '../SharedComponents/PlantShortDescription/plantShortDescription.scss';
 import './plantPage.scss';
-import {defaultDateFormat} from "../NewPlantPage/NewPlantPage";
 
-const moment = require('moment');
 
 class PlantPage extends React.Component {
     state = {
         plantById: {},
         loaded: false,
-        redirect: false
+        redirectToHome: false,
+        isEditOn: false
     }
 
     fetchPlant = () => {
@@ -38,14 +37,30 @@ class PlantPage extends React.Component {
     }
 
     handleEditButton = () => {
-        // const plantId = this.state.plantById.id;
+        this.setState({
+            isEditOn: true
+        })
+    }
 
-        axios.put(`plants/${this.state.plantById.id}`,
-            {},{ headers: { 'Content-Type': 'application/json' }})
-            .then(res => this.fetchPlant())
+    submitUpdatedPlantForm = (plant) => {
+
+        axios.put(`plants/${plant.id}`,
+            {...plant},{ headers: { 'Content-Type': 'application/json' }})
+            .then(x => this.setState({
+                isEditOn: false
+            }))
+            .then(() => this.fetchPlant())
             .catch(error => {
                 console.log(error)
             })
+    }
+
+    handleCancelButton = () => {
+        this.setState(
+            {
+                isEditOn: false
+            }
+        )
     }
 
     handleDeleteButton = () => {
@@ -53,7 +68,7 @@ class PlantPage extends React.Component {
             .then(x => console.log("Plant deleted"))
             .then(res => this.setState(
                 {
-                    redirect: true
+                    redirectToHome: true
                 }
             ))
             .catch(error => {
@@ -61,14 +76,10 @@ class PlantPage extends React.Component {
             })
     }
 
-    formatIntervalString = (string) => {
-        return string.replace(/([a-zA-Z])(?=[A-Z])/g, '$1 ').toLowerCase();
-    }
-
     render(){
-        const { redirect } = this.state;
+        const { redirectToHome } = this.state;
 
-        if (redirect) {
+        if (redirectToHome) {
             return <Redirect to="/" />
         }
 
@@ -79,64 +90,15 @@ class PlantPage extends React.Component {
                     <AddNewPlantPhoto/>
                     <PlantButtons plantId={this.state.plantById.id}
                                   fullDescriptionView={true}
-                                  plantProcessTriggered={this.fetchPlant}/>
-                    <div className="plantFullDescription">
-                        <PlantShortDescription plant={this.state.plantById}/>
-                        <div className="plantDescription">
-                            <div className="row">
-                                <div  className="column first">Watering interval:</div>
-                                <div className="column">
-                                    {this.formatIntervalString(this.state.plantById.watering.interval)}
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div  className="column first">
-                                    Last watering:
-                                </div>
-                                <div className="column">
-                                    {moment(this.state.plantById.watering.lastTimeProcessed).format(defaultDateFormat)}
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div  className="column first">Spraing interval:</div>
-                                <div className="column">
-                                    {this.formatIntervalString(this.state.plantById.spraing.interval)}
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div  className="column first">Last spraing:</div>
-                                <div className="column">{
-                                    moment(this.state.plantById.spraing.lastTimeProcessed).format(defaultDateFormat)}
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div  className="column first">Feeding interval:</div>
-                                <div className="column">
-                                    {this.formatIntervalString(this.state.plantById.feeding.interval)}
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div  className="column first">Last feeding:</div>
-                                <div className="column">
-                                    {moment(this.state.plantById.feeding.lastTimeProcessed).format(defaultDateFormat)}
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div  className="column first">Notes:</div>
-                                <div className="column">
-                                    {this.state.plantById.notes}
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <button className="editButton" onClick={this.handleEditButton}>
-                                <img src="/icons/edit-icon.png" alt=""/>
-                            </button>
-                            <button className="deleteButton" onClick={this.handleDeleteButton}>
-                                <img src="/icons/trash.png" alt=""/>
-                            </button>
-                        </div>
-                    </div>
+                                  plantProcessTriggered={() => this.fetchPlant() }/>
+                    <PlantFullDescription
+                        plant={this.state.plantById}
+                        isEditOn={this.state.isEditOn}
+                        handleEditButton={this.handleEditButton}
+                        handleDeleteButton={this.handleDeleteButton}
+                        handleCancelButton={this.handleCancelButton}
+                        submitUpdatedPlantForm={this.submitUpdatedPlantForm}
+                    />
                     <GoHomeButton/>
                 </div>
             )

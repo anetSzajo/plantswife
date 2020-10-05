@@ -6,33 +6,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.plantFullDescription{
-  background-color: $main-color;
-  border-radius: 2* $default-border-radius;
-  margin: 1.5rem auto;
-  padding: 1.5rem;
-  position: relative;
-  width: 70%;
-}
-.deleteButton,
-.editButton{
-  position: absolute;
-  opacity: 0.6;
-  border: none;
-  background-color: transparent;
-  img{
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-}
-
-.deleteButton{
-  bottom: 1%;
-  right: 1%;
-}
-
-.editButton{
-  bottom: 1%;
-  right: 9%;
-}

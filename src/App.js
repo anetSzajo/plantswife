@@ -16,6 +16,7 @@ import SignUp from "./Components/Auth/SignUp/SignUp";
 import {AuthContext} from "./Context/auth";
 import PrivateRoute from "./Components/Auth/PrivateRoute/PrivateRoute";
 
+
 function App(props) {
 
     const existingTokens = JSON.parse(localStorage.getItem("tokens"));
