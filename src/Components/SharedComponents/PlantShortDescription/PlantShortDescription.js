@@ -1,6 +1,6 @@
 import React from 'react';
-import { defaultDateFormat } from '../../NewPlantPage/NewPlantPage';
 import './plantShortDescription.scss';
+import {defaultDateFormat} from "../Common";
 
 const moment = require('moment');
 

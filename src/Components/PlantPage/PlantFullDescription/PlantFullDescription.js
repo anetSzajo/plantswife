@@ -1,11 +1,11 @@
 import React from "react";
 
-import {defaultDateFormat} from "../../NewPlantPage/NewPlantPage";
 import {intervalsMap} from "../../NewPlantPage/CreateNewPlantDto";
 import DatePicker from "react-datepicker";
 import CustomInput from "../../NewPlantPage/CustomInput/CustomInput";
 import '../../SharedComponents/PlantShortDescription/plantShortDescription.scss';
 import './plantFullDescription.scss';
+import {defaultDateFormat} from "../../SharedComponents/Common";
 
 const moment = require('moment');
 

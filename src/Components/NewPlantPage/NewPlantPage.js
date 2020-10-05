@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import DatePicker from "react-datepicker";
 import {Redirect} from "react-router-dom";
-import CreateNewPlantDto, { intervalsMap } from './CreateNewPlantDto';
+import CreateNewPlantDto, {intervalsMap} from './CreateNewPlantDto';
 
 import "react-datepicker/dist/react-datepicker.css";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
@@ -10,7 +10,6 @@ import CustomInput from "./CustomInput/CustomInput";
 import './newPlantPage.scss';
 
 const moment = require('moment');
-export const defaultDateFormat = "LLL";
 
 class NewPlantPage extends React.Component {
     constructor(props) {
