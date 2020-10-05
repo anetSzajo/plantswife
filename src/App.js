@@ -15,7 +15,7 @@ import Login from "./Components/Auth/Login/Login";
 import SignUp from "./Components/Auth/SignUp/SignUp";
 import {AuthContext} from "./Context/auth";
 import PrivateRoute from "./Components/Auth/PrivateRoute/PrivateRoute";
-import UpdatePlantPage from "./Components/PlantPage/UpdatePlantPage/UpdatePlantPage";
+
 
 function App(props) {
 
@@ -37,7 +37,6 @@ function App(props) {
                     <Route exact path="/createNewPlant" component={NewPlantPage} />
                     <PrivateRoute exact path="/filterByPlace" component={FindByPlacePage} />
                     <Route exact path="/plantViewPage/:plantid" component={PlantPage} />
-                    <Route exact path="/updateForm" component={UpdatePlantPage}/>
                     <Route exact path="/" component={HomePage}/>
                 </Switch>
             </Router>

@@ -14,26 +14,32 @@ class PlantFullDescription extends React.Component{
         plant: this.props.plant
     }
 
+    componentWillReceiveProps(nextProps) {
+            this.setState({
+                plant: nextProps.plant
+            });
+    }
+
     formatIntervalString = (string) => {
         return string.replace(/([a-zA-Z])(?=[A-Z])/g, '$1 ').toLowerCase();
     }
 
     calculateNextAction = (previousAction, actionInterval) => {
-        let nextAction;
+        let editedColumn;
 
-        nextAction = moment(previousAction).add(actionInterval[0], actionInterval[1]).format(defaultDateFormat);
+        editedColumn = moment(previousAction).add(actionInterval[0], actionInterval[1]).format(defaultDateFormat);
 
-        return nextAction;
+        return editedColumn;
     }
 
     updateAction = (data, processName) => {
-        let nextAction = this.calculateNextAction(this.state.plant[processName].lastTimeProcessed, intervalsMap.get(this.state.plant[processName].interval));
+        let editedColumn = this.calculateNextAction(this.state.plant[processName].lastTimeProcessed, intervalsMap.get(this.state.plant[processName].interval));
         this.setState({
             plant: {
                 ...this.state.plant,
                 [processName]: {
                     ...this.state.plant[processName],
-                    nextTimeProcessed: nextAction
+                    nextTimeProcessed: editedColumn
                 }
             }
         })
@@ -85,7 +91,7 @@ class PlantFullDescription extends React.Component{
                 <div className="plantDescription">
                     <div className="row">
                         <div className="column first">Id:</div>
-                        <div className="column">{plant.id}</div>
+                        <div className={this.props.isEditOn ? "editedColumn" : "column"}>{plant.id}</div>
                     </div>
                     <div className="row">
                         <div className="column first">Name:</div>
@@ -100,17 +106,21 @@ class PlantFullDescription extends React.Component{
                     </div>
                     <div className="row">
                         <div className="column first">Next watering:</div>
-                        <div className="column">
+                        <div className={this.props.isEditOn ? "editedColumn" : "column"}>
                             {moment(plant.watering.nextTimeProcessed).format(defaultDateFormat)}
                         </div>
                     </div>
                     <div className="row">
                         <div className="column first">Next spraing:</div>
-                        <div className="column">{moment(plant.spraing.nextTimeProcessed).format(defaultDateFormat)}</div>
+                        <div className={this.props.isEditOn ? "editedColumn" : "column"}>
+                            {moment(plant.spraing.nextTimeProcessed).format(defaultDateFormat)}
+                        </div>
                     </div>
                     <div className="row">
                         <div className="column first">Next feeding:</div>
-                        <div className="column">{moment(plant.feeding.nextTimeProcessed).format(defaultDateFormat)}</div>
+                        <div className={this.props.isEditOn ? "editedColumn" : "column"}>
+                            {moment(plant.feeding.nextTimeProcessed).format(defaultDateFormat)}
+                        </div>
                     </div>
                     <div className="row">
                         <div className="column first">Place:</div>
@@ -126,7 +136,7 @@ class PlantFullDescription extends React.Component{
                                 <option value="balcony">Balcony</option>
                             </select>
                             :
-                            <div>{plant.place}</div>
+                            <div>{this.formatIntervalString(plant.place)}</div>
                         }
                         </div>
                     </div>
@@ -266,7 +276,7 @@ class PlantFullDescription extends React.Component{
                             ?
                             <textarea className="notesInput" name="notes" value={plant.notes} onChange={this.handleInput}/>
                             :
-                            <div>{plant.notes}</div>
+                            <div className="column">{plant.notes}</div>
                         }
                         </div>
                     </div>
