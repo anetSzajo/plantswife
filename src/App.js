@@ -34,10 +34,10 @@ function App(props) {
                 <Switch>
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/signUp" component={SignUp} />
-                    <Route exact path="/createNewPlant" component={NewPlantPage} />
+                    <PrivateRoute exact path="/createNewPlant" component={NewPlantPage} />
                     <PrivateRoute exact path="/filterByPlace" component={FindByPlacePage} />
-                    <Route exact path="/plantViewPage/:plantid" component={PlantPage} />
-                    <Route exact path="/" component={HomePage}/>
+                    <PrivateRoute exact path="/plantViewPage/:plantid" component={PlantPage} />
+                    <PrivateRoute exact path="/" component={HomePage}/>
                 </Switch>
             </Router>
         </AuthContext.Provider>

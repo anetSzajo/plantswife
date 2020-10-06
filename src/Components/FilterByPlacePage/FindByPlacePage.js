@@ -1,7 +1,10 @@
 import React from 'react';
+import { Route } from "react-router-dom";
+
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
-import './findByPlacePage.scss';
+import PlantsList from '../PlantListPage/PlantsList/PlantsList';
 import PlaceTile from "./PlaceTile/PlaceTile";
+import './findByPlacePage.scss';
 
 class FindByPlacePage extends React.Component{
     componentDidMount(){
@@ -12,24 +15,23 @@ class FindByPlacePage extends React.Component{
         document.body.style.backgroundColor = null;
     }
 
-    // <Route
-    //     path='/pathName'
-    //     render = { (props) => (
-    //         <Component {...props} propsName={propsValue} />
-    //     )}
-    // />
-
     render(){
         return(
+            // <Route
+            //     path='/'
+            //     render = { (props) => (
+            //         <PlantsList {...props} plants={filteredPlants} />
+            //     )}
+            // />
         <div className="findByPlacePage">
             <h1>Choose a place to see all the plants living there...</h1>
             <div className="placeTiles--list">
-                <PlaceTile img="/icons/armchair.png" name="Living Room" />
-                <PlaceTile img="/icons/bed.png" name="Bedroom" />
-                <PlaceTile img="/icons/dinner.png" name="Dining Room" />
-                <PlaceTile img="/icons/kitchen.png" name="Kitchen" />
-                <PlaceTile img="/icons/balcony.png" name="Balcony" />
-                <PlaceTile img="/icons/hall.png" name="Hall" />
+                <PlaceTile img="/icons/armchair.png" name="Living Room" filteredPlace="livingRoom"/>
+                <PlaceTile img="/icons/bed.png" name="Bedroom" filteredPlace="bedroom"/>
+                <PlaceTile img="/icons/dinner.png" name="Dining Room" filteredPlace="diningRoom"/>
+                <PlaceTile img="/icons/kitchen.png" name="Kitchen" filteredPlace="kitchen"/>
+                <PlaceTile img="/icons/balcony.png" name="Balcony" filteredPlace="balcony"/>
+                <PlaceTile img="/icons/hall.png" name="Hall" filteredPlace="hall"/>
             </div>
             <GoHomeButton />
         </div>

@@ -10,23 +10,22 @@ function Login(props){
 
     const [isLoggedIn, setLoggedIn] = useState(false);
     const [isError, setIsError] = useState(false);
-    const [userName, setUserName] = useState("");
-    const [userEmail, setUserEmail] = useState("");
-    const [userPassword, setPassword] = useState("");
+
     const { setAuthTokens } = useAuth();
 
-    // const referer = props.location.state.referer || '/';
+    // const referer = `${props.location.state.referer}` || '/';
+
     ///redirect to previously entered page or a home page
 
-    function postLogin() {
-        axios.post("", {
-            userName,
-            userEmail,
-            userPassword
+    function postLogin(userEmail, userPassword) {
+        axios.post(`${process.env.REACT_APP_AXIOS_URL}/auth/login`, {
+            "email": userEmail,
+            "password": userPassword
         }).then(result => {
-            if (result.status === 200) {
+            if (result.status === 201) {
                 setAuthTokens(result.data);
                 setLoggedIn(true);
+                console.log(result.data)
             } else {
                 setIsError(true);
             }
@@ -35,9 +34,9 @@ function Login(props){
         });
     }
 
-        // if (isLoggedIn) {
-        //     return <Redirect to={ referer } />;
-        // }
+        if (isLoggedIn) {
+            return <Redirect to="/"  />;
+        }
 
        return(
            <div>

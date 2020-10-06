@@ -5,7 +5,7 @@ import './findByPlaceButton.scss';
 
 function FindByPlaceButton() {
     return(
-        <button className="filterByPlace--button"><Link to={"/filterByPlace"}>FIND BY PLACE</Link></button>
+        <button className="filterByPlace--button"><Link to="/filterByPlace">FIND BY PLACE</Link></button>
     )
 }
 

@@ -4,17 +4,15 @@ import {Link} from "react-router-dom";
 
 import AppLogo from "../../../SharedComponents/AppLogo/AppLogo";
 import '../authForm.scss';
-import {useAuth} from "../../../../Context/auth";
 
 function SignUpForm(props) {
 
-    const [isLoggedIn, setLoggedIn] = useState(false);
-    const [isError, setIsError] = useState(false);
     const [userName, setUserName] = useState("");
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setPassword] = useState("");
-    const { setAuthTokens } = useAuth();
-    const { register, getValues, errors, handleSubmit} = useForm();
+
+    const { register, getValues, errors, handleSubmit } = useForm();
+
 
     return(
         <div className="authFormPage" style={{backgroundImage: `url(/plantsPhotos/homeJungle.jpg)`}}>
@@ -23,7 +21,7 @@ function SignUpForm(props) {
                 <div className="logoImgContainer">
                     <img alt="" src="/icons/user.png" />
                 </div>
-                <form>
+                <form onSubmit={handleSubmit(() => props.onSubmit(userName, userEmail, userPassword))}>
                     <input
                         name="name"
                         type="text"
@@ -106,7 +104,7 @@ function SignUpForm(props) {
                     />
                     {errors.repeatPassword && <p>{ errors.repeatPassword.message }</p> }
 
-                    <button onClick={handleSubmit(props.onSubmit)} type="submit">Sign Up</button>
+                    <button type="submit">Sign Up</button>
                 </form>
                 <Link to="/login">Already have an account?</Link>
             </div>

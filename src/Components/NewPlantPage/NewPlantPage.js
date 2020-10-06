@@ -8,6 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 import CustomInput from "./CustomInput/CustomInput";
 import './newPlantPage.scss';
+import {AuthContext} from "../../Context/auth";
 
 const moment = require('moment');
 
@@ -19,6 +20,8 @@ class NewPlantPage extends React.Component {
             redirectToHome: false
         };
     }
+
+    static contextType = AuthContext;
 
     defaultEmptyPlant = () => ({
         name: '',
@@ -101,7 +104,12 @@ class NewPlantPage extends React.Component {
         const plant = CreateNewPlantDto.fromNewPlantForm(this.state.plant);
 
         axios.post(`${process.env.REACT_APP_AXIOS_URL}/plants`,
-            {...plant},{ headers: { 'Content-Type': 'application/json' }})
+            {...plant},{
+            headers:
+                {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${this.context.authTokens.access_token}`
+            }})
             .then(res => {
                 console.log(res);
                 console.log(plant);

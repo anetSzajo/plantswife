@@ -4,18 +4,14 @@ import {Link} from "react-router-dom";
 
 import AppLogo from "../../../SharedComponents/AppLogo/AppLogo";
 import '../authForm.scss';
-import {useAuth} from "../../../../Context/auth";
 
 function LoginForm(props) {
 
-    const [isLoggedIn, setLoggedIn] = useState(false);
     const [isError, setIsError] = useState(false);
-    const [userName, setUserName] = useState("");
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setPassword] = useState("");
-    const { setAuthTokens } = useAuth();
 
-    const { register, getValues, errors, handleSubmit } = useForm();
+    const { register, errors, handleSubmit } = useForm();
 
     return(
         <div className="authFormPage" style={{backgroundImage: `url(/plantsPhotos/homeJungle.jpg)` }}>
@@ -25,7 +21,7 @@ function LoginForm(props) {
                 <div className="logoImgContainer">
                     <img alt="" src="/icons/user.png" />
                 </div>
-                <form>
+                <form onSubmit={handleSubmit(() => props.onSubmit(userEmail, userPassword))}>
                     <input
                         name="email"
                         type="email"
@@ -57,7 +53,6 @@ function LoginForm(props) {
                             register({
                                 required: true,
                                 pattern: /^(?=.*\d).{4,8}$/
-                                // Password must be between 4 and 8 digits long and include at least one numeric digit.
                             })
                         }
                     />
@@ -68,9 +63,10 @@ function LoginForm(props) {
                         <p>Password must be between 4 and 8 digits long and include at least one numeric digit.</p>
                     )}
 
-                    <button type="submit" onClick={handleSubmit(props.onSubmit)}>Login</button>
+                    <button type="submit">Login</button>
                 </form>
                 <Link to="/signUp">Don't have an account?</Link>
+                { isError ? <p>The username or password provided were incorrect!</p> : null}
             </div>
         </div>
     )

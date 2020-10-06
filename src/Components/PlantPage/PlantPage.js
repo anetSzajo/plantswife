@@ -9,6 +9,7 @@ import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 import PlantFullDescription from "./PlantFullDescription/PlantFullDescription";
 import '../SharedComponents/PlantShortDescription/plantShortDescription.scss';
 import './plantPage.scss';
+import {AuthContext} from "../../Context/auth";
 
 
 class PlantPage extends React.Component {
@@ -19,10 +20,18 @@ class PlantPage extends React.Component {
         isEditOn: false
     }
 
+    static contextType = AuthContext;
+
     fetchPlant = () => {
         const plantId = this.props.match.params.plantid;
 
-        axios.get(`plants/${plantId}`)
+        axios.get(`plants/${plantId}`,
+            {
+                headers:
+                    {
+                        Authorization: `Bearer ${this.context.authTokens.access_token}`
+                    }
+            })
             .then(res => this.setState({
                 plantById: res.data,
                 loaded: true
@@ -42,10 +51,18 @@ class PlantPage extends React.Component {
         })
     }
 
+
+
     submitUpdatedPlantForm = (plant) => {
 
         axios.put(`plants/${plant.id}`,
-            {...plant},{ headers: { 'Content-Type': 'application/json' }})
+            {...plant},{
+                headers:
+                    {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${this.context.authTokens.access_token}`
+                    }
+                })
             .then(x => this.setState({
                 isEditOn: false
             }))
@@ -64,7 +81,13 @@ class PlantPage extends React.Component {
     }
 
     handleDeleteButton = () => {
-        axios.delete(`plants/${this.state.plantById.id}`)
+        axios.delete(`plants/${this.state.plantById.id}`,
+            {
+                headers:
+                    {
+                        Authorization: `Bearer ${this.context.authTokens.access_token}`
+                    }
+            })
             .then(x => console.log("Plant deleted"))
             .then(res => this.setState(
                 {
