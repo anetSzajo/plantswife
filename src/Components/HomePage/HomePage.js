@@ -5,15 +5,21 @@ import PlantListPage from "../PlantListPage/PlantListPage";
 import HomePageBackground from "./HomePageBackground/HomePageBackground";
 import FindByPlaceButton from "./FindByPlaceButton/FindByPlaceButton";
 
-function HomePage () {
-    return(
-        <div>
-            <HomePageBackground />
-            <AddNewPlantButton />
-            <FindByPlaceButton />
-            <PlantListPage />
-        </div>
-    )
+class HomePage extends React.Component {
+
+    render() {
+        return (
+            <div>
+                <HomePageBackground/>
+                <AddNewPlantButton/>
+                <FindByPlaceButton/>
+                <PlantListPage
+                    filterByPlace={this.props.location.state?.filterByPlace}
+                    place={this.props.location.state?.place}
+                />
+            </div>
+        )
+    }
 }
 
 export default HomePage;

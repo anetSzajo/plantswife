@@ -1,40 +1,43 @@
 import React from "react";
-import './placeTile.scss';
-import axios from "axios";
-import {AuthContext} from "../../../Context/auth";
+import { Redirect } from "react-router-dom";
 
-class PlaceTile extends React.Component{
+
+import './placeTile.scss';
+
+class PlaceTile extends React.Component {
 
     state = {
-        filteredPlants: []
+        filterByPlace: false
     }
 
-    static contextType = AuthContext;
-
-    handleClick = (filteredPlace) => {
-        axios.get(`plants`,
+    handleClick = () => {
+        this.setState(
             {
-                headers:
-                    {
-                        Authorization: `Bearer ${this.context.authTokens.access_token}`
-                    }
-            })
-            .then(res => this.setState({
-                filteredPlants: res.data.filter(plant => plant.place === filteredPlace)
-            }))
-            .catch(error => {
-                console.log(error)
-            })
+                filterByPlace: true
+            }
+        )
     }
 
-    render(){
-        return (
-            <button className="findByPlaceTile" onClick={() => this.handleClick(this.props.filteredPlace)}>
-                <img src={this.props.img} alt=""/>
-                <p>{this.props.name}</p>
-            </button>
-        )
+    render() {
+        if (this.state.filterByPlace) {
+              return <Redirect to={{
+                  pathname: '/',
+                  state: {
+                      place: this.props.place,
+                      filterByPlace: true
+                  }
+              }} />
+             }
+         else{
+             return (
+                <button className="findByPlaceTile" onClick={this.handleClick}>
+                       <img src={this.props.img} alt=""/>
+                      <p>{this.props.name}</p>
+                  </button>
+            )
+          }
     }
 }
 
 export default PlaceTile;
+
