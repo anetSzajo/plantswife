@@ -3,7 +3,7 @@ import { useAuth } from '../../../Context/auth';
 import './styles.scss';
 
 
-function LogOutButton(){
+function LogoutButton(){
 
     const { setAuthTokens } = useAuth();
 
@@ -12,8 +12,8 @@ function LogOutButton(){
     }
 
     return(
-        <button className="logOut-button" onClick={logOut}>Log out</button>
+        <button className="logoutButton" onClick={logOut}>Logout</button>
     )
 }
 
-export default LogOutButton;
+export default LogoutButton;

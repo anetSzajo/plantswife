@@ -1,6 +1,6 @@
 @import '../../base';
 
-.LogOutButton{
+.logoutButton{
   background-color: $second-color;
   border-radius: $default-border-radius;
   border: none;
@@ -8,7 +8,7 @@
   font-family: $font-family;
   padding: 3px 6px;
   position: fixed;
-  bottom: 28px;
+  top: 3%;
   width: 16%;
   margin: auto;
   //a,

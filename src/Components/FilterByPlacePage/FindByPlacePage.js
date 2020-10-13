@@ -3,9 +3,9 @@ import React from 'react';
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 import PlaceTile from "./PlaceTile/PlaceTile";
 import './findByPlacePage.scss';
-import {Redirect} from "react-router-dom";
 
 class FindByPlacePage extends React.Component{
+
     componentDidMount(){
             document.body.style.backgroundColor = "#F2F2F2";
 
@@ -15,33 +15,7 @@ class FindByPlacePage extends React.Component{
         document.body.style.backgroundColor = null;
     }
 
-
-    // state = {
-    //     filterByPlace: false,
-    //     place: ''
-    // }
-    //
-    //
-    // handleClick = () => {
-    //     this.setState(
-    //         {
-    //             filterByPlace: true,
-    //             place: this.props.place
-    //         }
-    //     )
-    // }
-
-
     render(){
-        // if (this.state.filterByPlace) {
-        //     return <Redirect to={
-        //         {
-        //             pathname: '/',
-        //             state: {place: this.state.place, filterByPlace: true}
-        //         }
-        //     }
-        //     />
-        // } else {
             return(
                 <div className="findByPlacePage">
                     <h1>Choose a place to see all the plants living there...</h1>
@@ -56,8 +30,6 @@ class FindByPlacePage extends React.Component{
                     <GoHomeButton />
                 </div>
             )
-        // }
-
     }
 }
 

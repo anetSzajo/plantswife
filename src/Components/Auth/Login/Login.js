@@ -13,8 +13,7 @@ function Login(props){
 
     const { setAuthTokens } = useAuth();
 
-    // const referer = `${props.location.state.referer}` || '/';
-
+    const referer = props.location.state?.referer || '/';
     ///redirect to previously entered page or a home page
 
     function postLogin(userEmail, userPassword) {
@@ -35,7 +34,7 @@ function Login(props){
     }
 
         if (isLoggedIn) {
-            return <Redirect to="/"  />;
+            return <Redirect to={referer} />;
         }
 
        return(

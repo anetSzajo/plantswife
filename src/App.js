@@ -22,28 +22,28 @@ function App(props) {
     const existingTokens = JSON.parse(localStorage.getItem("tokens"));
     const [authTokens, setAuthTokens] = useState(existingTokens);
 
-     const setTokens = (data) => {
-         localStorage.setItem("tokens", JSON.stringify(data));
-         setAuthTokens(data);
-     }
+    const setTokens = (data) => {
+        data ? localStorage.setItem("tokens", JSON.stringify(data)) : localStorage.clear()
+        setAuthTokens(data);
+    }
 
-  return (
-    <div className="App">
-        <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens } }>
-            <Router>
-                <Switch>
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/signUp" component={SignUp} />
-                    <PrivateRoute exact path="/createNewPlant" component={NewPlantPage} />
-                    <PrivateRoute exact path="/filterByPlace" component={FindByPlacePage} />
-                    <PrivateRoute exact path="/plantViewPage/:plantid" component={PlantPage} />
-                    <PrivateRoute exact path="/" component={HomePage} />
-                </Switch>
-            </Router>
-        </AuthContext.Provider>
-        <Footer />
-    </div>
-  );
+    return (
+        <div className="App">
+            <AuthContext.Provider value={{authTokens, setAuthTokens: setTokens}}>
+                <Router>
+                    <Switch>
+                        <Route exact path="/login" component={Login}/>
+                        <Route exact path="/signUp" component={SignUp}/>
+                        <PrivateRoute exact path="/createNewPlant" component={NewPlantPage}/>
+                        <PrivateRoute exact path="/filterByPlace" component={FindByPlacePage}/>
+                        <PrivateRoute exact path="/plantViewPage/:plantid" component={PlantPage}/>
+                        <PrivateRoute exact path="/" component={HomePage}/>
+                    </Switch>
+                </Router>
+            </AuthContext.Provider>
+            <Footer/>
+        </div>
+    );
 }
 
 export default App;
