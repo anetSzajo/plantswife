@@ -158,7 +158,7 @@ class NewPlantPage extends React.Component {
         return (
             <div className="newPlantFormPage">
 
-                <Snackbar open={open} autoHideDuration={6000} onClose={this.handleClose}>
+                <Snackbar open={open} autoHideDuration={6000} onClose={this.handleClose} anchorOrigin={{vertical: "top", horizontal: "center"}}>
                     <Alert onClose={this.handleClose} severity="warning">
                         Please fill all fields and submit.
                     </Alert>
@@ -167,14 +167,12 @@ class NewPlantPage extends React.Component {
                     <h1>NEW PLANT FORM</h1>
                     <form className="newPlantForm" onSubmit={this.handleSubmit}>
                         <label>Name: </label>
-
                         <input
                             type="text"
                             name="name"
                             value={plant.name}
                             onChange={this.handleInput}
                         />
-
                         <label>Watering interval:</label>
                         <select value={plant.wateringInterval} name="wateringInterval" onChange={this.handleInput} >
                             <option value=''>Choose an option...</option>
@@ -251,7 +249,7 @@ class NewPlantPage extends React.Component {
                             <option value="hall">Hall</option>
                             <option value="balcony">Balcony</option>
                         </select>
-                        <label>Notes:</label>
+                        <label>Notes: </label>
                         <textarea name="notes" value={plant.notes} onChange={this.handleInput} placeholder="Put your notes here..."/>
                         <input type="submit" value="SUBMIT" className="submit-button"/>
                         <GoHomeButton />
