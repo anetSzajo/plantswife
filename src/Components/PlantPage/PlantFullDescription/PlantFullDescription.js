@@ -1,11 +1,12 @@
 import React from "react";
-
-import {intervalsMap} from "../../NewPlantPage/CreateNewPlantDto";
 import DatePicker from "react-datepicker";
+import {intervalsMap} from "../../NewPlantPage/CreateNewPlantDto";
+import {defaultDateFormat} from "../../SharedComponents/Common";
 import CustomInput from "../../NewPlantPage/CustomInput/CustomInput";
+
 import '../../SharedComponents/PlantShortDescription/plantShortDescription.scss';
 import './plantFullDescription.scss';
-import {defaultDateFormat} from "../../SharedComponents/Common";
+
 
 const moment = require('moment');
 
@@ -14,7 +15,7 @@ class PlantFullDescription extends React.Component{
         plant: this.props.plant
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
             this.setState({
                 plant: nextProps.plant
             });
@@ -25,21 +26,21 @@ class PlantFullDescription extends React.Component{
     }
 
     calculateNextAction = (previousAction, actionInterval) => {
-        let editedColumn;
+        let nextAction;
 
-        editedColumn = moment(previousAction).add(actionInterval[0], actionInterval[1]).format(defaultDateFormat);
+        nextAction = moment(previousAction).add(actionInterval[0], actionInterval[1]).format(defaultDateFormat);
 
-        return editedColumn;
+        return nextAction;
     }
 
     updateAction = (data, processName) => {
-        let editedColumn = this.calculateNextAction(this.state.plant[processName].lastTimeProcessed, intervalsMap.get(this.state.plant[processName].interval));
+        let nextAction = this.calculateNextAction(this.state.plant[processName].lastTimeProcessed, intervalsMap.get(this.state.plant[processName].interval));
         this.setState({
             plant: {
                 ...this.state.plant,
                 [processName]: {
                     ...this.state.plant[processName],
-                    nextTimeProcessed: editedColumn
+                    nextTimeProcessed: nextAction
                 }
             }
         })
@@ -166,7 +167,7 @@ class PlantFullDescription extends React.Component{
                         <div  className="column first">
                             Last watering:
                         </div>
-                        <div className="column">
+                        <div className="column dateInputColumn">
                         { this.props.isEditOn
                             ?
                             <DatePicker
@@ -274,7 +275,7 @@ class PlantFullDescription extends React.Component{
                         <div className="column">
                         { this.props.isEditOn
                             ?
-                            <textarea className="notesInput" name="notes" value={plant.notes} onChange={this.handleInput}/>
+                            <textarea name="notes" value={plant.notes} onChange={this.handleInput}/>
                             :
                             <div className="column">{plant.notes}</div>
                         }

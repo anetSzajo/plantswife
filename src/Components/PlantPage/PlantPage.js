@@ -1,16 +1,16 @@
 import React from "react";
 import axios from "axios";
 import { Redirect } from 'react-router-dom';
+import {AuthContext} from "../../Context/auth";
 
 import PlantButtons from "../SharedComponents/PlantButtons/PlantButtons";
 import PlantPhoto from "../SharedComponents/PlantPhoto/PlantPhoto";
 import AddNewPlantPhoto from "./AddNewPlantPhoto/AddNewPlantPhoto";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 import PlantFullDescription from "./PlantFullDescription/PlantFullDescription";
+
 import '../SharedComponents/PlantShortDescription/plantShortDescription.scss';
 import './plantPage.scss';
-import {AuthContext} from "../../Context/auth";
-
 
 class PlantPage extends React.Component {
     state = {
@@ -50,8 +50,6 @@ class PlantPage extends React.Component {
             isEditOn: true
         })
     }
-
-
 
     submitUpdatedPlantForm = (plant) => {
 

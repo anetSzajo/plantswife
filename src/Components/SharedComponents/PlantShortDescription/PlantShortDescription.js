@@ -20,11 +20,11 @@ function PlantShortDescription({ plant }){
                     <div className="column">{moment(plant.watering.nextTimeProcessed).format(defaultDateFormat)}</div>
                 </div>
                 <div className="row">
-                    <div className="column first">Next feeding:</div>
+                    <div className="column first">Next spraing:</div>
                     <div className="column">{moment(plant.spraing.nextTimeProcessed).format(defaultDateFormat)}</div>
                 </div>
                 <div className="row">
-                    <div className="column first">Next spraing:</div>
+                    <div className="column first">Next feeding:</div>
                     <div className="column">{moment(plant.feeding.nextTimeProcessed).format(defaultDateFormat)}</div>
                 </div>
                 <div className="row">

@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import DatePicker from "react-datepicker";
 import {Redirect} from "react-router-dom";
+import {useForm} from 'react-hook-form'
 import CreateNewPlantDto, {intervalsMap} from './CreateNewPlantDto';
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -139,7 +140,14 @@ class NewPlantPage extends React.Component {
                     <h1>NEW PLANT FORM</h1>
                     <form className="newPlantForm" onSubmit={this.handleSubmit}>
                         <label>Name: </label>
-                        <input type="text" name="name" value={plant.name} onChange={this.handleInput}/>
+
+                        <input
+                            type="text"
+                            name="name"
+                            value={plant.name}
+                            onChange={this.handleInput}
+                        />
+
                         <label>Watering interval:</label>
                         <select value={plant.wateringInterval} name="wateringInterval" onChange={this.handleInput} >
                             <option value=''>Choose an option...</option>

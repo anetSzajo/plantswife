@@ -12,7 +12,12 @@ function LogoutButton(){
     }
 
     return(
-        <button className="logoutButton" onClick={logOut}>Logout</button>
+        <div>
+            <button className="logoutButton" onClick={logOut}>
+                <img alt="" src="/../icons/logout.png" />
+            </button>
+
+        </div>
     )
 }
 
