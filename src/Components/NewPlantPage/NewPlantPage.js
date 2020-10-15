@@ -2,8 +2,13 @@ import React from 'react';
 import axios from 'axios';
 import DatePicker from "react-datepicker";
 import {Redirect} from "react-router-dom";
-import {useForm} from 'react-hook-form'
 import CreateNewPlantDto, {intervalsMap} from './CreateNewPlantDto';
+
+import Button from '@material-ui/core/Button';
+import Snackbar from '@material-ui/core/Snackbar';
+// import MuiAlert from '@material-ui/';
+import { makeStyles } from '@material-ui/core/styles';
+import MuiAlert from '@material-ui/lab/Alert';
 
 import "react-datepicker/dist/react-datepicker.css";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
@@ -13,16 +18,30 @@ import {AuthContext} from "../../Context/auth";
 
 const moment = require('moment');
 
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
 class NewPlantPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             plant: props.plant ? props.plant : this.defaultEmptyPlant(),
-            redirectToHome: false
+            redirectToHome: false,
+            open: false
         };
     }
 
     static contextType = AuthContext;
+
+    handleClick = () => this.setState({ open: true })
+
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        this.setState({ open: false })
+    }
 
     defaultEmptyPlant = () => ({
         name: '',
@@ -121,6 +140,7 @@ class NewPlantPage extends React.Component {
                 }
             ))
             .catch(error => {
+                this.handleClick();
                 console.log(error)
             })
     }
@@ -128,6 +148,7 @@ class NewPlantPage extends React.Component {
 
     render() {
         const {plant} = this.state;
+        const {open} = this.state;
         const { redirectToHome } = this.state;
 
         if (redirectToHome) {
@@ -136,6 +157,12 @@ class NewPlantPage extends React.Component {
 
         return (
             <div className="newPlantFormPage">
+
+                <Snackbar open={open} autoHideDuration={6000} onClose={this.handleClose}>
+                    <Alert onClose={this.handleClose} severity="warning">
+                        Please fill all fields and submit.
+                    </Alert>
+                </Snackbar>
                 <div>
                     <h1>NEW PLANT FORM</h1>
                     <form className="newPlantForm" onSubmit={this.handleSubmit}>
