@@ -160,20 +160,20 @@ class NewPlantPage extends React.Component {
 
                 <Snackbar open={open} autoHideDuration={6000} onClose={this.handleClose} anchorOrigin={{vertical: "top", horizontal: "center"}}>
                     <Alert onClose={this.handleClose} severity="warning">
-                        Please fill all fields and submit.
+                        Please fill all fields with * and submit.
                     </Alert>
                 </Snackbar>
                 <div>
                     <h1>NEW PLANT FORM</h1>
                     <form className="newPlantForm" onSubmit={this.handleSubmit}>
-                        <label>Name: </label>
+                        <label className="required-field">Name</label>
                         <input
                             type="text"
                             name="name"
                             value={plant.name}
                             onChange={this.handleInput}
                         />
-                        <label>Watering interval:</label>
+                        <label className="required-field">Watering interval</label>
                         <select value={plant.wateringInterval} name="wateringInterval" onChange={this.handleInput} >
                             <option value=''>Choose an option...</option>
                             <option value="everyday">Everyday</option>
@@ -182,7 +182,7 @@ class NewPlantPage extends React.Component {
                             <option value="threeTimesAWeek">Three times a week</option>
                             <option value="onceAMonth">Once a month</option>
                         </select>
-                        <label>Last watering:</label>
+                        <label className="required-field">Last watering</label>
                         <DatePicker selected={Date.parse(this.state.plant.lastWatering)}
                                     onChange={(date) => this.handleDateChange(date, "lastWatering")}
                                     name="lastWatering"
@@ -193,9 +193,9 @@ class NewPlantPage extends React.Component {
                                     popperPlacement="bottom"
                                     customInput={<CustomInput calendarIcon="true"  />}
                             />
-                        <label>NextWatering:</label>
+                        <label>NextWatering</label>
                         <p>{this.state.plant.nextWatering}</p>
-                        <label>Spraing interval:</label>
+                        <label className="required-field">Spraing interval</label>
                         <select value={plant.spraingInterval} name="spraingInterval" onChange={this.handleInput}>
                             <option value=''>Choose an option...</option>
                             <option value="everyday">Everyday</option>
@@ -204,7 +204,7 @@ class NewPlantPage extends React.Component {
                             <option value="threeTimesAWeek">Three times a week</option>
                             <option value="onceAMonth">Once a month</option>
                         </select>
-                        <label>Last spraing:</label>
+                        <label className="required-field">Last spraing</label>
                         <DatePicker selected={Date.parse(this.state.plant.lastSpraing)}
                                     onChange={(date) => this.handleDateChange(date, "lastSpraing")}
                                     name="lastSpraing"
@@ -215,9 +215,9 @@ class NewPlantPage extends React.Component {
                                     popperPlacement="bottom"
                                     customInput={<CustomInput calendarIcon="true" />}
                             />
-                        <label>Next spraing::</label>
+                        <label>Next spraing</label>
                         <p>{this.state.plant.nextSpraing}</p>
-                        <label>Feeding interval:</label>
+                        <label className="required-field">Feeding interval</label>
                         <select value={plant.feedingInterval} name="feedingInterval" onChange={this.handleInput}>
                             <option value=''>Choose an option...</option>
                             <option value="everyday">Everyday</option>
@@ -226,7 +226,7 @@ class NewPlantPage extends React.Component {
                             <option value="threeTimesAWeek">Three times a week</option>
                             <option value="onceAMonth">Once a month</option>
                         </select>
-                        <label>Last feeding:</label>
+                        <label className="required-field">Last feeding</label>
                          <DatePicker selected={Date.parse(this.state.plant.lastFeeding)}
                                      onChange={(date) => this.handleDateChange(date, "lastFeeding")}
                                      name="lastFeeding"
@@ -237,9 +237,9 @@ class NewPlantPage extends React.Component {
                                      popperPlacement="bottom"
                                      customInput={<CustomInput calendarIcon="true" />}
                                  />
-                        <label>Next feeding:</label>
+                        <label>Next feeding</label>
                         <p>{this.state.plant.nextFeeding}</p>
-                        <label>Place:</label>
+                        <label>Place</label>
                         <select value={plant.place} name="place" onChange={this.handleInput}>
                             <option value=''>Choose a place..</option>
                             <option value="livingRoom">Living room</option>
@@ -249,7 +249,7 @@ class NewPlantPage extends React.Component {
                             <option value="hall">Hall</option>
                             <option value="balcony">Balcony</option>
                         </select>
-                        <label>Notes: </label>
+                        <label>Notes</label>
                         <textarea name="notes" value={plant.notes} onChange={this.handleInput} placeholder="Put your notes here..."/>
                         <input type="submit" value="SUBMIT" className="submit-button"/>
                         <GoHomeButton />
