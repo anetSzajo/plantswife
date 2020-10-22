@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/plantswife/precache-manifest.e12e1b95668971228824f9b1f8d126fd.js"
+  "/plantswife/precache-manifest.62e0cbdedd997b5c7f9412289a566640.js"
 );
 
 self.addEventListener('message', (event) => {
