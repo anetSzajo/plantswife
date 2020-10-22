@@ -7,6 +7,10 @@ body{
   height: 100vh;
 }
 
+.plantsList{
+  margin-bottom: 4rem;
+}
+
 .plantListElement{
   display: flex;
   justify-content: space-around;
@@ -17,4 +21,9 @@ body{
   position: relative;
 }
 
-
+@media(min-width: 40rem){
+  .plantListElement{
+    width: 37%;
+    align-items: inherit;
+  }
+}

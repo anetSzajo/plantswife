@@ -15,7 +15,7 @@ function SignUpForm(props) {
 
 
     return(
-        <div className="authFormPage" style={{backgroundImage: `url(/plantsPhotos/homeJungle.jpg)`}}>
+        <div className="authFormPage" style={{backgroundImage: `url(/plantsPhotos/homeJungle2.jpg)`}}>
             <AppLogo />
             <div className="card">
                 <div className="logoImgContainer">

@@ -14,3 +14,10 @@
     color: black;
   }
 }
+
+@media(min-width: 40rem){
+  .addNewPlantButton{
+    width: 30%;
+    margin: 1rem 13rem;
+  }
+}

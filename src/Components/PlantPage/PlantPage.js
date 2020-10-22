@@ -107,8 +107,7 @@ class PlantPage extends React.Component {
         if (this.state.loaded) {
             return (
                 <div className="plantViewPageBody">
-                    <PlantPhoto fullDescriptionView={true}/>
-                    <AddNewPlantPhoto/>
+                    <PlantPhoto fullDescriptionView={true} allowAddNewPlantPhoto={true} />
                     <PlantButtons plantId={this.state.plantById.id}
                                   fullDescriptionView={true}
                                   plantProcessTriggered={() => this.fetchPlant() }/>

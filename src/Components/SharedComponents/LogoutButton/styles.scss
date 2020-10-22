@@ -19,3 +19,14 @@
     padding: 3px;
   }
 }
+
+@media(min-width: 40rem){
+  .logoutButton{
+    width: 3%;
+    right: 32%;
+  }
+  .logoutButton img{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

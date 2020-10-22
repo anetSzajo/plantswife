@@ -3,29 +3,12 @@
   border: none;
   background-color: transparent;
   position: absolute;
-  top: 127px;
-  left: 80px;
+  //top: 127px;
+  //left: 80px;
+  bottom: 2%;
+  left: 1%;
   img{
     width: 1.5rem;
     height: 1.5rem;
-  }
-}
-
-//@media(min-width: 370px) {
-//  .addNewPlantPhotoButton {
-//    top:126px;
-//    left: 106px;
-//  }
-//}
-@media(min-width: 360px) {
-  .addNewPlantPhotoButton {
-    top:126px;
-    left: 106px;
-  }
-}
-
-@media(min-width: 376px) {
-  .addNewPlantPhotoButton {
-    left: 128px;
   }
 }

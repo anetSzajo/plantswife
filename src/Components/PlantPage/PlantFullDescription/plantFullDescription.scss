@@ -49,3 +49,10 @@
 .saveButton{
   right: 12%;
 }
+
+@media(min-width: 40rem){
+  .plantFullDescription{
+    width: 27%;
+    margin-bottom: 2rem;
+  }
+}

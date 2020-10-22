@@ -1,16 +1,20 @@
 @import '../../base';
 
 .AppLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: $font-family;
   font-size: 13px;
   color: white;
   background-color: $second-color;
-  position: absolute;
-  top: 19px;
-  left: 35%;
+  //position: absolute;
+  //top: 5%;
+  //left: 35%;
   width: 6rem;
   height: 6rem;
-  margin: auto;
+  margin: 0 auto 1rem auto;
   display: flex;
   border-radius: 62px;
   opacity: 0.8;
@@ -25,3 +29,11 @@
   }
 }
 
+@media(min-width: 15rem){
+  .AppLogo{
+    left: 41%;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 80px;
+  }
+}

@@ -119,3 +119,10 @@ div .react-datepicker{
   color: black !important;
   border-radius: $default-border-radius !important;
 }
+
+
+@media(min-width:40rem){
+  .newPlantForm{
+    width: 37vw;
+  }
+}
