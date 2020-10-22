@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/plantswife/login/static/css/main.22e7f554.chunk.css",
-    "main.js": "/plantswife/login/static/js/main.520c3d5d.chunk.js",
-    "main.js.map": "/plantswife/login/static/js/main.520c3d5d.chunk.js.map",
-    "runtime-main.js": "/plantswife/login/static/js/runtime-main.7f8bb6ef.js",
-    "runtime-main.js.map": "/plantswife/login/static/js/runtime-main.7f8bb6ef.js.map",
-    "static/css/2.e6ac38db.chunk.css": "/plantswife/login/static/css/2.e6ac38db.chunk.css",
-    "static/js/2.50f84346.chunk.js": "/plantswife/login/static/js/2.50f84346.chunk.js",
-    "static/js/2.50f84346.chunk.js.map": "/plantswife/login/static/js/2.50f84346.chunk.js.map",
-    "index.html": "/plantswife/login/index.html",
-    "precache-manifest.5c080329f4f3384894c7c7cc916e75d2.js": "/plantswife/login/precache-manifest.5c080329f4f3384894c7c7cc916e75d2.js",
-    "service-worker.js": "/plantswife/login/service-worker.js",
-    "static/css/2.e6ac38db.chunk.css.map": "/plantswife/login/static/css/2.e6ac38db.chunk.css.map",
-    "static/css/main.22e7f554.chunk.css.map": "/plantswife/login/static/css/main.22e7f554.chunk.css.map",
-    "static/js/2.50f84346.chunk.js.LICENSE.txt": "/plantswife/login/static/js/2.50f84346.chunk.js.LICENSE.txt"
+    "main.css": "/plantswife/static/css/main.22e7f554.chunk.css",
+    "main.js": "/plantswife/static/js/main.9b128658.chunk.js",
+    "main.js.map": "/plantswife/static/js/main.9b128658.chunk.js.map",
+    "runtime-main.js": "/plantswife/static/js/runtime-main.c23a9043.js",
+    "runtime-main.js.map": "/plantswife/static/js/runtime-main.c23a9043.js.map",
+    "static/css/2.e6ac38db.chunk.css": "/plantswife/static/css/2.e6ac38db.chunk.css",
+    "static/js/2.50f84346.chunk.js": "/plantswife/static/js/2.50f84346.chunk.js",
+    "static/js/2.50f84346.chunk.js.map": "/plantswife/static/js/2.50f84346.chunk.js.map",
+    "index.html": "/plantswife/index.html",
+    "precache-manifest.1f416cedcf74c471ef7ff0bfbfcfba9c.js": "/plantswife/precache-manifest.1f416cedcf74c471ef7ff0bfbfcfba9c.js",
+    "service-worker.js": "/plantswife/service-worker.js",
+    "static/css/2.e6ac38db.chunk.css.map": "/plantswife/static/css/2.e6ac38db.chunk.css.map",
+    "static/css/main.22e7f554.chunk.css.map": "/plantswife/static/css/main.22e7f554.chunk.css.map",
+    "static/js/2.50f84346.chunk.js.LICENSE.txt": "/plantswife/static/js/2.50f84346.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7f8bb6ef.js",
+    "static/js/runtime-main.c23a9043.js",
     "static/css/2.e6ac38db.chunk.css",
     "static/js/2.50f84346.chunk.js",
     "static/css/main.22e7f554.chunk.css",
-    "static/js/main.520c3d5d.chunk.js"
+    "static/js/main.9b128658.chunk.js"
   ]
 }
