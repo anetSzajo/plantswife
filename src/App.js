@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {
     BrowserRouter as Router,
+    HashRouter,
     Switch,
     Route,
 } from "react-router-dom";
@@ -29,6 +30,7 @@ function App(props) {
 
     return (
         <div className="App">
+            <HashRouter basename="/">
             <AuthContext.Provider value={{authTokens, setAuthTokens: setTokens}}>
                 <Router>
                     <Switch>
@@ -42,6 +44,7 @@ function App(props) {
                 </Router>
             </AuthContext.Provider>
             <Footer/>
+            </HashRouter>
         </div>
     );
 }
