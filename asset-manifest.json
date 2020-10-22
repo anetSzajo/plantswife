@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/plantswife/static/css/main.22e7f554.chunk.css",
+    "main.js": "/plantswife/static/js/main.520c3d5d.chunk.js",
+    "main.js.map": "/plantswife/static/js/main.520c3d5d.chunk.js.map",
+    "runtime-main.js": "/plantswife/static/js/runtime-main.c23a9043.js",
+    "runtime-main.js.map": "/plantswife/static/js/runtime-main.c23a9043.js.map",
+    "static/css/2.e6ac38db.chunk.css": "/plantswife/static/css/2.e6ac38db.chunk.css",
+    "static/js/2.50f84346.chunk.js": "/plantswife/static/js/2.50f84346.chunk.js",
+    "static/js/2.50f84346.chunk.js.map": "/plantswife/static/js/2.50f84346.chunk.js.map",
+    "index.html": "/plantswife/index.html",
+    "precache-manifest.e12e1b95668971228824f9b1f8d126fd.js": "/plantswife/precache-manifest.e12e1b95668971228824f9b1f8d126fd.js",
+    "service-worker.js": "/plantswife/service-worker.js",
+    "static/css/2.e6ac38db.chunk.css.map": "/plantswife/static/css/2.e6ac38db.chunk.css.map",
+    "static/css/main.22e7f554.chunk.css.map": "/plantswife/static/css/main.22e7f554.chunk.css.map",
+    "static/js/2.50f84346.chunk.js.LICENSE.txt": "/plantswife/static/js/2.50f84346.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c23a9043.js",
+    "static/css/2.e6ac38db.chunk.css",
+    "static/js/2.50f84346.chunk.js",
+    "static/css/main.22e7f554.chunk.css",
+    "static/js/main.520c3d5d.chunk.js"
+  ]
+}

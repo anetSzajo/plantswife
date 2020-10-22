@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Monstera",
+    "nextWatering": "in 3 days",
+    "nextFeeding": "in 20 days",
+    "nextSpraing": "in 10 days" ,
+    "place": "Living room"
+  },
+  {
+    "id": 2,
+    "name": "Sanseveria",
+    "nextWatering": "in 10 days",
+    "nextFeeding": "in 3 days",
+    "nextSpraing": "in 20 days",
+    "place": "Bedroom"
+  },
+  {
+    "id": 3,
+    "name": "Aloe Vera" ,
+    "nextWatering":"in 3 days" ,
+    "nextFeeding": "in 10 days",
+    "nextSpraing":"in 20 days" ,
+    "place": "Living room"
+  },
+  {
+    "id": 4,
+    "name": "mezo",
+    "nextWatering":"in 10 days" ,
+    "nextFeeding": "in 3 days",
+    "nextSpraing":"in 10 days" ,
+    "place": "Balcony"
+  },
+  {
+    "id": 5,
+    "name": "Zamiokulkas",
+    "nextWatering": "in 20 days",
+    "nextFeeding": "in 3 days",
+    "nextSpraing": "doesn't need",
+    "place": "Kitchen"
+  }
+]
