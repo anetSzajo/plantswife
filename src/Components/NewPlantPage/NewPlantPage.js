@@ -4,10 +4,7 @@ import DatePicker from "react-datepicker";
 import {Redirect} from "react-router-dom";
 import CreateNewPlantDto, {intervalsMap} from './CreateNewPlantDto';
 
-import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
-// import MuiAlert from '@material-ui/';
-import { makeStyles } from '@material-ui/core/styles';
 import MuiAlert from '@material-ui/lab/Alert';
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -157,7 +154,6 @@ class NewPlantPage extends React.Component {
 
         return (
             <div className="newPlantFormPage">
-
                 <Snackbar open={open} autoHideDuration={6000} onClose={this.handleClose} anchorOrigin={{vertical: "top", horizontal: "center"}}>
                     <Alert onClose={this.handleClose} severity="warning">
                         Please fill all fields with * and submit.

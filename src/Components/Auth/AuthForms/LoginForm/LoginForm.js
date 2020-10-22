@@ -7,7 +7,6 @@ import '../authForm.scss';
 
 function LoginForm(props) {
 
-    const [isError, setIsError] = useState(false);
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setPassword] = useState("");
 
@@ -66,7 +65,6 @@ function LoginForm(props) {
                     <button type="submit">Login</button>
                 </form>
                 <Link to="/signUp">Don't have an account?</Link>
-                { isError ? <p>The username or password provided were incorrect!</p> : null}
             </div>
         </div>
     )

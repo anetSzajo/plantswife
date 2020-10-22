@@ -14,7 +14,6 @@ function Alert(props) {
 function Login(props){
 
     const [isLoggedIn, setLoggedIn] = useState(false);
-    const [isError, setIsError] = useState(false);
     const [open, setOpen] = useState(false);
 
     const handleClick = () => {
@@ -44,11 +43,9 @@ function Login(props){
                 console.log(result.data)
             } else {
                 handleClick();
-                setIsError(true);
             }
         }).catch(e => {
             handleClick();
-            setIsError(true);
         });
     }
 

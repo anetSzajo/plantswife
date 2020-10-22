@@ -14,7 +14,6 @@ function Alert(props) {
 function SignUp(){
 
     const [isSignedUp, setSignedUp] = useState(false);
-    const [isError, setIsError] = useState(false);
     const [open, setOpen] = useState(false);
 
     const handleClick = () => {
@@ -44,12 +43,10 @@ function SignUp(){
                     setSignedUp(true);
                 } else {
                     handleClick();
-                    setIsError(true);
                 }
             })
             .catch(e => {
                 handleClick();
-                setIsError(true);
             });
     }
 
