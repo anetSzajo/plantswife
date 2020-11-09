@@ -15,6 +15,7 @@ import './plantPage.scss';
 class PlantPage extends React.Component {
     state = {
         plantById: {},
+        imageURL: '',
         loaded: false,
         redirectToHome: false,
         isEditOn: false
@@ -41,8 +42,29 @@ class PlantPage extends React.Component {
             })
     }
 
+    fetchPlantImage = () => {
+        const plantId = this.props.match.params.plantid;
+
+        axios.get(`plants/${plantId}`, {
+            headers:
+                {
+                    Authorization: `Bearer ${this.context.authTokens.access_token}`
+                }
+        })
+            .then(res => this.setState(
+                {
+                    imageURL: res.data
+                    }
+                )
+            )
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
     componentDidMount(){
       this.fetchPlant();
+      this.fetchPlantImage();
     }
 
     handleEditButton = () => {
@@ -107,7 +129,11 @@ class PlantPage extends React.Component {
         if (this.state.loaded) {
             return (
                 <div className="plantViewPageBody">
-                    <PlantPhoto fullDescriptionView={true} allowAddNewPlantPhoto={true} />
+                    <PlantPhoto
+                        fullDescriptionView={true}
+                        allowAddNewPlantPhoto={true}
+                        plant={this.state.plantById}
+                    />
                     <PlantButtons plantId={this.state.plantById.id}
                                   fullDescriptionView={true}
                                   plantProcessTriggered={() => this.fetchPlant() }/>

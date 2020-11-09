@@ -7,12 +7,10 @@ import PlantMoreInfoButton from "./PlantMoreInfoButton/PlantMoreInfoButton";
 import './plantListElement.scss';
 
 function PlantListElement({ plant, plantProcessTriggered }){
-
-
     return(
         <div className="plantListElement">
             <div className="plantListElement__menu">
-                <PlantPhoto />
+                <PlantPhoto plant={plant}/>
                 <PlantButtons plantId={plant.id} plantProcessTriggered={plantProcessTriggered}/>
             </div>
             <PlantShortDescription plant={plant}/>
