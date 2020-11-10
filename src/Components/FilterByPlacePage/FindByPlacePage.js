@@ -7,9 +7,8 @@ import './findByPlacePage.scss';
 class FindByPlacePage extends React.Component{
 
     componentDidMount(){
-            document.body.style.backgroundColor = "#F2F2F2";
-
-        }
+        document.body.style.backgroundColor = "#F2F2F2";
+    }
 
     componentWillUnmount(){
         document.body.style.backgroundColor = null;

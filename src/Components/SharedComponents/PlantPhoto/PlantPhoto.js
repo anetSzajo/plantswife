@@ -7,18 +7,20 @@ import {AuthContext} from "../../../Context/auth";
 
 class PlantPhoto extends React.Component {
     state = {
-        plant: this.props.plant,
+        plant: this.props.plant
     }
 
     static contextType = AuthContext;
 
     componentDidMount() {
-        this.fetchPlantImg();
+        this.state.plant.imageUrl && this.fetchPlantImg()
     }
 
     fetchPlantImg = () => {
+        let url = this.state.plant.imageUrl || `plants/${this.state.plant.id}/image`
+
         axios.get(
-            this.state.plant.imageUrl,
+            url,
             {
                 headers:
                     {
@@ -27,13 +29,9 @@ class PlantPhoto extends React.Component {
                 responseType: "arraybuffer"
             }
         )
-            .then(x => {
-                console.log(x)
-                return x
-            })
             .then((response) => {
                 const data = `data:${response.headers['content-type']};base64,${new Buffer(response.data, "binary").toString('base64')}`;
-                this.setState({ imgSrc: data });
+                this.setState({imgSrc: data});
             })
             .catch(err => {
                 console.log(err)
@@ -47,7 +45,6 @@ class PlantPhoto extends React.Component {
         axios.post(`plants/${this.state.plant.id}/image`, data, {
             headers:
                 {
-                    'Content-Type': 'application/json',
                     'Authorization': `Bearer ${this.context.authTokens.access_token}`
                 }
         })
@@ -56,7 +53,6 @@ class PlantPhoto extends React.Component {
                 console.log(err)
             })
     }
-
 
     render() {
         return (

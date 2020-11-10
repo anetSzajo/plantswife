@@ -12,7 +12,6 @@ import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 import CustomInput from "./CustomInput/CustomInput";
 import './newPlantPage.scss';
 import {AuthContext} from "../../Context/auth";
-import AddNewPlantPhoto from "../PlantPage/AddNewPlantPhoto/AddNewPlantPhoto";
 
 const moment = require('moment');
 

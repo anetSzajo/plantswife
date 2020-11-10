@@ -15,7 +15,7 @@ class PlantFullDescription extends React.Component{
         plant: this.props.plant
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps(nextProps) {
             this.setState({
                 plant: nextProps.plant
             });

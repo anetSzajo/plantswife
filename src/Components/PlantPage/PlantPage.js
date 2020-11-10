@@ -5,7 +5,6 @@ import {AuthContext} from "../../Context/auth";
 
 import PlantButtons from "../SharedComponents/PlantButtons/PlantButtons";
 import PlantPhoto from "../SharedComponents/PlantPhoto/PlantPhoto";
-import AddNewPlantPhoto from "./AddNewPlantPhoto/AddNewPlantPhoto";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 import PlantFullDescription from "./PlantFullDescription/PlantFullDescription";
 
@@ -15,7 +14,6 @@ import './plantPage.scss';
 class PlantPage extends React.Component {
     state = {
         plantById: {},
-        imageURL: '',
         loaded: false,
         redirectToHome: false,
         isEditOn: false
@@ -42,29 +40,8 @@ class PlantPage extends React.Component {
             })
     }
 
-    fetchPlantImage = () => {
-        const plantId = this.props.match.params.plantid;
-
-        axios.get(`plants/${plantId}`, {
-            headers:
-                {
-                    Authorization: `Bearer ${this.context.authTokens.access_token}`
-                }
-        })
-            .then(res => this.setState(
-                {
-                    imageURL: res.data
-                    }
-                )
-            )
-            .catch(error => {
-                console.log(error)
-            })
-    }
-
     componentDidMount(){
       this.fetchPlant();
-      this.fetchPlantImage();
     }
 
     handleEditButton = () => {
