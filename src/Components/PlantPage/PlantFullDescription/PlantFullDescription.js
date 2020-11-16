@@ -15,10 +15,21 @@ class PlantFullDescription extends React.Component{
         plant: this.props.plant
     }
 
-    componentWillReceiveProps(nextProps) {
-            this.setState({
-                plant: nextProps.plant
-            });
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (nextProps.plant !== prevState.plant) {
+            return { plant: nextProps.plant };
+        }
+        else return null;
+    }
+
+    componentDidUpdate(prevProps, nextProps) {
+        if (prevProps.plant !== this.props.plant){
+            this.setState(
+                {
+                    plant: nextProps.plant
+                }
+            )
+        }
     }
 
     formatIntervalString = (string) => {
