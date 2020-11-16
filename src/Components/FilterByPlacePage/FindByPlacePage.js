@@ -25,6 +25,7 @@ class FindByPlacePage extends React.Component{
                         <PlaceTile img="/icons/kitchen.png" name="Kitchen" place="kitchen" />
                         <PlaceTile img="/icons/balcony.png" name="Balcony"  place="balcony" />
                         <PlaceTile img="/icons/hall.png" name="Hall" place="hall" />
+                        <PlaceTile img="/icons/showAll.png" name="Show All" />
                     </div>
                     <GoHomeButton />
                 </div>
