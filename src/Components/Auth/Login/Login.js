@@ -5,11 +5,7 @@ import LoginForm from "../AuthForms/LoginForm/LoginForm";
 import Footer from '../../Footer/Footer';
 import {useAuth} from "../../../Context/auth";
 import Snackbar from "@material-ui/core/Snackbar";
-import MuiAlert from "@material-ui/lab/Alert";
-
-function Alert(props) {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
+import Alert from '../../SharedComponents/Alert/Alert';
 
 function Login(props){
 

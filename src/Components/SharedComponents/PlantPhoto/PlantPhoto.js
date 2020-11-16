@@ -1,13 +1,15 @@
 import React from "react";
 import axios from 'axios';
-
 import './plantPhoto.scss';
 import AddNewPlantPhoto from "../../PlantPage/AddNewPlantPhoto/AddNewPlantPhoto";
 import {AuthContext} from "../../../Context/auth";
+import Snackbar from "@material-ui/core/Snackbar";
+import Alert from '../../SharedComponents/Alert/Alert';
 
 class PlantPhoto extends React.Component {
     state = {
-        plant: this.props.plant
+        plant: this.props.plant,
+        open: false
     }
 
     static contextType = AuthContext;
@@ -15,6 +17,21 @@ class PlantPhoto extends React.Component {
     componentDidMount() {
         this.state.plant.imageUrl && this.fetchPlantImg()
     }
+
+    handleClick = () => {
+        this.setState({
+            open: true
+        });
+    };
+
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        this.setState({
+            open: false
+        });
+    };
 
     fetchPlantImg = () => {
         let url = this.state.plant.imageUrl || `plants/${this.state.plant.id}/image`
@@ -40,26 +57,48 @@ class PlantPhoto extends React.Component {
 
     uploadPlantImage = (photo) => {
         const data = new FormData();
-        data.append('image', photo)
+        data.append('image', photo);
 
-        axios.post(`plants/${this.state.plant.id}/image`, data, {
-            headers:
-                {
-                    'Authorization': `Bearer ${this.context.authTokens.access_token}`
+        (async () => {
+            axios.interceptors.response.use(
+                (response) => response,
+            (error) => {
+                if (error.response && error.response.data) {
+                    this.setState({
+                        imgSrc: '/icons/defaultPlantPhoto.png'
+                    })
+                    this.handleClick();
+                    return Promise.reject(error.response.data);
                 }
-        })
-            .then(() => this.fetchPlantImg())
-            .catch(err => {
-                console.log(err)
+                return Promise.reject(error.message);
+            });
+
+            axios.post(`plants/${this.state.plant.id}/image`, data, {
+                headers:
+                    {
+                        'Authorization': `Bearer ${this.context.authTokens.access_token}`
+                    }
             })
+                .then(() => this.fetchPlantImg())
+                .catch(err => {
+                    this.handleClick();
+                })
+        })();
     }
+
+
 
     render() {
         return (
             <div className={`plantPhoto__container ${this.props.fullDescriptionView && 'largePhoto'}`}>
+                <Snackbar open={this.state.open} autoHideDuration={6000} onClose={this.handleClose} anchorOrigin={{vertical: "top", horizontal: "center"}}>
+                    <Alert onClose={this.handleClose} severity="warning">
+                        Failed to load photo. Please use png/jpg format.
+                    </Alert>
+                </Snackbar>
                 <img className="plantPhoto"
                      src={
-                         this.state.imgSrc
+                         this.state.imgSrc ? this.state.imgSrc : '/icons/defaultPlantPhoto.png'
                      }
                      alt=""/>
                 {this.props.allowAddNewPlantPhoto
