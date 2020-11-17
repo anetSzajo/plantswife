@@ -5,6 +5,7 @@ import AddNewPlantPhoto from "../../PlantPage/AddNewPlantPhoto/AddNewPlantPhoto"
 import {AuthContext} from "../../../Context/auth";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from '../../SharedComponents/Alert/Alert';
+import DeletePlantPhoto from "../../PlantPage/DeletePlantPhoto/DeletePlantPhoto";
 
 class PlantPhoto extends React.Component {
     state = {
@@ -62,16 +63,16 @@ class PlantPhoto extends React.Component {
         (async () => {
             axios.interceptors.response.use(
                 (response) => response,
-            (error) => {
-                if (error.response && error.response.data) {
-                    this.setState({
-                        imgSrc: '/icons/defaultPlantPhoto.png'
-                    })
-                    this.handleClick();
-                    return Promise.reject(error.response.data);
-                }
-                return Promise.reject(error.message);
-            });
+                (error) => {
+                    if (error.response && error.response.data) {
+                        this.setState({
+                            imgSrc: '/icons/defaultPlantPhoto.png'
+                        })
+                        this.handleClick();
+                        return Promise.reject(error.response.data);
+                    }
+                    return Promise.reject(error.message);
+                });
 
             axios.post(`plants/${this.state.plant.id}/image`, data, {
                 headers:
@@ -86,12 +87,30 @@ class PlantPhoto extends React.Component {
         })();
     }
 
-
+    deletePlantImage = () => {
+        axios.delete(this.state.plant.imageUrl,
+            {
+                headers:
+                    {
+                        Authorization: `Bearer ${this.context.authTokens.access_token}`
+                    }
+            })
+            .then(res => {
+                console.log("Photo Deleted Successfully.")
+            })
+            .then(res => {
+                this.setState({
+                    imgSrc: '/icons/defaultPlantPhoto.png'
+                })
+            })
+            .catch(err => console.log(err))
+    }
 
     render() {
         return (
             <div className={`plantPhoto__container ${this.props.fullDescriptionView && 'largePhoto'}`}>
-                <Snackbar open={this.state.open} autoHideDuration={6000} onClose={this.handleClose} anchorOrigin={{vertical: "top", horizontal: "center"}}>
+                <Snackbar open={this.state.open} autoHideDuration={6000} onClose={this.handleClose}
+                          anchorOrigin={{vertical: "top", horizontal: "center"}}>
                     <Alert onClose={this.handleClose} severity="warning">
                         Failed to load photo. Please use png/jpg format.
                     </Alert>
@@ -101,11 +120,18 @@ class PlantPhoto extends React.Component {
                          this.state.imgSrc ? this.state.imgSrc : '/icons/defaultPlantPhoto.png'
                      }
                      alt=""/>
-                {this.props.allowAddNewPlantPhoto
+                {this.props.allowAddNewPlantPhoto && !this.props.isEditOn
                     ?
                     <AddNewPlantPhoto handlePhoto={this.uploadPlantImage}/>
                     :
-                    null
+                    this.props.allowAddNewPlantPhoto && this.props.isEditOn
+                        ?
+                        <div>
+                            <AddNewPlantPhoto handlePhoto={this.uploadPlantImage} />
+                            <DeletePlantPhoto handleClickDelete={this.deletePlantImage} />
+                        </div>
+                        :
+                        null
                 }
             </div>
         )

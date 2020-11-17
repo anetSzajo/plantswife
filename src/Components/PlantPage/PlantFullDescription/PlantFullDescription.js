@@ -3,10 +3,10 @@ import DatePicker from "react-datepicker";
 import {intervalsMap} from "../../NewPlantPage/CreateNewPlantDto";
 import {defaultDateFormat} from "../../SharedComponents/Common";
 import CustomInput from "../../NewPlantPage/CustomInput/CustomInput";
-
 import '../../SharedComponents/PlantShortDescription/plantShortDescription.scss';
 import './plantFullDescription.scss';
-
+import {confirmAlert} from "react-confirm-alert";
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 const moment = require('moment');
 
@@ -94,6 +94,22 @@ class PlantFullDescription extends React.Component{
             }
         )
     }
+
+    handleClick = () => {
+        confirmAlert({
+            title: 'Confirm to delete',
+            message: 'Are you sure to delete this plant?',
+            buttons: [
+                {
+                    label: 'Yes',
+                    onClick: () => this.props.handleDeleteButton()
+                },
+                {
+                    label: 'No'
+                }
+            ]
+        });
+    };
 
     render(){
         const {plant} = this.state;
@@ -310,7 +326,7 @@ class PlantFullDescription extends React.Component{
                             <button className="editButton" onClick={this.props.handleEditButton}>
                             <img src="/icons/edit-icon.png" alt=""/>
                             </button>
-                            <button className="deleteButton" onClick={this.props.handleDeleteButton}>
+                            <button className="deleteButton" onClick={this.handleClick}>
                             <img src="/icons/trash.png" alt=""/>
                             </button>
                         </div>

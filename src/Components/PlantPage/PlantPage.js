@@ -110,6 +110,7 @@ class PlantPage extends React.Component {
                         fullDescriptionView={true}
                         allowAddNewPlantPhoto={true}
                         plant={this.state.plantById}
+                        isEditOn={this.state.isEditOn}
                     />
                     <PlantButtons plantId={this.state.plantById.id}
                                   fullDescriptionView={true}
