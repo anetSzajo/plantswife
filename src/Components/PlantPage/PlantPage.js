@@ -1,13 +1,11 @@
 import React from "react";
 import axios from "axios";
-import { Redirect } from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import {AuthContext} from "../../Context/auth";
-
 import PlantButtons from "../SharedComponents/PlantButtons/PlantButtons";
 import PlantPhoto from "../SharedComponents/PlantPhoto/PlantPhoto";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 import PlantFullDescription from "./PlantFullDescription/PlantFullDescription";
-
 import '../SharedComponents/PlantShortDescription/plantShortDescription.scss';
 import './plantPage.scss';
 
@@ -40,8 +38,8 @@ class PlantPage extends React.Component {
             })
     }
 
-    componentDidMount(){
-      this.fetchPlant();
+    componentDidMount() {
+        this.fetchPlant();
     }
 
     handleEditButton = () => {
@@ -53,13 +51,13 @@ class PlantPage extends React.Component {
     submitUpdatedPlantForm = (plant) => {
 
         axios.put(`plants/${plant.id}`,
-            {...plant},{
+            {...plant}, {
                 headers:
                     {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.context.authTokens.access_token}`
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${this.context.authTokens.access_token}`
                     }
-                })
+            })
             .then(x => this.setState({
                 isEditOn: false
             }))
@@ -77,7 +75,7 @@ class PlantPage extends React.Component {
         )
     }
 
-    handleDeleteButton = () => {
+    handleDeletePlantButton = () => {
         axios.delete(`plants/${this.state.plantById.id}`,
             {
                 headers:
@@ -96,11 +94,11 @@ class PlantPage extends React.Component {
             })
     }
 
-    render(){
-        const { redirectToHome } = this.state;
+    render() {
+        const {redirectToHome} = this.state;
 
         if (redirectToHome) {
-            return <Redirect to="/" />
+            return <Redirect to="/"/>
         }
 
         if (this.state.loaded) {
@@ -114,20 +112,19 @@ class PlantPage extends React.Component {
                     />
                     <PlantButtons plantId={this.state.plantById.id}
                                   fullDescriptionView={true}
-                                  plantProcessTriggered={() => this.fetchPlant() }/>
+                                  plantProcessTriggered={() => this.fetchPlant()}/>
                     <PlantFullDescription
                         plant={this.state.plantById}
                         isEditOn={this.state.isEditOn}
                         handleEditButton={this.handleEditButton}
-                        handleDeleteButton={this.handleDeleteButton}
+                        handleDeletePlantButton={this.handleDeletePlantButton}
                         handleCancelButton={this.handleCancelButton}
                         submitUpdatedPlantForm={this.submitUpdatedPlantForm}
                     />
                     <GoHomeButton/>
                 </div>
             )
-        }
-        else{
+        } else {
             return null;
         }
     }

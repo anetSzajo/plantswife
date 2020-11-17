@@ -1,0 +1,14 @@
+.deletePlantButton{
+  position: absolute;
+  bottom: 2%;
+  right: 1%;
+  opacity: 0.6;
+  border: none;
+  background-color: transparent;
+  padding: 1px 8px;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

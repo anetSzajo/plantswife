@@ -1,30 +1,30 @@
 import React from "react";
 import {confirmAlert} from "react-confirm-alert";
-import './deletePlantPhoto.scss';
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import './deletePlantButton.scss';
 
-export default function DeletePlantPhoto(props) {
+export default function DeletePlantButton(props) {
 
     const handleClick = () => {
         confirmAlert({
             title: 'Confirm to delete',
-            message: 'Are you sure to delete this photo?',
+            message: 'Are you sure to delete this plant?',
             buttons: [
                 {
                     label: 'Yes',
-                    onClick: () => props.handleClickDelete()
+                    onClick: () => props.handleDeletePlantButton()
                 },
                 {
                     label: 'No'
                 }
             ]
         });
-    };
+    }
 
     return (
         <div>
-            <button className="deletePlantPhoto" onClick={handleClick}>
-                <img src="/icons/cancel.png" alt=""/>
+            <button className="deletePlantButton" onClick={handleClick}>
+                <img src="/icons/trash.png" alt=""/>
             </button>
         </div>
     )

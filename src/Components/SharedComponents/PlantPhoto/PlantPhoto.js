@@ -1,11 +1,11 @@
 import React from "react";
 import axios from 'axios';
-import './plantPhoto.scss';
-import AddNewPlantPhoto from "../../PlantPage/AddNewPlantPhoto/AddNewPlantPhoto";
 import {AuthContext} from "../../../Context/auth";
+import AddNewPlantPhoto from "./AddNewPlantPhoto/AddNewPlantPhoto";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from '../../SharedComponents/Alert/Alert';
-import DeletePlantPhoto from "../../PlantPage/DeletePlantPhoto/DeletePlantPhoto";
+import DeletePlantPhotoButton from "./DeletePlantPhotoButton/DeletePlantPhotoButton";
+import './plantPhoto.scss';
 
 class PlantPhoto extends React.Component {
     state = {
@@ -128,7 +128,7 @@ class PlantPhoto extends React.Component {
                         ?
                         <div>
                             <AddNewPlantPhoto handlePhoto={this.uploadPlantImage} />
-                            <DeletePlantPhoto handleClickDelete={this.deletePlantImage} />
+                            <DeletePlantPhotoButton handleClickDelete={this.deletePlantImage} />
                         </div>
                         :
                         null
