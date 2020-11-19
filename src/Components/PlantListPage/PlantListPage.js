@@ -1,7 +1,6 @@
 import React from "react";
 import PlantsList from './PlantsList/PlantsList';
 import axios from 'axios';
-import {AuthContext} from "../../Context/auth";
 
 class PlantListPage extends React.Component {
 
@@ -9,15 +8,8 @@ class PlantListPage extends React.Component {
         plants: []
     }
 
-    static contextType = AuthContext;
-
     fetchPlants = (place) => {
-        axios.get(`plants`, {
-            headers:
-                {
-                    Authorization: `Bearer ${this.context.authTokens.access_token}`
-                }
-        })
+        axios.get(`plants`)
             .then(res => {
                     if (place) {
                         this.setState({

@@ -3,10 +3,11 @@ import DatePicker from "react-datepicker";
 import {intervalsMap} from "../../NewPlantPage/CreateNewPlantDto";
 import {defaultDateFormat} from "../../SharedComponents/Common";
 import CustomInput from "../../NewPlantPage/CustomInput/CustomInput";
+import DeletePlantButton from "../DeletePlantButton/DeletePlantButton";
 import '../../SharedComponents/PlantShortDescription/plantShortDescription.scss';
 import './plantFullDescription.scss';
 import 'react-confirm-alert/src/react-confirm-alert.css';
-import DeletePlantButton from "../DeletePlantButton/DeletePlantButton";
+
 
 const moment = require('moment');
 

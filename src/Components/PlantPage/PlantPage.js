@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import {Redirect} from 'react-router-dom';
-import {AuthContext} from "../../Context/auth";
+
 import PlantButtons from "../SharedComponents/PlantButtons/PlantButtons";
 import PlantPhoto from "../SharedComponents/PlantPhoto/PlantPhoto";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
@@ -17,18 +17,10 @@ class PlantPage extends React.Component {
         isEditOn: false
     }
 
-    static contextType = AuthContext;
-
     fetchPlant = () => {
         const plantId = this.props.match.params.plantid;
 
-        axios.get(`plants/${plantId}`,
-            {
-                headers:
-                    {
-                        Authorization: `Bearer ${this.context.authTokens.access_token}`
-                    }
-            })
+        axios.get(`plants/${plantId}`)
             .then(res => this.setState({
                 plantById: res.data,
                 loaded: true
@@ -50,14 +42,7 @@ class PlantPage extends React.Component {
 
     submitUpdatedPlantForm = (plant) => {
 
-        axios.put(`plants/${plant.id}`,
-            {...plant}, {
-                headers:
-                    {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${this.context.authTokens.access_token}`
-                    }
-            })
+        axios.put(`plants/${plant.id}`, {...plant})
             .then(x => this.setState({
                 isEditOn: false
             }))
@@ -76,13 +61,7 @@ class PlantPage extends React.Component {
     }
 
     handleDeletePlantButton = () => {
-        axios.delete(`plants/${this.state.plantById.id}`,
-            {
-                headers:
-                    {
-                        Authorization: `Bearer ${this.context.authTokens.access_token}`
-                    }
-            })
+        axios.delete(`plants/${this.state.plantById.id}`)
             .then(x => console.log("Plant deleted"))
             .then(res => this.setState(
                 {

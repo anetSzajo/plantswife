@@ -1,6 +1,5 @@
 import React from "react";
 import axios from 'axios';
-import {AuthContext} from "../../../Context/auth";
 import AddNewPlantPhoto from "./AddNewPlantPhoto/AddNewPlantPhoto";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from '../../SharedComponents/Alert/Alert';
@@ -12,8 +11,6 @@ class PlantPhoto extends React.Component {
         plant: this.props.plant,
         open: false
     }
-
-    static contextType = AuthContext;
 
     componentDidMount() {
         this.state.plant.imageUrl && this.fetchPlantImg()
@@ -37,16 +34,7 @@ class PlantPhoto extends React.Component {
     fetchPlantImg = () => {
         let url = this.state.plant.imageUrl || `plants/${this.state.plant.id}/image`
 
-        axios.get(
-            url,
-            {
-                headers:
-                    {
-                        Authorization: `Bearer ${this.context.authTokens.access_token}`
-                    },
-                responseType: "arraybuffer"
-            }
-        )
+        axios.get(url,{ responseType: "arraybuffer" })
             .then((response) => {
                 const data = `data:${response.headers['content-type']};base64,${new Buffer(response.data, "binary").toString('base64')}`;
                 this.setState({imgSrc: data});
@@ -74,12 +62,7 @@ class PlantPhoto extends React.Component {
                     return Promise.reject(error.message);
                 });
 
-            axios.post(`plants/${this.state.plant.id}/image`, data, {
-                headers:
-                    {
-                        'Authorization': `Bearer ${this.context.authTokens.access_token}`
-                    }
-            })
+            axios.post(`plants/${this.state.plant.id}/image`, data)
                 .then(() => this.fetchPlantImg())
                 .catch(err => {
                     this.handleClick();
@@ -88,13 +71,7 @@ class PlantPhoto extends React.Component {
     }
 
     deletePlantImage = () => {
-        axios.delete(this.state.plant.imageUrl,
-            {
-                headers:
-                    {
-                        Authorization: `Bearer ${this.context.authTokens.access_token}`
-                    }
-            })
+        axios.delete(this.state.plant.imageUrl)
             .then(res => {
                 console.log("Photo Deleted Successfully.")
             })

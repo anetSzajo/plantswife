@@ -3,15 +3,12 @@ import axios from 'axios';
 import DatePicker from "react-datepicker";
 import {Redirect} from "react-router-dom";
 import CreateNewPlantDto, {intervalsMap} from './CreateNewPlantDto';
-
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-
-import "react-datepicker/dist/react-datepicker.css";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
 import CustomInput from "./CustomInput/CustomInput";
 import './newPlantPage.scss';
-import {AuthContext} from "../../Context/auth";
+import "react-datepicker/dist/react-datepicker.css";
 
 const moment = require('moment');
 
@@ -29,15 +26,13 @@ class NewPlantPage extends React.Component {
         };
     }
 
-    static contextType = AuthContext;
-
-    handleClick = () => this.setState({ open: true })
+    handleClick = () => this.setState({open: true})
 
     handleClose = (event, reason) => {
         if (reason === 'clickaway') {
             return;
         }
-        this.setState({ open: false })
+        this.setState({open: false})
     }
 
     defaultEmptyPlant = () => ({
@@ -59,11 +54,11 @@ class NewPlantPage extends React.Component {
         date = moment(date).format();
 
         this.setState({
-            plant: {
-                ...this.state.plant,
-                [name]: date
-            }
-        }, () => this.checkAction(this.state.plant)
+                plant: {
+                    ...this.state.plant,
+                    [name]: date
+                }
+            }, () => this.checkAction(this.state.plant)
         )
     }
 
@@ -86,7 +81,7 @@ class NewPlantPage extends React.Component {
     }
 
     checkAction = (plant) => {
-        if (plant.lastWatering && plant.wateringInterval){
+        if (plant.lastWatering && plant.wateringInterval) {
             let nextWatering = this.calculateNextAction(plant.lastWatering, intervalsMap.get(this.state.plant.wateringInterval));
             this.setState({
                 plant: {
@@ -95,7 +90,7 @@ class NewPlantPage extends React.Component {
                 }
             })
         }
-        if (plant.lastSpraing && plant.spraingInterval){
+        if (plant.lastSpraing && plant.spraingInterval) {
             let nextSpraing = this.calculateNextAction(plant.lastSpraing, intervalsMap.get(this.state.plant.spraingInterval));
             this.setState({
                 plant: {
@@ -104,7 +99,7 @@ class NewPlantPage extends React.Component {
                 }
             })
         }
-        if (plant.lastFeeding && plant.feedingInterval){
+        if (plant.lastFeeding && plant.feedingInterval) {
             let nextFeeding = this.calculateNextAction(plant.lastFeeding, intervalsMap.get(this.state.plant.feedingInterval));
             this.setState({
                 plant: {
@@ -120,13 +115,7 @@ class NewPlantPage extends React.Component {
 
         const plant = CreateNewPlantDto.fromNewPlantForm(this.state.plant);
 
-        axios.post(`${process.env.REACT_APP_AXIOS_URL}/plants`,
-            {...plant},{
-            headers:
-                {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.context.authTokens.access_token}`
-            }})
+        axios.post(`${process.env.REACT_APP_AXIOS_URL}/plants`, {...plant})
             .then(res => {
                 console.log(res);
                 console.log(plant);
@@ -142,19 +131,19 @@ class NewPlantPage extends React.Component {
             })
     }
 
-
     render() {
         const {plant} = this.state;
         const {open} = this.state;
-        const { redirectToHome } = this.state;
+        const {redirectToHome} = this.state;
 
         if (redirectToHome) {
-            return <Redirect to="/" />
+            return <Redirect to="/"/>
         }
 
         return (
             <div className="newPlantFormPage">
-                <Snackbar open={open} autoHideDuration={6000} onClose={this.handleClose} anchorOrigin={{vertical: "top", horizontal: "center"}}>
+                <Snackbar open={open} autoHideDuration={6000} onClose={this.handleClose}
+                          anchorOrigin={{vertical: "top", horizontal: "center"}}>
                     <Alert onClose={this.handleClose} severity="warning">
                         Please fill all fields with * and submit.
                     </Alert>
@@ -170,7 +159,7 @@ class NewPlantPage extends React.Component {
                             onChange={this.handleInput}
                         />
                         <label className="required-field">Watering interval</label>
-                        <select value={plant.wateringInterval} name="wateringInterval" onChange={this.handleInput} >
+                        <select value={plant.wateringInterval} name="wateringInterval" onChange={this.handleInput}>
                             <option value=''>Choose an option...</option>
                             <option value="everyday">Everyday</option>
                             <option value="onceAWeek">Once a week</option>
@@ -187,8 +176,8 @@ class NewPlantPage extends React.Component {
                                     dateFormat="MM/dd/yyyy HH:mm"
                                     showTimeSelect
                                     popperPlacement="bottom"
-                                    customInput={<CustomInput calendarIcon="true"  />}
-                            />
+                                    customInput={<CustomInput calendarIcon="true"/>}
+                        />
                         <label>NextWatering</label>
                         <p>{this.state.plant.nextWatering}</p>
                         <label className="required-field">Spraing interval</label>
@@ -209,8 +198,8 @@ class NewPlantPage extends React.Component {
                                     dateFormat="MM/dd/yyyy HH:mm"
                                     showTimeSelect
                                     popperPlacement="bottom"
-                                    customInput={<CustomInput calendarIcon="true" />}
-                            />
+                                    customInput={<CustomInput calendarIcon="true"/>}
+                        />
                         <label>Next spraing</label>
                         <p>{this.state.plant.nextSpraing}</p>
                         <label className="required-field">Feeding interval</label>
@@ -223,16 +212,16 @@ class NewPlantPage extends React.Component {
                             <option value="onceAMonth">Once a month</option>
                         </select>
                         <label className="required-field">Last feeding</label>
-                         <DatePicker selected={Date.parse(this.state.plant.lastFeeding)}
-                                     onChange={(date) => this.handleDateChange(date, "lastFeeding")}
-                                     name="lastFeeding"
-                                     placeholderText="Select date and time"
-                                     maxDate={new Date()}
-                                     dateFormat="MM/dd/yyyy HH:mm"
-                                     showTimeSelect
-                                     popperPlacement="bottom"
-                                     customInput={<CustomInput calendarIcon="true" />}
-                                 />
+                        <DatePicker selected={Date.parse(this.state.plant.lastFeeding)}
+                                    onChange={(date) => this.handleDateChange(date, "lastFeeding")}
+                                    name="lastFeeding"
+                                    placeholderText="Select date and time"
+                                    maxDate={new Date()}
+                                    dateFormat="MM/dd/yyyy HH:mm"
+                                    showTimeSelect
+                                    popperPlacement="bottom"
+                                    customInput={<CustomInput calendarIcon="true"/>}
+                        />
                         <label>Next feeding</label>
                         <p>{this.state.plant.nextFeeding}</p>
                         <label>Place</label>
@@ -246,9 +235,10 @@ class NewPlantPage extends React.Component {
                             <option value="balcony">Balcony</option>
                         </select>
                         <label>Notes</label>
-                        <textarea name="notes" value={plant.notes} onChange={this.handleInput} placeholder="Put your notes here..."/>
+                        <textarea name="notes" value={plant.notes} onChange={this.handleInput}
+                                  placeholder="Put your notes here..."/>
                         <input type="submit" value="SUBMIT" className="submit-button"/>
-                        <GoHomeButton />
+                        <GoHomeButton/>
                     </form>
                     {console.log(plant)}
                 </div>
