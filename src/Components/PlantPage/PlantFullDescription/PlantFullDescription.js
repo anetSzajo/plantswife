@@ -16,17 +16,11 @@ class PlantFullDescription extends React.Component {
         plant: this.props.plant
     }
 
-    static getDerivedStateFromProps(nextProps, prevState) {
-        if (nextProps.plant !== prevState.plant) {
-            return {plant: nextProps.plant};
-        } else return null;
-    }
-
-    componentDidUpdate(prevProps, nextProps) {
+    componentDidUpdate(prevProps, prevState) {
         if (prevProps.plant !== this.props.plant) {
             this.setState(
                 {
-                    plant: nextProps.plant
+                    plant: this.props.plant
                 }
             )
         }
@@ -262,7 +256,7 @@ class PlantFullDescription extends React.Component {
                                     <option value="onceAMonth">Once a month</option>
                                 </select>
                                 :
-                                <div>{this.formatIntervalString(this.props.plant.feeding.interval)}</div>
+                                <div className="column">{this.formatIntervalString(this.props.plant.feeding.interval)}</div>
                             }
                         </div>
                     </div>

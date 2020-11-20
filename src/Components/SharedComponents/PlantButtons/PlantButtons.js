@@ -3,12 +3,10 @@ import axios from 'axios';
 
 import './plantButtons.scss';
 
-
 class PlantButtons extends React.Component {
 
     handlePlantProcessed(processType){
-        axios.post(`plants/${this.props.plantId}/${processType}`,
-            {},{ headers: { 'Content-Type': 'application/json' }})
+        axios.post(`plants/${this.props.plantId}/${processType}`,{})
             .then(res => this.props.plantProcessTriggered())
             .catch(error => {
                 console.log(error)

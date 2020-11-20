@@ -34,6 +34,7 @@ class PlantPage extends React.Component {
         this.fetchPlant();
     }
 
+
     handleEditButton = () => {
         this.setState({
             isEditOn: true
@@ -41,7 +42,6 @@ class PlantPage extends React.Component {
     }
 
     submitUpdatedPlantForm = (plant) => {
-
         axios.put(`plants/${plant.id}`, {...plant})
             .then(x => this.setState({
                 isEditOn: false
