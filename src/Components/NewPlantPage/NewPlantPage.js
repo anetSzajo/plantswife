@@ -179,7 +179,7 @@ class NewPlantPage extends React.Component {
                                     customInput={<CustomInput calendarIcon="true"/>}
                         />
                         <label>NextWatering</label>
-                        <p>{this.state.plant.nextWatering}</p>
+                        <p>{moment(this.state.plant.nextWatering).format('MM/DD/yyy HH:ss')}</p>
                         <label className="required-field">Spraing interval</label>
                         <select value={plant.spraingInterval} name="spraingInterval" onChange={this.handleInput}>
                             <option value=''>Choose an option...</option>
@@ -201,7 +201,7 @@ class NewPlantPage extends React.Component {
                                     customInput={<CustomInput calendarIcon="true"/>}
                         />
                         <label>Next spraing</label>
-                        <p>{this.state.plant.nextSpraing}</p>
+                        <p>{moment(this.state.plant.nextSpraing).format('MM/DD/yyy HH:ss')}</p>
                         <label className="required-field">Feeding interval</label>
                         <select value={plant.feedingInterval} name="feedingInterval" onChange={this.handleInput}>
                             <option value=''>Choose an option...</option>
@@ -223,7 +223,7 @@ class NewPlantPage extends React.Component {
                                     customInput={<CustomInput calendarIcon="true"/>}
                         />
                         <label>Next feeding</label>
-                        <p>{this.state.plant.nextFeeding}</p>
+                        <p>{moment(this.state.plant.nextFeeding).format('MM/DD/yyy HH:ss')}</p>
                         <label>Place</label>
                         <select value={plant.place} name="place" onChange={this.handleInput}>
                             <option value=''>Choose a place..</option>
