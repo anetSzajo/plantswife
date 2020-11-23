@@ -1,6 +1,8 @@
 import React from 'react';
-import './plantShortDescription.scss';
+
 import {defaultDateFormat} from "../Common";
+import {formatIntervalString} from '../Common';
+import './plantShortDescription.scss';
 
 const moment = require('moment');
 
@@ -29,7 +31,7 @@ function PlantShortDescription({ plant }){
                 </div>
                 <div className="row">
                     <div className="column first">Place:</div>
-                    <div className="column">{plant.place}</div>
+                    <div className="column">{formatIntervalString(plant.place)}</div>
                 </div>
             </div>
     )

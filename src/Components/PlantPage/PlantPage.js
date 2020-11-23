@@ -1,10 +1,10 @@
 import React from "react";
 import axios from "axios";
 import {Redirect} from 'react-router-dom';
-
 import PlantButtons from "../SharedComponents/PlantButtons/PlantButtons";
 import PlantPhoto from "../SharedComponents/PlantPhoto/PlantPhoto";
 import GoHomeButton from "../SharedComponents/GoHomeButton/GoHomeButton";
+import EditablePlantFullDescription from "./EditablePlantFullDescription/EditablePlantFullDescription";
 import PlantFullDescription from "./PlantFullDescription/PlantFullDescription";
 import '../SharedComponents/PlantShortDescription/plantShortDescription.scss';
 import './plantPage.scss';
@@ -89,17 +89,24 @@ class PlantPage extends React.Component {
                         plant={this.state.plantById}
                         isEditOn={this.state.isEditOn}
                     />
-                    <PlantButtons plantId={this.state.plantById.id}
-                                  fullDescriptionView={true}
-                                  plantProcessTriggered={() => this.fetchPlant()}/>
-                    <PlantFullDescription
-                        plant={this.state.plantById}
-                        isEditOn={this.state.isEditOn}
-                        handleEditButton={this.handleEditButton}
-                        handleDeletePlantButton={this.handleDeletePlantButton}
-                        handleCancelButton={this.handleCancelButton}
-                        submitUpdatedPlantForm={this.submitUpdatedPlantForm}
-                    />
+                    {this.state.isEditOn ?
+                        <EditablePlantFullDescription
+                            plant={this.state.plantById}
+                            handleCancelButton={this.handleCancelButton}
+                            submitUpdatedPlantForm={this.submitUpdatedPlantForm}
+                        />
+                        :
+                        <div>
+                            <PlantButtons plantId={this.state.plantById.id}
+                                          fullDescriptionView={true}
+                                          plantProcessTriggered={() => this.fetchPlant()}/>
+                            <PlantFullDescription
+                                plant={this.state.plantById}
+                                handleEditButton={this.handleEditButton}
+                                handleDeletePlantButton={this.handleDeletePlantButton}
+                            />
+                        </div>
+                    }
                     <GoHomeButton/>
                 </div>
             )
