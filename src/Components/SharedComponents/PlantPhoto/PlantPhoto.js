@@ -9,16 +9,18 @@ import './plantPhoto.scss';
 class PlantPhoto extends React.Component {
     state = {
         plant: this.props.plant,
-        open: false
+        open: false,
+        errorMessage: ''
     }
 
     componentDidMount() {
         this.state.plant.imageUrl && this.fetchPlantImg()
     }
 
-    handleClick = () => {
+    handleClick = (errorMessage) => {
         this.setState({
-            open: true
+            open: true,
+            errorMessage: errorMessage
         });
     };
 
@@ -34,7 +36,7 @@ class PlantPhoto extends React.Component {
     fetchPlantImg = () => {
         let url = this.state.plant.imageUrl || `plants/${this.state.plant.id}/image`
 
-        axios.get(url,{ responseType: "arraybuffer" })
+        axios.get(url, {responseType: "arraybuffer"})
             .then((response) => {
                 const data = `data:${response.headers['content-type']};base64,${new Buffer(response.data, "binary").toString('base64')}`;
                 this.setState({imgSrc: data});
@@ -48,26 +50,13 @@ class PlantPhoto extends React.Component {
         const data = new FormData();
         data.append('image', photo);
 
-        (async () => {
-            axios.interceptors.response.use(
-                (response) => response,
-                (error) => {
-                    if (error.response && error.response.data) {
-                        this.setState({
-                            imgSrc: '/icons/defaultPlantPhoto.png'
-                        })
-                        this.handleClick();
-                        return Promise.reject(error.response.data);
-                    }
-                    return Promise.reject(error.message);
-                });
-
-            axios.post(`plants/${this.state.plant.id}/image`, data)
-                .then(() => this.fetchPlantImg())
-                .catch(err => {
-                    this.handleClick();
-                })
-        })();
+        axios.post(`plants/${this.state.plant.id}/image`, data)
+            .then(() => this.fetchPlantImg())
+            .catch(err => {
+                this.setState({
+                    imgSrc: '/icons/defaultPlantPhoto.png'
+                }, () => this.handleClick('Failed to upload photo. Please use png/jpg format.'))
+            })
     }
 
     deletePlantImage = () => {
@@ -80,7 +69,7 @@ class PlantPhoto extends React.Component {
                     imgSrc: '/icons/defaultPlantPhoto.png'
                 })
             })
-            .catch(err => console.log(err))
+            .catch(err => this.handleClick('Failed to delete photo. Try again.'))
     }
 
     render() {
@@ -89,7 +78,7 @@ class PlantPhoto extends React.Component {
                 <Snackbar open={this.state.open} autoHideDuration={6000} onClose={this.handleClose}
                           anchorOrigin={{vertical: "top", horizontal: "center"}}>
                     <Alert onClose={this.handleClose} severity="warning">
-                        Failed to load photo. Please use png/jpg format.
+                        {this.state.errorMessage}
                     </Alert>
                 </Snackbar>
                 <img className="plantPhoto"
@@ -104,8 +93,8 @@ class PlantPhoto extends React.Component {
                     this.props.allowAddNewPlantPhoto && this.props.isEditOn
                         ?
                         <div>
-                            <AddNewPlantPhoto handlePhoto={this.uploadPlantImage} />
-                            <DeletePlantPhotoButton handleClickDelete={this.deletePlantImage} />
+                            <AddNewPlantPhoto handlePhoto={this.uploadPlantImage}/>
+                            <DeletePlantPhotoButton handleClickDelete={this.deletePlantImage}/>
                         </div>
                         :
                         null

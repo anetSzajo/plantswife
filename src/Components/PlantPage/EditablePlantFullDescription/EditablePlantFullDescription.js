@@ -10,7 +10,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 
 const moment = require('moment');
 
-class EditablePlantFullDescription extends React.Component{
+class EditablePlantFullDescription extends React.Component {
 
     state = {
         plant: this.props.plant
@@ -31,11 +31,7 @@ class EditablePlantFullDescription extends React.Component{
     }
 
     calculateNextAction = (previousAction, actionInterval) => {
-        let nextAction;
-
-        nextAction = moment(previousAction).add(actionInterval[0], actionInterval[1]).format(defaultDateFormat);
-
-        return nextAction;
+        return moment(previousAction).add(actionInterval[0], actionInterval[1]).format(defaultDateFormat);
     }
 
     updateAction = (data, processName) => {
@@ -97,7 +93,7 @@ class EditablePlantFullDescription extends React.Component{
     render() {
         const {plant} = this.state;
 
-        return(
+        return (
             <div className="plantFullDescription">
                 <div className="plantDescription">
                     <div className="row">
