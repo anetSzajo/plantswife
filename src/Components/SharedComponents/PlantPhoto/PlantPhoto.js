@@ -41,6 +41,7 @@ class PlantPhoto extends React.Component {
                 const data = `data:${response.headers['content-type']};base64,${new Buffer(response.data, "binary").toString('base64')}`;
                 this.setState({imgSrc: data});
             })
+            .then((x) => console.log(this.state.plant.imageUrl))
             .catch(err => {
                 console.log(err)
             })
@@ -51,6 +52,12 @@ class PlantPhoto extends React.Component {
         data.append('image', photo);
 
         axios.post(`plants/${this.state.plant.id}/image`, data)
+            .then((res) => this.setState({
+                plant:{
+                    ...this.state.plant,
+                    imageUrl: res.data.imageUrl
+                }
+            }))
             .then(() => this.fetchPlantImg())
             .catch(err => {
                 this.setState({
@@ -69,7 +76,7 @@ class PlantPhoto extends React.Component {
                     imgSrc: '/icons/defaultPlantPhoto.png'
                 })
             })
-            .catch(err => this.handleClick('Failed to delete photo. Try again.'))
+            .catch(err => this.handleClick('Failed to delete photo. Maybe already deleted?'))
     }
 
     render() {
