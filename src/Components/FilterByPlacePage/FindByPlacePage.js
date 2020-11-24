@@ -7,9 +7,8 @@ import './findByPlacePage.scss';
 class FindByPlacePage extends React.Component{
 
     componentDidMount(){
-            document.body.style.backgroundColor = "#F2F2F2";
-
-        }
+        document.body.style.backgroundColor = "#F2F2F2";
+    }
 
     componentWillUnmount(){
         document.body.style.backgroundColor = null;
@@ -26,6 +25,7 @@ class FindByPlacePage extends React.Component{
                         <PlaceTile img="/icons/kitchen.png" name="Kitchen" place="kitchen" />
                         <PlaceTile img="/icons/balcony.png" name="Balcony"  place="balcony" />
                         <PlaceTile img="/icons/hall.png" name="Hall" place="hall" />
+                        <PlaceTile img="/icons/showAll.png" name="Show All" />
                     </div>
                     <GoHomeButton />
                 </div>

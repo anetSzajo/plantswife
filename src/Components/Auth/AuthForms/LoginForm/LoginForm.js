@@ -14,7 +14,6 @@ function LoginForm(props) {
 
     return(
         <div className="authFormPage" style={{backgroundImage: `url(/plantsPhotos/homeJungle.jpg)` }}>
-
             <AppLogo />
             <div className="card">
                 <div className="logoImgContainer">

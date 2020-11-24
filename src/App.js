@@ -30,6 +30,7 @@ function App(props) {
     return (
         <div className="App">
             <AuthContext.Provider value={{authTokens, setAuthTokens: setTokens}}>
+
                 <Router>
                     <Switch>
                         <Route exact path="/login" component={Login}/>

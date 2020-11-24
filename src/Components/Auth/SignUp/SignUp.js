@@ -3,13 +3,9 @@ import {useAuth} from "../../../Context/auth";
 import axios from "axios";
 import {Redirect} from "react-router-dom";
 import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
+import Alert from '../../SharedComponents/Alert/Alert';
 import SignUpForm from "../AuthForms/SignUpForm/SignUpForm";
 import Footer from '../../Footer/Footer';
-
-function Alert(props) {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
 
 function SignUp(){
 

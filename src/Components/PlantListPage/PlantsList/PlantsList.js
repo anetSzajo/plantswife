@@ -3,8 +3,15 @@ import PlantListElement from './PlantListElement/PlantListElement';
 
 function PlantsList ({ plants, plantProcessTriggered }){
     return(
-        <div>
-            {plants.map(plant => ( <PlantListElement key={`${plant.name}${plant.id}`} plant={plant} plantProcessTriggered={plantProcessTriggered} />)) }
+        <div className="plantsList">
+            {plants.map(plant => (
+                <PlantListElement
+                    key={`${plant.name}${plant.id}`}
+                    plant={plant}
+                    plantProcessTriggered={plantProcessTriggered}
+                />
+                ))
+            }
         </div>
     )
 }
