@@ -41,7 +41,6 @@ class PlantPhoto extends React.Component {
                 const data = `data:${response.headers['content-type']};base64,${new Buffer(response.data, "binary").toString('base64')}`;
                 this.setState({imgSrc: data});
             })
-            .then((x) => console.log(this.state.plant.imageUrl))
             .catch(err => {
                 console.log(err)
             })
@@ -68,9 +67,6 @@ class PlantPhoto extends React.Component {
 
     deletePlantImage = () => {
         axios.delete(this.state.plant.imageUrl)
-            .then(res => {
-                console.log("Photo Deleted Successfully.")
-            })
             .then(res => {
                 this.setState({
                     imgSrc: '/icons/defaultPlantPhoto.png'

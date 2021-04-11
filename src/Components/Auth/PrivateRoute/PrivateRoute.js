@@ -6,7 +6,7 @@ import { useAuth } from "../../../Context/auth";
 
 function PrivateRoute( {component: Component, ...rest} ) {
 
-    const { authTokens } = useAuth(); //get tokens from context, having means that authenticated
+    const { authTokens } = useAuth();
 
     axios.interceptors.request.use(function (config) {
         const token = localStorage.getItem('tokens');

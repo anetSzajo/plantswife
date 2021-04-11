@@ -116,10 +116,6 @@ class NewPlantPage extends React.Component {
         const plant = CreateNewPlantDto.fromNewPlantForm(this.state.plant);
 
         axios.post(`${process.env.REACT_APP_AXIOS_URL}/plants`, {...plant})
-            .then(res => {
-                console.log(res);
-                console.log(plant);
-            })
             .then(res => this.setState(
                 {
                     redirectToHome: true
@@ -127,7 +123,6 @@ class NewPlantPage extends React.Component {
             ))
             .catch(error => {
                 this.handleClick();
-                console.log(error)
             })
     }
 
@@ -240,7 +235,6 @@ class NewPlantPage extends React.Component {
                         <input type="submit" value="SUBMIT" className="submit-button"/>
                         <GoHomeButton/>
                     </form>
-                    {console.log(plant)}
                 </div>
             </div>
         )

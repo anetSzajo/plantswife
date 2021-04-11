@@ -26,7 +26,6 @@ function Login(props){
     const { setAuthTokens } = useAuth();
 
     const referer = props.location.state?.referer || '/';
-    ///redirect to previously entered page or a home page
 
     function postLogin(userEmail, userPassword) {
         axios.post(`${process.env.REACT_APP_AXIOS_URL}/auth/login`, {
@@ -36,7 +35,6 @@ function Login(props){
             if (result.status === 201) {
                 setAuthTokens(result.data);
                 setLoggedIn(true);
-                console.log(result.data)
             } else {
                 handleClick();
             }

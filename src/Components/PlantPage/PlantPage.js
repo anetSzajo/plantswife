@@ -62,7 +62,6 @@ class PlantPage extends React.Component {
 
     handleDeletePlantButton = () => {
         axios.delete(`plants/${this.state.plantById.id}`)
-            .then(x => console.log("Plant deleted"))
             .then(res => this.setState(
                 {
                     redirectToHome: true
