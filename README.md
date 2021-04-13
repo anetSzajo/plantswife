@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Plantswife
 
-## Available Scripts
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Demo](#demo)
+* [Features](#features)
+* [Screenshots](#screenshots)
 
-In the project directory, you can run:
+## General info
+**Plantswife** is a mobile app for managing a houseplant jungle. Allows to keep all your plants data in one place, easily add, edit or delete elements. Simply buttons allows for quick next watering, spraing or feeding tasks updates. You don't have to remember dates, app will do it for you. Adding plants' photos help to monitor their growth and find in you own plants' database. You can finally say goodbye to shed or withered plants. Enjoy beautiful home jungle and free your mind!
 
-### `npm start`
+## Technologies
+**Frontend:** React, JavaScript, SCSS\
+**Backend:** Nest.js (https://github.com/kSzajo/plantswife-backend)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Demo
+https://plantswife.herokuapp.com
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Create new user or login with test credentials: \
+**LOGIN:** test@test.test \
+**PASSWORD:** qwe123
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
+* Login/Register
+* Create new plant
+* Update plant data
+* Update next watering/spraing/feeding dates by clicking the icon buttons
+* Add and delete plant photo
+* Delete plant
+* Filter plants by its location
 
-### `npm run build`
+## Screenshots
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="screenshots/registerPage.png" width="300px" height="600px"><img src="screenshots/loginPage.png" width="300px" height="600px"><img src="screenshots/homePage.png" width="300px" height="600px">
+<img src="screenshots/filterPage.png" width="300px" height="600px"><img src="screenshots/filteredHomePage.png" width="300px" height="600px"><img src="screenshots/createPlantPage.png" width="300px" height="600px">
+<img src="screenshots/addPlantPhoto.png" width="300px" height="600px"><img src="screenshots/plantPage.png" width="300px" height="600px"><img src="screenshots/editPlantPage.png" width="300px" height="600px">
+<img src="screenshots/confirmDeletePlant.png" width="300px" height="600px">
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+**Be aware!** Due to the fact that Heroku app is going inactive after long time of non-use, plants photos might be reset after turning off the app.
